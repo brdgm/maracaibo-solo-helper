@@ -1,0 +1,93 @@
+{
+  "gameTitle": "Maracaibo",
+  "home": {
+    "title": "Maracaibo Solo Helper",
+    "play1": "Spiele den <a href='https://boardgamegeek.com/boardgame/276025/maracaibo' target='_blank' rel='noopener'><b>Maracaibo</b></a> Solomodus gegen Jean oder Jacques, die Sologegner.",
+    "play2": "Du kannst mit oder ohne die Erweiterung <a href='https://boardgamegeek.com/boardgameexpansion/338013/maracaibo-the-uprising' target='_blank' rel='noopener'>Der Aufstand</a> spielen.",
+    "feedback": "Diskussion und Feedback:"
+  },
+  "setup": {
+    "title": "Konfiguration",
+    "difficultyLevel": {
+      "title": "Schwierigkeitsgrad",
+      "easy": "Leicht",
+      "hard": "Schwer"
+    },
+    "expansions": {
+      "title": "Erweiterungen",
+      "fireland": "Feuerland",
+      "oceania": "Ozeanien"
+    }
+  },
+  "setupGame": {
+    "title": "Spielaufbau",
+    "mainBoard": {
+      "title": "Hauptspielbrett",
+      "setup2Players": "Richte das Hauptspielbrett wie für ein Zwei-Personen-Spiel ein, mit folgenden Änderungen am Basisspiel-Aufbau:",
+      "specialActionTiles": "Schritt #2: Mische und decke nur <b>4 statt 6 Sonderaktionsplättchen</b> auf. Lass die untere Reihe des Sonderaktionstagebuchs leer.",
+      "objectiveTiles": "Schritt #9: Lege, nachdem du die beiden Zielplättchenstapel gemischt hast, <b>nur ein silbernes und ein goldenes Ziel</b> offen auf das Spielbrett.",
+      "turnOrderToken": "Überspringe Schritt #14: Lege dafür den <b>2-Spieler-Zugreihenfolge-Aktionsmarker</b> oben auf die Zugreihenfolgeleiste.",
+      "botFirstPlayer": "Lege den Marker für <b>Alfred auf die erste Position</b> der Zugreihenfolgeleiste und deinen Marker auf die zweite Position."
+    },
+    "crewCards": {
+      "title": "Besatzungskarten erhalten",
+      "draw5": "Mische die Besatzungskarten, <b>ziehe 5 Karten</b> und lege sie offen vor dich.",
+      "select3": "<b>Wähle 3 dieser Karten</b> aus, die du behältst, lege die anderen 2 zurück in die Schachtel.",
+      "waxSeals": "Nimm die <b>passenden gewöhnlichen Wachssiegel</b>, die auf deinen Besatzungskarten oben rechts abgebildet sind, aus dem Vorrat. Diese legst du auf die äußersten linken leeren Wachssiegel-Felder neben deinen Arbeitern, sodass alle Arbeiter ein Wachssiegel neben sich haben."
+    },
+    "objectiveTiles": {
+      "title": "Persönliche Anfangszielplättchen draften",
+      "followInstructions": "Befolge die entsprechenden Anweisungen für ein Zwei-Spieler-Spiel mit folgenden Änderungen:",
+      "selectOnePair": "In Schritt #4 wählst du <b>eines der verfügbaren Paare</b> aus und legst die Plättchen rechts neben deinem Tableau neben die Zielreihen. Nimm das andere Paar aus dem Spiel."
+    }
+  },
+  "roundRewards": {
+    "title": "Belohnungsphase"
+  },
+  "roundCleanup": {
+    "title": "Aufräumphase"
+  },
+  "gameEnd": {
+    "title": "Spielende"
+  },
+  "sideBar": {
+    "round": "Runde {round}",
+    "turn": "Zug {turn}"
+  },
+  "player": {
+    "player": "Spieler",
+    "bot": "Alfred"
+  },
+  "difficultyLevel": {
+    "1": "Weiß - Leicht",
+    "2": "Blau - Mittel",
+    "3": "Gelb - Fortgeschritten",
+    "4": "Grün - Fortgeschritten"
+  },
+  "notfound": {
+    "title": "Nicht Gefunden"
+  },
+  "action": {
+    "playGame": "Spielen",
+    "startGame": "Spiel starten",
+    "next": "Weiter",
+    "nextRound": "Nächste Runde",
+    "abortGame": "Spiel abbrechen",
+    "abortGameConfirm": "Das aktuelle Spiel wird abgebrochen - bist du sicher?",
+    "endGame": "Spiel beenden",
+    "endGameConfirm": "Dieses Spiel wird beendet - bist du sicher?",
+    "cancel": "Abbrechen",
+    "backToHome": "Zurück zum Anfang",
+    "back": "Zurück",
+    "close": "Schließen",
+    "ok": "OK",
+    "pass": "Passen"
+  },
+  "footer": {
+    "credits": "Credits"
+  },
+  "serviceWorkerUpdatedRefresh": {
+    "title": "Applikation neu laden",
+    "notice": "Die Applikation wurde aktualisiert - möchtest du die Seite neu laden um die neueste Version zu nutzen?"
+  }
+}

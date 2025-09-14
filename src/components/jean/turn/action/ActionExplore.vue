@@ -1,13 +1,17 @@
 <template>
   <ActionBox :instructionTitle="t('jean.action.explore.title')" :modalSizeLg="true">
     <template #action>
-      {{t('jean.action.explore.title')}}
+      <div class="explore">
+        <div class="amount">{{action.exploreSteps}}</div>
+        <AppIcon name="explorer-track" class="icon"/>
+      </div>
     </template>
     <template #instruction>
-      <ul class="instruction">
-        <li>
-          {{t('jean.action.explore.title')}}...
-        </li>
+      <ul>
+        <li v-html="t('jean.action.explore.move', {amount: action.exploreSteps}, action.exploreSteps ?? 0)"></li>
+        <li v-html="t('jean.action.explore.quest')"></li>
+        <li v-html="t('jean.action.explore.shortestPath')"></li>
+        <li v-html="t('jean.action.explore.noRewards')"></li>
       </ul>
     </template>
   </ActionBox>
@@ -45,4 +49,18 @@ export default defineComponent({
 </script>
 
 <style lang="scss" scoped>
+.explore {
+  display: flex;
+  align-items: center;
+  .amount {
+    margin-right: 0.25rem;
+    font-size: 2rem;
+    font-weight: bold;
+    color: white;
+    text-shadow: -2px -2px 0 #000, 2px -2px 0 #000, -2px 2px 0 #000, 2px 2px 0 #000;
+  }
+  .icon {
+    width: 3rem;
+  }
+}
 </style>

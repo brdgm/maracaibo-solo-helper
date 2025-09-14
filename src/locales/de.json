@@ -73,6 +73,17 @@
       "questPile": {
         "title": "Nehme Quest",
         "take": "Jean entfernt eine Quest vom Nachziehstapel."
+      },
+      "removeDisc": {
+        "title": "Scheibe entfernen",
+        "remove": "Jean entfernt eine Scheibe für Schiffs-Upgrades (wird von der Anwendung verwaltet)."
+      },
+      "explore": {
+        "title": "Entdecker bewegen",
+        "move": "Jean bewegt ihren Entdecker <b>{amount} Felder</b> weiter.",
+        "quest": "Befindet sich eine Quest in Reichweite ihres Entdeckers, zieht sie ihn dort hin und nimmt sie (und lässt möglicherweise Felder verfallen).",
+        "shortestPath": "Andernfalls wählt sie immer den kürzestmöglichen Weg.",
+        "noRewards": "Die Belohnung für das Überschreiten der Barriere oder der Ankunft am Zielfeld erhält Jean nicht, reduziert allerdings den Bonus für deinen Entdecker."
       }
     }
   },

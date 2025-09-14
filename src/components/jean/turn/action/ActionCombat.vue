@@ -1,7 +1,7 @@
 <template>
   <ActionBox :instructionTitle="t('jean.action.combat.title')" :modalSizeLg="true">
     <template #action>
-      {{t('jean.action.combat.title')}}
+      <AppIcon name="combat" class="icon"/> TBD
     </template>
     <template #instruction>
       <ul class="instruction">
@@ -45,4 +45,7 @@ export default defineComponent({
 </script>
 
 <style lang="scss" scoped>
+.icon {
+  width: 3rem;
+}
 </style>

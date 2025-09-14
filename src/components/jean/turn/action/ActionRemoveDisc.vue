@@ -1,14 +1,10 @@
 <template>
   <ActionBox :instructionTitle="t('jean.action.removeDisc.title')" :modalSizeLg="true">
     <template #action>
-      {{t('jean.action.removeDisc.title')}}
+      <AppIcon name="remove-disc" class="icon"/>
     </template>
     <template #instruction>
-      <ul class="instruction">
-        <li>
-          {{t('jean.action.removeDisc.title')}}...
-        </li>
-      </ul>
+      <p v-html="t('jean.action.removeDisc.remove')"></p>
     </template>
   </ActionBox>
 </template>
@@ -45,4 +41,7 @@ export default defineComponent({
 </script>
 
 <style lang="scss" scoped>
+.icon {
+  width: 3rem;
+}
 </style>

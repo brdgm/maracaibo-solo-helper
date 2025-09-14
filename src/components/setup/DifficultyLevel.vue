@@ -16,7 +16,6 @@
   <div class="row">
     <div class="col-6 offset-3 col-sm-8 offset-sm-2 col-md-5 offset-md-1">
       <i>
-        <AppIcon type="difficulty-level" :name="`${difficultyLevel}`" class="icon"/>
         {{t(`difficultyLevel.${difficultyLevel}`)}}
       </i>
     </div>
@@ -28,13 +27,9 @@
 import { defineComponent, ref } from 'vue'
 import { useI18n } from 'vue-i18n'
 import { useStateStore } from '@/store/state'
-import AppIcon from '../structure/AppIcon.vue'
 
 export default defineComponent({
   name: 'DifficultyLevel',
-  components: {
-    AppIcon
-  },
   setup() {
     const { t } = useI18n()
     const state = useStateStore()

@@ -1,13 +1,14 @@
+import Card from '@/services/Card'
 import CardDeck from '@/services/CardDeck'
 
-export default function (params?: MockCardDeckParams) : CardDeck {  
+export default function (getMethod: (id: string) => Card, params?: MockCardDeckParams) : CardDeck {  
   return CardDeck.fromPersistence({
     pile: params?.pile ?? [],
     discard: params?.discard ?? []
-  })
+  }, getMethod)
 }
 
 export interface MockCardDeckParams {
-  pile?: number[]
-  discard?: number[]
+  pile?: string[]
+  discard?: string[]
 }

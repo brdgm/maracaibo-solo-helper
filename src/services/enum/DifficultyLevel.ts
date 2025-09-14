@@ -2,9 +2,10 @@
  * Difficulty Level
  */
 enum DifficultyLevel {
-  LEVEL_1_WHITE = 1,
-  LEVEL_2_BLUE = 2,
-  LEVEL_3_YELLOW = 3,
-  LEVEL_4_GREEN = 4
+  LEVEL_1 = 1,  // Jean: Very Easy, Jacques: Simple
+  LEVEL_2 = 2,  // Jean: Easy,      Jacques: Medium
+  LEVEL_3 = 3,  // Jean: Medium,    Jacques: Hard
+  LEVEL_4 = 4,  // Jean: Hard,      Jacques: Very Hard
+  LEVEL_5 = 5   // Jean: Very Hard
 }
 export default DifficultyLevel

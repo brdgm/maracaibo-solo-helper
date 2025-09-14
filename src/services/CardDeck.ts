@@ -1,9 +1,8 @@
 import { shuffle } from 'lodash'
-import Card from './Card'
-import Cards from './Cards'
 import { CardDeckPersistence } from '@/store/state'
 import { ref } from 'vue'
-import Action from './enum/Action'
+import Card from './Card'
+import CardLevel from './enum/CardLevel'
 
 /**
  * Manages the solo card deck.
@@ -32,19 +31,15 @@ export default class CardDeck {
 
   /**
    * Draws next card.
-   * If two "deliver specimens" Cards are in discard, shuffles discard pile into the main pile.
-   * If not sufficient cards are left, an error is thrown.
    * @returns Next action card
    */
   public draw() : Card {
-    if (this._discard.value.filter(isDeliverySpecimens).length == 2) {
-      // Shuffle discard pile into main pile
-      this._pile.value = shuffle([...this._pile.value, ...this._discard.value])
-      this._discard.value = []
-    }
     const card = this._pile.value.shift()
     if (!card) {
-      throw new Error('Pile is empty.')
+      // empty pile? shuffle and draw again
+      this._pile.value = shuffle(this._discard.value)
+      this._discard.value = []
+      return this.draw()
     }
     this._discard.value.unshift(card)
     return card
@@ -63,23 +58,22 @@ export default class CardDeck {
   /**
    * Creates a shuffled new card deck.
    */
-  public static new() : CardDeck {
-    const cards = shuffle(Cards.getAll())
+  public static new(cardLevelA: number, cardLevelB: number, cardLevelC: number, getAllMethod: (level: CardLevel) => Card[]) : CardDeck {
+    const cardsLevelA = shuffle(getAllMethod(CardLevel.A))
+    const cardsLevelB = shuffle(getAllMethod(CardLevel.B))
+    const cardsLevelC = shuffle(getAllMethod(CardLevel.C))
+    const cards = [ ...cardsLevelA.slice(0, cardLevelA), ...cardsLevelB.slice(0, cardLevelB), ...cardsLevelC.slice(0, cardLevelC) ]
     return new CardDeck(cards, [])
   }
 
   /**
    * Re-creates card deck from persistence.
    */
-  public static fromPersistence(persistence : CardDeckPersistence) : CardDeck {
+  public static fromPersistence(persistence : CardDeckPersistence, getMethod: (id: string) => Card) : CardDeck {
     return new CardDeck(
-      persistence.pile.map(Cards.get),
-      persistence.discard.map(Cards.get)
+      persistence.pile.map(getMethod),
+      persistence.discard.map(getMethod)
     )
   }
 
-}
-
-function isDeliverySpecimens(card: Card) : boolean {
-  return card.actions.some(action => action.action == Action.DELIVER_SPECIMENS)
 }

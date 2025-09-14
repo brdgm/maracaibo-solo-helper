@@ -1,11 +1,7 @@
 import { defineStore } from 'pinia'
 import { name } from '@/../package.json'
 import DifficultyLevel from '@/services/enum/DifficultyLevel'
-import Expansion from '@/services/enum/Expansion'
-import toggleArrayItem from '@brdgm/brdgm-commons/src/util/array/toggleArrayItem'
-import Player from '@/services/enum/Player'
-import WaxSeal from '@/services/enum/WaxSeal'
-import Worker from '@/services/enum/Worker'
+import Bot from '@/services/enum/Bot'
 
 export const useStateStore = defineStore(`${name}.state`, {
   state: () => {
@@ -13,11 +9,8 @@ export const useStateStore = defineStore(`${name}.state`, {
       language: 'en',
       baseFontSize: 1.0,
       setup: {
-        expansions: [],
-        difficultyLevel: DifficultyLevel.LEVEL_1_WHITE
-      },
-      alienDiscovery: {
-        species: [undefined, undefined]
+        bot: Bot.JEAN,
+        difficultyLevel: DifficultyLevel.LEVEL_1
       },
       rounds: []
     } as State
@@ -25,9 +18,6 @@ export const useStateStore = defineStore(`${name}.state`, {
   actions: {
     resetGame() {
       this.rounds = []
-    },
-    setupToggleExpansion(expansion: Expansion) : void {
-      toggleArrayItem(this.setup.expansions, expansion)
     },
     storeRound(round : Round) : void {
       this.rounds = this.rounds.filter(item => item.round < round.round)
@@ -52,7 +42,7 @@ export interface State {
   rounds: Round[]
 }
 export interface Setup {
-  expansions: Expansion[]
+  bot: Bot,
   difficultyLevel: DifficultyLevel
   debugMode?: boolean
 }
@@ -72,32 +62,6 @@ export interface BotPersistence {
   cardDeck: CardDeckPersistence
 }
 export interface CardDeckPersistence {
-  pile: number[]
-  discard: number[]
-}
-export interface MainBoardState {
-  exploration: Player[][]
-  navigation: Player[][]
-  correspondence: Player[][]
-  academy: Player[][]
-  specialAction: Player[][]
-  unlockLens: Player[][]
-  deliverSpecimen: Player[]
-  researchMuseumSpecimen: Player[]
-  turnOrder: Player[]
-  gainObjective: Player[]
-}
-export interface BotPlayerBoardState {
-  bonusTrackPosition: number
-  money: number
-  tents: number
-  stamps: number
-  availableWorkers: Worker[]
-  restingWorkers: number
-  workerState: WorkerState[]
-  bonusCards: string[]
-}
-export interface WorkerState {
-  worker: Worker
-  waxSeals: WaxSeal[]
+  pile: string[]
+  discard: string[]
 }

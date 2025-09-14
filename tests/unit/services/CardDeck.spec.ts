@@ -1,7 +1,6 @@
 import CardDeck from '@/services/CardDeck'
 import { expect } from 'chai'
 import mockCardDeck from '../helper/mockCardDeck'
-import JeanCards from '@/services/jean/JeanCards'
 import CardLevel from '@/services/enum/CardLevel'
 import DifficultyLevel from '@/services/enum/DifficultyLevel'
 import Bot from '@/services/enum/Bot'

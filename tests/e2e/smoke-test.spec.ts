@@ -4,7 +4,7 @@ test('smoke test', async ({ page }) => {
   await page.goto('/')
 
   // app home
-  await expect(page.locator('h1')).toHaveText('Darwin\'s Journey Solo Helper')
+  await expect(page.locator('h1')).toHaveText('Maracaibo Solo Helper')
   await page.getByRole('link', { name: 'Play Game' }).click()
 
   // setup game
@@ -22,5 +22,5 @@ test('smoke test', async ({ page }) => {
   await page.locator('#endGameModal').getByRole('button', { name: 'Abort Game' }).click()
 
   // app home
-  await expect(page.locator('h1')).toHaveText('Darwin\'s Journey Solo Helper')
+  await expect(page.locator('h1')).toHaveText('Maracaibo Solo Helper')
 })

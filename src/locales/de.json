@@ -64,6 +64,11 @@
       "vp": {
         "title": "Siegpunkte",
         "get": "Jean erhält <b>{amount}</b> Siegpunkt. | Jean erhält <b>{amount}</b> Siegpunkte."
+      },
+      "reduceCombat": {
+        "title": "Kampfpunkte abgeben",
+        "reduce": "Gebe <b>{amount}</b> Kampfpunkt ab. | Gebe <b>{amount}</b> Kampfpunkte ab.",
+        "noPoints": "Kannst du dies nicht, gibst du alle übrigen Kampfpunkte ab und Jean erhält je fehlenden Kampfpunkte <b>{amount} Siegpunkte</b>."
       }
     }
   },

@@ -1,13 +1,15 @@
 <template>
   <ActionBox :instructionTitle="t('jean.action.reduceCombat.title')" :modalSizeLg="true">
     <template #action>
-      {{t('jean.action.reduceCombat.title')}}
+      <div class="reduce-combat">
+        <div class="amount">{{action.reduceCombat}}</div>
+        <AppIcon name="combat-point" class="icon"/>
+      </div>
     </template>
     <template #instruction>
       <ul class="instruction">
-        <li>
-          {{t('jean.action.reduceCombat.title')}}...
-        </li>
+        <li v-html="t('jean.action.reduceCombat.reduce', {amount: action.reduceCombat}, action.reduceCombat ?? 0)"></li>
+        <li v-html="t('jean.action.reduceCombat.noPoints', {amount: combatPointVP})"></li>
       </ul>
     </template>
   </ActionBox>
@@ -40,9 +42,33 @@ export default defineComponent({
   setup() {
     const { t } = useI18n()
     return { t }
+  },
+  computed: {
+    combatPointVP() : number {
+      if (this.navigationState.round >= 3) {
+        return 4
+      }
+      else {
+        return 3
+      }
+    }
   }
 })
 </script>
 
 <style lang="scss" scoped>
+.reduce-combat {
+  display: flex;
+  align-items: center;
+  .amount {
+    margin-right: -0.25rem;
+    font-size: 2rem;
+    font-weight: bold;
+    color: red;
+    text-shadow: -2px -2px 0 #000, 2px -2px 0 #000, -2px 2px 0 #000, 2px 2px 0 #000;
+  }
+  .icon {
+    width: 3rem;
+  }
+}
 </style>

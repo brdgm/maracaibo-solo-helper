@@ -64,6 +64,11 @@
       "vp": {
         "title": "Victory Points",
         "get": "Jean gains <b>{amount}</b> victory point. | Jean gains <b>{amount}</b> victory points."
+      },
+      "reduceCombat": {
+        "title": "Pay Combat Points",
+        "reduce": "Pay <b>{amount}</b> combat point. | Pay <b>{amount}</b> combat points.",
+        "noPoints": "If you cannot, instead pay as many combat points as you can and Jean scores <b>{amount} VP</b> for each missing combat point."
       }
     }
   },

@@ -49,6 +49,7 @@ export default defineComponent({
 
 <style lang="scss" scoped>
 .actionBox {
+  display: flex;
   background-color: #dbcba1;
   border: 2px solid #8a7d72;
   border-radius: 0.5rem;
@@ -60,5 +61,6 @@ export default defineComponent({
   background-repeat: no-repeat;
   background-position: right 5px top 5px;
   background-size: 1.25rem;
+  justify-content: center;
 }
 </style>

@@ -41,6 +41,24 @@
     "turnPlayer": {
       "title": "Your turn",
       "takeTurn": "Take your turn."
+    },
+    "turnBot": {
+      "foundQuest": "Jean found a quest",
+      "noQuest": "No Quest"
+    },
+    "action": {
+      "moveShip": {
+        "title": "Move Ship",
+        "upperRoute": "If there is a choice: use the upper route.",
+        "lowerRoute": "If there is a choice: use the lower route.",
+        "ignoreVillages": "Jean ignores all villages without quests. These are not-counted spaces! This means that Jean will always end her movement in either a city or a location with a quest.",
+        "cannotSkipHand": "Jean cannot skip locations with the hand symbol, such as the 'homeward bound' spaces. This means that once she reaches space 20, she only every moves to the next space.",
+        "legacyTiles": "If legacy tiles reveal new cities, these also count for Jean."
+      },
+      "influence": {
+        "title": "Influence",
+        "get": "Jean gains <b>{count}</b> influence for <b>{nation}</b>."
+      }
     }
   },
   "sideBar": {
@@ -65,6 +83,11 @@
       "3": "Level 3 - Hard („Navigator“)",
       "4": "Level 4 - Very hard („Commodore“)"
     }
+  },
+  "nation": {
+    "france": "France",
+    "spain": "Spain",
+    "england": "England"
   },
   "notfound": {
     "title": "Not Found"

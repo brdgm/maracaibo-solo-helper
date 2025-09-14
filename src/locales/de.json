@@ -41,6 +41,24 @@
     "turnPlayer": {
       "title": "Dein Zug",
       "takeTurn": "Führe deinen Zug aus."
+    },
+    "turnBot": {
+      "foundQuest": "Jean findet eine Quest",
+      "noQuest": "Keine Quest"
+    },
+    "action": {
+      "moveShip": {
+        "title": "Schiff bewegen",
+        "upperRoute": "Bei einer Auswahl: nutze die obere Route.",
+        "lowerRoute": "Bei einer Auswahl: nutze die untere Route.",
+        "ignoreVillages": "Jean ignoriert alle Dörfer ohne Aufträge. Diese sind nicht zu zählende Felder! Das bedeutet, dass Jean ihre Bewegung immer entweder in einer Stadt oder an einem Ort mit einem Auftrag beendet.",
+        "cannotSkipHand": "Jean kann Orte mit dem Handsymbol, wie die 'Heimwärts' Felder, nicht überspringen. Das bedeutet, dass sie, sobald sie Feld 20 erreicht hat, immer nur zum nächsten Feld zieht.",
+        "legacyTiles": "Wenn Legacyplättchen neue Städte aufdecken, zählen diese auch für Jean."
+      },
+      "influence": {
+        "title": "Einfluss",
+        "get": "Jean erhält <b>{count}</b> Einfluss bei <b>{nation}</b>."
+      }
     }
   },
   "sideBar": {
@@ -65,6 +83,11 @@
       "3": "Level 3 - Schwer („Steuermann“)",
       "4": "Level 4 - So gut wie unmöglich! („Commodore“)"
     }
+  },
+  "nation": {
+    "france": "Frankreich",
+    "spain": "Spanien",
+    "england": "England"
   },
   "notfound": {
     "title": "Nicht Gefunden"

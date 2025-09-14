@@ -18,7 +18,7 @@
     }
   },
   "setupGame": {
-    "title": "Spielaufbau",
+    "title": "Spielaufbau ({bot})",
     "jean": {
       "intro": "Bereite das Spiel wie gewohnt für 2 Spieler vor, mit diesen Änderungen:",
       "chooseColor": "Wähle eine Farbe für Jean.",
@@ -28,6 +28,13 @@
       "noDoubloons": "Sie sammelt keine Dublonen oder Kampfpunkte.",
       "noProjectCards": "Sie erhält keine Projektkarten zu Spielbeginn.",
       "automaNote": "Das Automa-Tableau und die Automakarten werden nicht benötigt, sie werden von der Anwendung verwaltet."
+    },
+    "jacques": {
+      "intro": "Bereite das Spiel entsprechend der Anzahl menschlicher Spieler vor. Beim Solospiel bereite es als 2-Spieler-Spiel vor.",
+      "noPlayerMaterial": "Jacques verwendet kein Spielermaterial.",
+      "victoryPointMarker": "Platziere seinen Siegpunktmarker auf der Siegpunktleiste",
+      "explorerMarker": "Platziere seinen Entdeckermarker am Start der Entdeckerleiste.",
+      "automaNote": "Jacques' Automakarten werden nicht benötigt, sie werden von der Anwendung verwaltet."
     }
   },
   "roundRewards": {

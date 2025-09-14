@@ -1,25 +1,11 @@
 <template>
-  <h3>{{t('setupGame.mainBoard.title')}} - JACQUES</h3>
-  <p v-html="t('setupGame.mainBoard.setup2Players')"></p>
-  <ol type="A">
-    <li v-html="t('setupGame.mainBoard.specialActionTiles')"></li>
-    <li v-html="t('setupGame.mainBoard.objectiveTiles')"></li>
-    <li v-html="t('setupGame.mainBoard.turnOrderToken')"></li>
-    <li v-html="t('setupGame.mainBoard.botFirstPlayer')"></li>
-  </ol>
-
-  <h3>{{t('setupGame.crewCards.title')}}</h3>
-  <ol type="A">
-    <li v-html="t('setupGame.crewCards.draw5')"></li>
-    <li v-html="t('setupGame.crewCards.select3')"></li>
-    <li v-html="t('setupGame.crewCards.waxSeals')"></li>
-  </ol>
-
-  <h3>{{t('setupGame.objectiveTiles.title')}}</h3>
-  <p v-html="t('setupGame.objectiveTiles.followInstructions')"></p>
+  <p>{{t('setupGame.jacques.intro')}}</p>
   <ul>
-    <li v-html="t('setupGame.objectiveTiles.selectOnePair')"></li>
-  </ul>  
+    <li>{{t('setupGame.jacques.noPlayerMaterial')}}</li>
+    <li>{{t('setupGame.jacques.victoryPointMarker')}}</li>
+    <li>{{t('setupGame.jacques.explorerMarker')}}</li>
+  </ul>
+  <p>{{t('setupGame.jacques.automaNote')}}</p>
 </template>
 
 <script lang="ts">

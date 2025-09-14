@@ -1,6 +1,5 @@
-import AlienSpecies from '@/services/enum/AlienSpecies'
+import Bot from '@/services/enum/Bot'
 import DifficultyLevel from '@/services/enum/DifficultyLevel'
-import Player from '@/services/enum/Player'
 import { Round, State } from '@/store/state'
 
 export default function (params?: MockStateParams) : State {  
@@ -8,19 +7,15 @@ export default function (params?: MockStateParams) : State {
     language: 'en',
     baseFontSize: 1,
     setup: {
-      difficultyLevel: params?.difficultyLevel ?? DifficultyLevel.LEVEL_1,
-      startPlayer: params?.startPlayer
-    },
-    alienDiscovery: {
-      species: params?.alienSpecies ?? []
+      bot: params?.bot ?? Bot.JEAN,
+      difficultyLevel: params?.difficultyLevel ?? DifficultyLevel.LEVEL_1
     },
     rounds: params?.rounds ?? []
   }
 }
 
 export interface MockStateParams {
+  bot?: Bot
   difficultyLevel?: DifficultyLevel
-  startPlayer?: Player
-  alienSpecies?: (AlienSpecies|undefined)[]
   rounds?: Round[]
 }

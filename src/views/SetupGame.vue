@@ -1,5 +1,5 @@
 <template>
-  <h1>{{t('setupGame.title', {bot:t(`bot.${state.setup.bot}`)})}}</h1>
+  <h1>{{t('setupGame.title')}} ({{t(`bot.${state.setup.bot}`)}})</h1>
 
   <div class="instructions mt-4">
     <SetupGameJean v-if="isBotJean"/>

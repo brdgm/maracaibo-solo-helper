@@ -18,7 +18,7 @@
     }
   },
   "setupGame": {
-    "title": "Setup Game ({bot})",
+    "title": "Setup Game",
     "jean": {
       "intro": "Setup the game up as for a 2-player game, with the following changes:",
       "chooseColor": "Choose a color for Jean.",

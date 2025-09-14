@@ -18,7 +18,7 @@
     }
   },
   "setupGame": {
-    "title": "Spielaufbau ({bot})",
+    "title": "Spielaufbau",
     "jean": {
       "intro": "Bereite das Spiel wie gewohnt für 2 Spieler vor, mit diesen Änderungen:",
       "chooseColor": "Wähle eine Farbe für Jean.",

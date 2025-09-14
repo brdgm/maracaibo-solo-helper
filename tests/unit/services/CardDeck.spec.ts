@@ -3,27 +3,28 @@ import { expect } from 'chai'
 import mockCardDeck from '../helper/mockCardDeck'
 import JeanCards from '@/services/jean/JeanCards'
 import CardLevel from '@/services/enum/CardLevel'
-import JacquesCards from '@/services/jacques/JacquesCards'
+import DifficultyLevel from '@/services/enum/DifficultyLevel'
+import Bot from '@/services/enum/Bot'
 
 describe('services/CardDeck', () => {
   it('new-jean', () => {
-    const deck = CardDeck.new(5, 2, 1, JeanCards.getAll)
+    const deck = CardDeck.new(Bot.JEAN, DifficultyLevel.LEVEL_3)
 
     expect(deck.currentCard, 'currentCard').to.undefined
-    expect(deck.pile.length, 'pile').to.eq(8)
+    expect(deck.pile.length, 'pile').to.eq(7)
     expect(deck.discard.length, 'discard').to.eq(0)
 
     expect(deck.pile.filter(card => card.cardLevel == CardLevel.A).length, 'level-A').to.eq(5)
-    expect(deck.pile.filter(card => card.cardLevel == CardLevel.B).length, 'level-B').to.eq(2)
+    expect(deck.pile.filter(card => card.cardLevel == CardLevel.B).length, 'level-B').to.eq(1)
     expect(deck.pile.filter(card => card.cardLevel == CardLevel.C).length, 'level-C').to.eq(1)
 
     const persistence = deck.toPersistence()
-    expect(persistence.pile.length, 'pile').to.eq(8)
+    expect(persistence.pile.length, 'pile').to.eq(7)
     expect(persistence.discard.length, 'discard').to.eq(0)
   })
 
   it('new-jacques', () => {
-    const deck = CardDeck.new(5, 2, 0, JacquesCards.getAll)
+    const deck = CardDeck.new(Bot.JACQUES, DifficultyLevel.LEVEL_2)
 
     expect(deck.currentCard, 'currentCard').to.undefined
     expect(deck.pile.length, 'pile').to.eq(7)
@@ -39,7 +40,7 @@ describe('services/CardDeck', () => {
   })
 
   it('draw', () => {
-    const deck = mockCardDeck(JeanCards.get, {pile:['A1','B2','C3']})
+    const deck = mockCardDeck(Bot.JEAN, {pile:['A1','B2','C3']})
 
     expect(deck.pile.length, 'pile').to.eq(3)
     expect(deck.discard.length, 'discard').to.eq(0)

@@ -22,6 +22,7 @@ import { useRouter } from 'vue-router'
 import SetupGameJean from '@/components/setup/SetupGameJean.vue'
 import SetupGameJacques from '@/components/setup/SetupGameJacques.vue'
 import Bot from '@/services/enum/Bot'
+import CardDeck from '@/services/CardDeck'
 
 export default defineComponent({
   name: 'SetupGame',
@@ -44,6 +45,7 @@ export default defineComponent({
   },
   methods: {
     startGame() : void {
+      this.state.setup.initialCardDeck = CardDeck.new(this.state.setup.bot, this.state.setup.difficultyLevel).toPersistence()
       this.router.push('/round/1/turn/1/bot')
     }
   }

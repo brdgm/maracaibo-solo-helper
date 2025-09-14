@@ -8,38 +8,17 @@
   },
   "setup": {
     "title": "Konfiguration",
+    "botSelection": {
+      "title": "Dein Gegner"
+    },
     "difficultyLevel": {
       "title": "Schwierigkeitsgrad",
       "easy": "Leicht",
       "hard": "Schwer"
-    },
-    "expansions": {
-      "title": "Erweiterungen",
-      "fireland": "Feuerland",
-      "oceania": "Ozeanien"
     }
   },
   "setupGame": {
-    "title": "Spielaufbau",
-    "mainBoard": {
-      "title": "Hauptspielbrett",
-      "setup2Players": "Richte das Hauptspielbrett wie für ein Zwei-Personen-Spiel ein, mit folgenden Änderungen am Basisspiel-Aufbau:",
-      "specialActionTiles": "Schritt #2: Mische und decke nur <b>4 statt 6 Sonderaktionsplättchen</b> auf. Lass die untere Reihe des Sonderaktionstagebuchs leer.",
-      "objectiveTiles": "Schritt #9: Lege, nachdem du die beiden Zielplättchenstapel gemischt hast, <b>nur ein silbernes und ein goldenes Ziel</b> offen auf das Spielbrett.",
-      "turnOrderToken": "Überspringe Schritt #14: Lege dafür den <b>2-Spieler-Zugreihenfolge-Aktionsmarker</b> oben auf die Zugreihenfolgeleiste.",
-      "botFirstPlayer": "Lege den Marker für <b>Alfred auf die erste Position</b> der Zugreihenfolgeleiste und deinen Marker auf die zweite Position."
-    },
-    "crewCards": {
-      "title": "Besatzungskarten erhalten",
-      "draw5": "Mische die Besatzungskarten, <b>ziehe 5 Karten</b> und lege sie offen vor dich.",
-      "select3": "<b>Wähle 3 dieser Karten</b> aus, die du behältst, lege die anderen 2 zurück in die Schachtel.",
-      "waxSeals": "Nimm die <b>passenden gewöhnlichen Wachssiegel</b>, die auf deinen Besatzungskarten oben rechts abgebildet sind, aus dem Vorrat. Diese legst du auf die äußersten linken leeren Wachssiegel-Felder neben deinen Arbeitern, sodass alle Arbeiter ein Wachssiegel neben sich haben."
-    },
-    "objectiveTiles": {
-      "title": "Persönliche Anfangszielplättchen draften",
-      "followInstructions": "Befolge die entsprechenden Anweisungen für ein Zwei-Spieler-Spiel mit folgenden Änderungen:",
-      "selectOnePair": "In Schritt #4 wählst du <b>eines der verfügbaren Paare</b> aus und legst die Plättchen rechts neben deinem Tableau neben die Zielreihen. Nimm das andere Paar aus dem Spiel."
-    }
+    "title": "Spielaufbau"
   },
   "roundRewards": {
     "title": "Belohnungsphase"
@@ -54,15 +33,24 @@
     "round": "Runde {round}",
     "turn": "Zug {turn}"
   },
-  "player": {
-    "player": "Spieler",
-    "bot": "Alfred"
+  "bot": {
+    "jean": "Jean",
+    "jacques": "Jacques"
   },
   "difficultyLevel": {
-    "1": "Weiß - Leicht",
-    "2": "Blau - Mittel",
-    "3": "Gelb - Fortgeschritten",
-    "4": "Grün - Fortgeschritten"
+    "jean": {
+      "1": "Level 1 - Sehr einfach",
+      "2": "Level 2 - Einfach",
+      "3": "Level 3 - Mittel",
+      "4": "Level 4 - Schwer",
+      "5": "Level 5 - Sehr schwer"
+    },
+    "jacques": {
+      "1": "Level 1 - Einfach („Deckschrubber“)",
+      "2": "Level 2 - Mittel („Kieltaucher“)",
+      "3": "Level 3 - Schwer („Steuermann“)",
+      "4": "Level 4 - So gut wie unmöglich! („Commodore“)"
+    }
   },
   "notfound": {
     "title": "Nicht Gefunden"

@@ -8,38 +8,17 @@
   },
   "setup": {
     "title": "Setup Application",
+    "botSelection": {
+      "title": "Your Opponent"
+    },
     "difficultyLevel": {
       "title": "Difficulty Level",
       "easy": "Easy",
       "hard": "Hard"
-    },
-    "expansions": {
-      "title": "Expansions",
-      "fireland": "Fireland",
-      "oceania": "Oceania"
     }
   },
   "setupGame": {
-    "title": "Setup Game",
-    "mainBoard": {
-      "title": "Main Board",
-      "setup2Players": "Follow the ‘Main Board Setup’ instructions for a two-player game with the following changes to the base game setup:",
-      "specialActionTiles": "Step #2: Only shuffle and reveal <b>4 Special Action</b> tiles instead of 6. Leave the bottom row of the Special Action Diary empty.",
-      "objectiveTiles": "Step #9: After you shuffle the two Objective tile stacks, only place <b>one silver and one golden Objective</b> face up on the board.",
-      "turnOrderToken": "Skip step #14: Instead place the <b>2-player Turn Order Action token</b> on top of the Turn Order track.",
-      "botFirstPlayer": "Put <b>Alfred's marker in the first position</b> of the Turn Order track and your marker in the second position."
-    },
-    "crewCards": {
-      "title": "Gaining Crew Cards",
-      "draw5": "Shuffle the Crew cards, <b>draw 5 cards</B>, and place them face up.",
-      "select3": "<b>Select 3</b> of these cards to keep and place the other 2 back in the box.",
-      "waxSeals": "Take the <b>corresponding Regular Wax Seals</b>, represented in the top right corner on the chosen Crew cards, from the Wax Seals supply. These are placed onto the left-most empty Wax Seal spots next to their workers so that all workers have one Wax Seal next to them."
-    },
-    "objectiveTiles": {
-      "title": "Drafting Starting Personal Objective Tiles",
-      "followInstructions": "Follow the ‘Drafting Starting Personal Objective Tiles’ instructions for a two-player game with the following changes:",
-      "selectOnePair": "During step #4, select <b>one of the available pairs</b> and place the tiles on the right side of your personal board, next to the Objective rows, and remove the other pair from the game."
-    }
+    "title": "Setup Game"
   },
   "roundRewards": {
     "title": "Reward Phase"
@@ -54,15 +33,24 @@
     "round": "Round {round}",
     "turn": "Turn {turn}"
   },
-  "player": {
-    "player": "Player",
-    "bot": "Alfred"
+  "bot": {
+    "jean": "Jean",
+    "jacques": "Jacques"
   },
   "difficultyLevel": {
-    "1": "White - Easy",
-    "2": "Blue - Medium",
-    "3": "Yellow - Advanced",
-    "4": "Green - Advanced"
+    "jean": {
+      "1": "Level 1 - Very easy",
+      "2": "Level 2 - Easy",
+      "3": "Level 3 - Medium",
+      "4": "Level 4 - Hard",
+      "5": "Level 5 - Very hard"
+    },
+    "jacques": {
+      "1": "Level 1 - Simple („Deck Scrubber“)",
+      "2": "Level 2 - Medium („Keel Diver“)",
+      "3": "Level 3 - Hard („Navigator“)",
+      "4": "Level 4 - Very hard („Commodore“)"
+    }
   },
   "notfound": {
     "title": "Not Found"

@@ -6,7 +6,7 @@
       <label for="difficultyLevel" class="form-label">{{t('setup.difficultyLevel.easy')}}</label>
     </div>
     <div class="col-6 col-sm-8 col-md-5">
-      <input type="range" class="form-range" min="1" max="4" id="difficultyLevel"
+      <input type="range" class="form-range" min="1" :max="maxLevel" id="difficultyLevel"
           :value="difficultyLevel" @input="updateDifficultyLevel($event)">
     </div>
     <div class="col-3 col-sm-2 col-md-1">
@@ -16,7 +16,7 @@
   <div class="row">
     <div class="col-6 offset-3 col-sm-8 offset-sm-2 col-md-5 offset-md-1">
       <i>
-        {{t(`difficultyLevel.${difficultyLevel}`)}}
+        {{t(`difficultyLevel.${bot}.${difficultyLevel}`)}}
       </i>
     </div>
   </div>
@@ -27,6 +27,7 @@
 import { defineComponent, ref } from 'vue'
 import { useI18n } from 'vue-i18n'
 import { useStateStore } from '@/store/state'
+import Bot from '@/services/enum/Bot'
 
 export default defineComponent({
   name: 'DifficultyLevel',
@@ -34,9 +35,20 @@ export default defineComponent({
     const { t } = useI18n()
     const state = useStateStore()
 
+    const bot = state.setup.bot
     const difficultyLevel = ref(state.setup.difficultyLevel)
 
-    return { t, state, difficultyLevel }
+    return { t, state, bot, difficultyLevel }
+  },
+  computed: {
+    maxLevel() : number {
+      if (this.bot == Bot.JEAN) {
+        return 5
+      }
+      else {
+        return 4
+      }
+    }
   },
   methods: {
     updateDifficultyLevel(event: Event) {

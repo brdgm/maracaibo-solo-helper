@@ -2,27 +2,8 @@
   <h1>{{t('setupGame.title')}}</h1>
 
   <div class="instructions mt-4">
-    <h3>{{t('setupGame.mainBoard.title')}}</h3>
-    <p v-html="t('setupGame.mainBoard.setup2Players')"></p>
-    <ol type="A">
-      <li v-html="t('setupGame.mainBoard.specialActionTiles')"></li>
-      <li v-html="t('setupGame.mainBoard.objectiveTiles')"></li>
-      <li v-html="t('setupGame.mainBoard.turnOrderToken')"></li>
-      <li v-html="t('setupGame.mainBoard.botFirstPlayer')"></li>
-    </ol>
-
-    <h3>{{t('setupGame.crewCards.title')}}</h3>
-    <ol type="A">
-      <li v-html="t('setupGame.crewCards.draw5')"></li>
-      <li v-html="t('setupGame.crewCards.select3')"></li>
-      <li v-html="t('setupGame.crewCards.waxSeals')"></li>
-    </ol>
-
-    <h3>{{t('setupGame.objectiveTiles.title')}}</h3>
-    <p v-html="t('setupGame.objectiveTiles.followInstructions')"></p>
-    <ul>
-      <li v-html="t('setupGame.objectiveTiles.selectOnePair')"></li>
-    </ul>  
+    <SetupGameJean v-if="isBotJean"/>
+    <SetupGameJacques v-else/>
   </div>
 
   <button class="btn btn-primary btn-lg mt-4" @click="startGame()">
@@ -38,11 +19,16 @@ import { useI18n } from 'vue-i18n'
 import { useStateStore } from '@/store/state'
 import FooterButtons from '@/components/structure/FooterButtons.vue'
 import { useRouter } from 'vue-router'
+import SetupGameJean from '@/components/setup/SetupGameJean.vue'
+import SetupGameJacques from '@/components/setup/SetupGameJacques.vue'
+import Bot from '@/services/enum/Bot'
 
 export default defineComponent({
   name: 'SetupGame',
   components: {
-    FooterButtons
+    FooterButtons,
+    SetupGameJean,
+    SetupGameJacques
   },
   setup() {
     const { t } = useI18n()
@@ -50,6 +36,11 @@ export default defineComponent({
     const router = useRouter()
 
     return { t, state, router }
+  },
+  computed: {
+    isBotJean() : boolean {
+      return this.state.setup.bot == Bot.JEAN
+    }
   },
   methods: {
     startGame() : void {

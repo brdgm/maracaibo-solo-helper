@@ -4,6 +4,8 @@
 
   <BotActions :navigationState="navigationState" @next="next"/>
 
+  <DebugInfo :navigationState="navigationState"/>
+
   <FooterButtons :backButtonRouteTo="backButtonRouteTo" endGameButtonType="abortGame"/>
 </template>
 
@@ -17,13 +19,15 @@ import NavigationState from '@/util/jean/NavigationState'
 import SideBar from '@/components/jean/turn/SideBar.vue'
 import BotActions from '@/components/jean/turn/BotActions.vue'
 import Player from '@/services/enum/Player'
+import DebugInfo from '@/components/jean/turn/DebugInfo.vue'
 
 export default defineComponent({
   name: 'TurnBot',
   components: {
     FooterButtons,
     SideBar,
-    BotActions
+    BotActions,
+    DebugInfo
   },
   setup() {
     const { t } = useI18n()

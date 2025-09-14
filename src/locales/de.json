@@ -44,7 +44,9 @@
     },
     "turnBot": {
       "foundQuest": "Jean findet eine Quest",
-      "noQuest": "Keine Quest"
+      "noQuest": "Keine Quest",
+      "cityMarketSpace": "Belege ein freies Lagerfeld<br/>mit einer Scheibe aus dem Vorrat",
+      "removeCard": "Entferne Karte {card}<br/>aus der Auslage"
     },
     "action": {
       "moveShip": {
@@ -58,6 +60,10 @@
       "influence": {
         "title": "Einfluss",
         "get": "Jean erhält <b>{count}</b> Einfluss bei <b>{nation}</b>."
+      },
+      "vp": {
+        "title": "Siegpunkte",
+        "get": "Jean erhält <b>{amount}</b> Siegpunkt. | Jean erhält <b>{amount}</b> Siegpunkte."
       }
     }
   },

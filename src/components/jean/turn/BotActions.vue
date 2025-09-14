@@ -4,16 +4,21 @@
   </div>
 
   <template v-if="!noQuest">
-    <FoundQuestCheck @foundQuest="foundQuest" @noQuest="noQuest = true"/>
+    <CheckFoundQuest @foundQuest="foundQuest" @noQuest="noQuest = true"/>
   </template>
   <template v-else>
-    <div v-for="(action,index) in navigationState.currentCard.actions" :key="index" class="mt-3">
-      <component :is="`action-${action.action}`" :navigationState="navigationState" :action="action"/>
-    </div>
+    <template v-if="!cityCompleted">
+      <CheckCityMarketSpace :card="navigationState.currentCard" @marketSpace="cityPlacedDisc" @removeCard="removedCard"/>
+    </template>
+    <template v-else>
+      <div v-for="(action,index) in actions" :key="index" class="mt-3">
+        <component :is="`action-${action.action}`" :navigationState="navigationState" :action="action"/>
+      </div>
 
-    <button class="btn btn-primary btn-lg mt-4" @click="next">
-      {{t('action.next')}}
-    </button>
+      <button class="btn btn-primary btn-lg mt-4" @click="next">
+        {{t('action.next')}}
+      </button>
+    </template>
   </template>
 </template>
 
@@ -25,14 +30,16 @@ import Direction from '@/services/jean/enum/Direction'
 import AppIcon from '@/components/structure/AppIcon.vue'
 import MoveShip from './action/MoveShip.vue'
 import { JeanBotPersistence } from '@/store/state'
-import FoundQuestCheck from './FoundQuestCheck.vue'
+import CheckFoundQuest from './CheckFoundQuest.vue'
 import ActionCombat from './action/ActionCombat.vue'
 import ActionExplore from './action/ActionExplore.vue'
 import ActionInfluence from './action/ActionInfluence.vue'
 import ActionQuestPile from './action/ActionQuestPile.vue'
 import ActionReduceCombat from './action/ActionReduceCombat.vue'
 import ActionRemoveDisc from './action/ActionRemoveDisc.vue'
-import ActionVP from './action/ActionVP.vue'
+import ActionVp from './action/ActionVp.vue'
+import CheckCityMarketSpace from './CheckCityMarketSpace.vue'
+import { CardAction } from '@/services/jean/JeanCard'
 
 export default defineComponent({
   name: 'BotActions',
@@ -42,14 +49,15 @@ export default defineComponent({
   components: {
     AppIcon,
     MoveShip,
-    FoundQuestCheck,
+    CheckFoundQuest,
+    CheckCityMarketSpace,
     ActionCombat,
     ActionExplore,
     ActionInfluence,
     ActionQuestPile,
     ActionReduceCombat,
     ActionRemoveDisc,
-    ActionVP
+    ActionVp
   },
   props: {
     navigationState: {
@@ -64,6 +72,7 @@ export default defineComponent({
   data() {
     return {
       noQuest: false,
+      cityCompleted: false,
       params: {
         questCount: 0,
         projectCardCount: 0,
@@ -79,6 +88,9 @@ export default defineComponent({
     direction() : Direction {
       return this.navigationState.currentCard.direction
     },
+    actions() : CardAction[] {
+      return this.navigationState.currentCard.actions.filter(item => item.roundFrom <= this.navigationState.round && item.roundTo >= this.navigationState.round)
+    }
   },
   methods: {
     next() : void {
@@ -87,6 +99,14 @@ export default defineComponent({
     foundQuest() : void {
       this.params.questCount += 1
       this.$emit('next', this.params)
+    },
+    cityPlacedDisc() : void {
+      this.params.discRemovedCount += 1
+      this.cityCompleted = true
+    },
+    removedCard() : void {
+      this.params.projectCardCount += 1
+      this.cityCompleted = true
     }
   }
 })

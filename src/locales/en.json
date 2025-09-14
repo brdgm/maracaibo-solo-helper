@@ -44,7 +44,9 @@
     },
     "turnBot": {
       "foundQuest": "Jean found a quest",
-      "noQuest": "No Quest"
+      "noQuest": "No Quest",
+      "cityMarketSpace": "Place disc from supply<br/>in free market space",
+      "removeCard": "Remove card {card}<br/>from display"
     },
     "action": {
       "moveShip": {
@@ -58,6 +60,10 @@
       "influence": {
         "title": "Influence",
         "get": "Jean gains <b>{count}</b> influence for <b>{nation}</b>."
+      },
+      "vp": {
+        "title": "Victory Points",
+        "get": "Jean gains <b>{amount}</b> victory point. | Jean gains <b>{amount}</b> victory points."
       }
     }
   },

@@ -1,14 +1,13 @@
 <template>
   <ActionBox :instructionTitle="t('jean.action.vp.title')" :modalSizeLg="true">
     <template #action>
-      {{t('jean.action.vp.title')}}
+      <div class="vp">
+        <AppIcon name="vp" class="icon"/>
+        <div class="amount"><div>{{ action.vp }}</div></div>
+      </div>
     </template>
     <template #instruction>
-      <ul class="instruction">
-        <li>
-          {{t('jean.action.vp.title')}}...
-        </li>
-      </ul>
+      <p v-html="t('jean.action.vp.get', {amount: action.vp}, action.vp ?? 0)"></p>
     </template>
   </ActionBox>
 </template>
@@ -22,7 +21,7 @@ import ActionBox from '@/components/structure/ActionBox.vue'
 import { CardAction } from '@/services/jean/JeanCard'
 
 export default defineComponent({
-  name: 'ActionVP',
+  name: 'ActionVp',
   components: {
     AppIcon,
     ActionBox
@@ -45,4 +44,30 @@ export default defineComponent({
 </script>
 
 <style lang="scss" scoped>
+.vp {
+  position: relative;
+  width: 3rem;
+  height: 3rem;
+  .icon {
+    position: absolute;
+    left: 0;
+    width: 3rem;
+    height: 3rem;
+    object-fit: contain;
+  }
+  .amount {
+    display: flex;
+    position: absolute;
+    left: 0;
+    width: 3rem;
+    height: 3rem;
+    z-index: 100;
+    justify-content: center;
+    align-items: center;
+    font-size: 1.5rem;
+    font-weight: bold;
+    color: white;
+    text-shadow: -2px -2px 0 #000, 2px -2px 0 #000, -2px 2px 0 #000, 2px 2px 0 #000;
+  }
+}
 </style>

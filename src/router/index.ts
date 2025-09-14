@@ -5,11 +5,12 @@ import AppHome from '@/views/AppHome.vue'
 import NotFound from '@/views/NotFound.vue'
 import SetupApp from '@/views/SetupApp.vue'
 import SetupGame from '@/views/SetupGame.vue'
-import RoundTurnPlayer from '@/views/RoundTurnPlayer.vue'
-import RoundTurnBot from '@/views/RoundTurnBot.vue'
-import RoundRewards from '@/views/RoundRewards.vue'
-import RoundCleanup from '@/views/RoundCleanup.vue'
-import GameEnd from '@/views/GameEnd.vue'
+import JeanTurnPlayer from '@/views/jean/TurnPlayer.vue'
+import JeanTurnBot from '@/views/jean/TurnBot.vue'
+import JeanGameEnd from '@/views/jean/GameEnd.vue'
+import JacquesTurnPlayer from '@/views/jacques/TurnPlayer.vue'
+import JacquesTurnBot from '@/views/jacques/TurnBot.vue'
+import JacquesGameEnd from '@/views/jacques/GameEnd.vue'
 
 const LOCALSTORAGE_KEY = `${name}.route`
 
@@ -30,34 +31,44 @@ const routes: Array<RouteRecordRaw> = [
     component: SetupGame
   },
   {
-    path: '/round/:round/turn/:turn/player',
-    name: 'RoundTurnPlayer',
-    component: RoundTurnPlayer
+    path: '/jean/turn/:turn/player',
+    name: 'JeanTurnPlayer',
+    component: JeanTurnPlayer
   },
   {
-    path: '/round/:round/turn/:turn/bot',
-    name: 'RoundTurnBot',
-    component: RoundTurnBot
+    path: '/jean/turn/:turn/bot',
+    name: 'JeanTurnBot',
+    component: JeanTurnBot
   },
   {
-    path: '/round/:round/turn/:turn/bot/action/:action',
-    name: 'RoundTurnBotAction',
-    component: RoundTurnBot
+    path: '/jean/turn/:turn/bot/action/:action',
+    name: 'JeanTurnBotAction',
+    component: JeanTurnBot
   },
   {
-    path: '/round/:round/rewards',
-    name: 'RoundRewards',
-    component: RoundRewards
+    path: '/jean/gameEnd',
+    name: 'JeanGameEnd',
+    component: JeanGameEnd
   },
   {
-    path: '/round/:round/cleanup',
-    name: 'RoundCleanup',
-    component: RoundCleanup
+    path: '/jacques/turn/:turn/player',
+    name: 'JacquesTurnPlayer',
+    component: JacquesTurnPlayer
   },
   {
-    path: '/gameEnd',
-    name: 'GameEnd',
-    component: GameEnd
+    path: '/jacques/turn/:turn/bot',
+    name: 'JacquesTurnBot',
+    component: JacquesTurnBot
+  },
+  {
+    path: '/jacques/turn/:turn/bot/action/:action',
+    name: 'JacquesTurnBotAction',
+    component: JacquesTurnBot
+  },
+  {
+    path: '/jacques/gameEnd',
+    name: 'JacquesGameEnd',
+    component: JacquesGameEnd
   },
   {
     path: '/:pathMatch(.*)*',

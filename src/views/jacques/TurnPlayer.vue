@@ -1,14 +1,8 @@
 <template>
   <SideBar :navigationState="navigationState"/>
-  <h1>{{t('roundCleanup.title')}}</h1>
+  <h1>{{t('player.player')}}</h1>
 
-  <div class="instructions">
-    <ul class="mt-4">
-      <li v-html="t('roundCleanup.intro')"></li>
-    </ul>
-  </div>
-
-  <button class="btn btn-primary btn-lg mt-4" @click="next()">
+  <button class="btn btn-primary btn-lg mt-4" @click="next">
     {{t('action.next')}}
   </button>
 
@@ -25,7 +19,7 @@ import NavigationState from '@/util/NavigationState'
 import SideBar from '@/components/round/SideBar.vue'
 
 export default defineComponent({
-  name: 'RoundCleanup',
+  name: 'TurnPlayer',
   components: {
     FooterButtons,
     SideBar
@@ -43,22 +37,18 @@ export default defineComponent({
   },
   computed: {
     backButtonRouteTo() : string {
-      return `/round/${this.round}/rewards`
+      if (this.turn > 1) {
+        return `/jacques/turn/${this.turn - 1}/bot`
+      }
+      else {
+        return ''
+      }
     }
   },
   methods: {
     next() : void {
-      this.router.push(`/round/${this.round + 1}/turn/1/bot`)
+      this.router.push(`/jacques/turn/${this.turn + 1}/bot`)
     }
   }
 })
 </script>
-
-<style lang="scss" scoped>
-.instructions {
-  max-width: 1000px;
-  & > ul > li {
-    margin-top: 0.5rem;
-  }
-}
-</style>

@@ -46,7 +46,12 @@ export default defineComponent({
   methods: {
     startGame() : void {
       this.state.setup.initialCardDeck = CardDeck.new(this.state.setup.bot, this.state.setup.difficultyLevel).toPersistence()
-      this.router.push('/round/1/turn/1/bot')
+      if (this.isBotJean) {
+        this.router.push('/jean/turn/1/player')
+      }
+      else {
+        this.router.push('/jacques/turn/1/player')
+      }
     }
   }
 })

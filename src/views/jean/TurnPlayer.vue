@@ -19,7 +19,7 @@ import NavigationState from '@/util/NavigationState'
 import SideBar from '@/components/round/SideBar.vue'
 
 export default defineComponent({
-  name: 'RoundTurnPlayer',
+  name: 'TurnPlayer',
   components: {
     FooterButtons,
     SideBar
@@ -37,26 +37,17 @@ export default defineComponent({
   },
   computed: {
     backButtonRouteTo() : string {
-      if (this.turn == 5) {
-        return `/round/${this.round}/turn/${this.turn - 1}/player`
+      if (this.turn > 1) {
+        return `/jean/turn/${this.turn - 1}/bot`
       }
       else {
-        return `/round/${this.round}/turn/${this.turn}/bot`
+        return ''
       }
     }
   },
   methods: {
     next() : void {
-      if (this.turn == 5) {
-        this.router.push(`/round/${this.round}/rewards`)
-      }
-      else if (this.turn == 4) {
-        // bot never has a 5th worker
-        this.router.push(`/round/${this.round}/turn/${this.turn + 1}/player`)
-      }
-      else {
-        this.router.push(`/round/${this.round}/turn/${this.turn + 1}/bot`)
-      }
+      this.router.push(`/jean/turn/${this.turn + 1}/bot`)
     }
   }
 })

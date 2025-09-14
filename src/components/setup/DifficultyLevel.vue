@@ -24,7 +24,7 @@
 </template>
 
 <script lang="ts">
-import { defineComponent, ref } from 'vue'
+import { defineComponent, ref, computed, watch } from 'vue'
 import { useI18n } from 'vue-i18n'
 import { useStateStore } from '@/store/state'
 import Bot from '@/services/enum/Bot'
@@ -35,20 +35,26 @@ export default defineComponent({
     const { t } = useI18n()
     const state = useStateStore()
 
-    const bot = state.setup.bot
+    const bot = computed(() => state.setup.bot)
     const difficultyLevel = ref(state.setup.difficultyLevel)
 
-    return { t, state, bot, difficultyLevel }
-  },
-  computed: {
-    maxLevel() : number {
-      if (this.bot == Bot.JEAN) {
-        return 5
-      }
-      else {
-        return 4
-      }
+    // Helper function to get max level for a bot
+    const getMaxLevel = (botType: Bot): number => {
+      return botType === Bot.JEAN ? 5 : 4
     }
+
+    // Watch for bot changes and adjust difficulty level if needed
+    watch(bot, (newBot) => {
+      const newMaxLevel = getMaxLevel(newBot)
+      if (difficultyLevel.value > newMaxLevel) {
+        difficultyLevel.value = newMaxLevel
+        state.setup.difficultyLevel = newMaxLevel
+      }
+    })
+
+    const maxLevel = computed(() => getMaxLevel(bot.value))
+
+    return { t, state, bot, difficultyLevel, maxLevel }
   },
   methods: {
     updateDifficultyLevel(event: Event) {

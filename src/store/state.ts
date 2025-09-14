@@ -2,6 +2,7 @@ import { defineStore } from 'pinia'
 import { name } from '@/../package.json'
 import DifficultyLevel from '@/services/enum/DifficultyLevel'
 import Bot from '@/services/enum/Bot'
+import Player from '@/services/enum/Player'
 
 export const useStateStore = defineStore(`${name}.state`, {
   state: () => {
@@ -12,25 +13,17 @@ export const useStateStore = defineStore(`${name}.state`, {
         bot: Bot.JEAN,
         difficultyLevel: DifficultyLevel.LEVEL_1
       },
-      rounds: []
+      turns: []
     } as State
   },
   actions: {
     resetGame() {
-      this.rounds = []
+      this.turns = []
       this.setup.initialCardDeck = undefined
     },
-    storeRound(round : Round) : void {
-      this.rounds = this.rounds.filter(item => item.round < round.round)
-      this.rounds.push(round)
-    },
-    storeRoundTurn(roundTurn : RoundTurn) : void {
-      const round = this.rounds.find(item => item.round == roundTurn.round)
-      if (!round) {
-        throw new Error(`Round ${roundTurn.round} not found.`)
-      }
-      round.turns = round.turns.filter(item => item.turn < roundTurn.turn)
-      round.turns.push(roundTurn)
+    storeTurn(turn : Turn) : void {
+      this.turns = this.turns.filter(item => item.turn < turn.turn)
+      this.turns.push(turn)
     }
   },
   persist: true
@@ -40,7 +33,7 @@ export interface State {
   language: string
   baseFontSize: number
   setup: Setup
-  rounds: Round[]
+  turns: Turn[]
 }
 export interface Setup {
   bot: Bot,
@@ -50,15 +43,10 @@ export interface Setup {
 }
 
 
-export interface Round {
-  round: number
-  initialBotPersistence: BotPersistence
-  turns: RoundTurn[]
-}
-export interface RoundTurn {
-  round: number
+export interface Turn {
   turn: number
-  botPersistence: BotPersistence
+  player: Player
+  botPersistence?: BotPersistence
 }
 export interface BotPersistence {
   cardDeck: CardDeckPersistence

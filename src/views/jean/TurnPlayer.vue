@@ -1,6 +1,8 @@
 <template>
   <SideBar :navigationState="navigationState"/>
-  <h1>{{t('player.player')}}</h1>
+  <h1>{{t('jean.turnPlayer.title')}}</h1>
+
+  <p v-html="t('jean.turnPlayer.takeTurn')" class="mt-3"></p>
 
   <button class="btn btn-primary btn-lg mt-4" @click="next">
     {{t('action.next')}}

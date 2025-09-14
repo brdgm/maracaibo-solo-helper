@@ -37,14 +37,11 @@
       "automaNote": "Jacques' Automakarten werden nicht benötigt, sie werden von der Anwendung verwaltet."
     }
   },
-  "roundRewards": {
-    "title": "Belohnungsphase"
-  },
-  "roundCleanup": {
-    "title": "Aufräumphase"
-  },
-  "gameEnd": {
-    "title": "Spielende"
+  "jean": {
+    "turnPlayer": {
+      "title": "Dein Zug",
+      "takeTurn": "Führe deinen Zug aus."
+    }
   },
   "sideBar": {
     "round": "Runde {round}",

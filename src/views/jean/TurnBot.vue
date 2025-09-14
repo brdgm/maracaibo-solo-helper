@@ -1,6 +1,6 @@
 <template>
   <SideBar :navigationState="navigationState"/>
-  <h1>{{t('player.bot')}}</h1>
+  <h1>{{t('bot.jean')}}</h1>
 
   <button class="btn btn-primary btn-lg mt-4" @click="next">
     {{t('action.next')}}

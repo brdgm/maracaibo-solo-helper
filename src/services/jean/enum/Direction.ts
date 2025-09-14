@@ -2,7 +2,7 @@
  * Direction (Jean)
  */
 enum Direction {
-  RIGHT = 'right',
-  LEFT = 'left'
+  UPPER = 'upper',
+  LOWER = 'lower'
 }
 export default Direction

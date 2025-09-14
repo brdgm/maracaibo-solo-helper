@@ -37,14 +37,11 @@
       "automaNote": "Jacques' Automa cards are not required, they are managed by the application."
     }
   },
-  "roundRewards": {
-    "title": "Reward Phase"
-  },
-  "roundCleanup": {
-    "title": "Cleanup Phase"
-  },
-  "gameEnd": {
-    "title": "Game End"
+  "jean": {
+    "turnPlayer": {
+      "title": "Your turn",
+      "takeTurn": "Take your turn."
+    }
   },
   "sideBar": {
     "round": "Round {round}",

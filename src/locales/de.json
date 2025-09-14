@@ -18,7 +18,17 @@
     }
   },
   "setupGame": {
-    "title": "Spielaufbau"
+    "title": "Spielaufbau",
+    "jean": {
+      "intro": "Bereite das Spiel wie gewohnt für 2 Spieler vor, mit diesen Änderungen:",
+      "chooseColor": "Wähle eine Farbe für Jean.",
+      "setupMarkers": "Bereite ihr Schiff, ihren Entdecker, ihren Siegpunktmarker und Einflussmarker wie gewohnt vor.",
+      "noFigures": "Sie verwendet ihre Figuren nicht.",
+      "noShipBoard": "Sie braucht kein Schiffstableau.",
+      "noDoubloons": "Sie sammelt keine Dublonen oder Kampfpunkte.",
+      "noProjectCards": "Sie erhält keine Projektkarten zu Spielbeginn.",
+      "automaNote": "Das Automa-Tableau und die Automakarten werden nicht benötigt, sie werden von der Anwendung verwaltet."
+    }
   },
   "roundRewards": {
     "title": "Belohnungsphase"

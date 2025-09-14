@@ -1,14 +1,14 @@
 <template>
-  <p>Setup the game up as for a 2-player game, with the following changes:</p>
+  <p>{{t('setupGame.jean.intro')}}</p>
   <ul>
-    <li>Choose a color for Jean.</li>
-    <li>Setup her ship, explorer, victory point marker and influence markers as usual.</li>
-    <li>She does not use her figures.</li>
-    <li>She doesn't need a ship board.</li>
-    <li>She does not collect doubloons or combat points.</li>
-    <li>She does not receive any project cards at the start of the game.</li>
+    <li>{{t('setupGame.jean.chooseColor')}}</li>
+    <li>{{t('setupGame.jean.setupMarkers')}}</li>
+    <li>{{t('setupGame.jean.noFigures')}}</li>
+    <li>{{t('setupGame.jean.noShipBoard')}}</li>
+    <li>{{t('setupGame.jean.noDoubloons')}}</li>
+    <li>{{t('setupGame.jean.noProjectCards')}}</li>
   </ul>
-  <p>The Automa board and Automa cards are not required, they are managed by the application.</p>
+  <p>{{t('setupGame.jean.automaNote')}}</p>
 </template>
 
 <script lang="ts">

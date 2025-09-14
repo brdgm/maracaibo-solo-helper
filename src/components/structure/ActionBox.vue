@@ -1,10 +1,6 @@
 <template>
-  <div class="row">
-    <div class="col">
-      <div class="actionBox col" @click="showInstructions">
-        <slot name="action"></slot>
-      </div>
-    </div>
+  <div class="actionBox col" @click="showInstructions">
+    <slot name="action"></slot>
   </div>
 
   <ModalDialog :id="modalId" :title="instructionTitle" :scrollable="true" :size-lg="modalSizeLg">

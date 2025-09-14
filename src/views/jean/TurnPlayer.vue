@@ -17,8 +17,8 @@ import { useI18n } from 'vue-i18n'
 import { useRoute, useRouter } from 'vue-router'
 import FooterButtons from '@/components/structure/FooterButtons.vue'
 import { useStateStore } from '@/store/state'
-import NavigationState from '@/util/NavigationState'
-import SideBar from '@/components/round/SideBar.vue'
+import NavigationState from '@/util/jean/NavigationState'
+import SideBar from '@/components/jean/turn/SideBar.vue'
 
 export default defineComponent({
   name: 'TurnPlayer',
@@ -33,9 +33,9 @@ export default defineComponent({
     const state = useStateStore()
 
     const navigationState = new NavigationState(route, state)
-    const { round, turn } = navigationState
+    const { turn } = navigationState
 
-    return { t, router, state, round, turn, navigationState }
+    return { t, router, state, turn, navigationState }
   },
   computed: {
     backButtonRouteTo() : string {

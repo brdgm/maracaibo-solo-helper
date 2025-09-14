@@ -9,7 +9,7 @@
 import { defineComponent } from 'vue'
 import { useI18n } from 'vue-i18n'
 import { useStateStore } from '@/store/state'
-import NavigationState from '@/util/NavigationState'
+import NavigationState from '@/util/jean/NavigationState'
 
 export default defineComponent({
   name: 'SideBar',
@@ -26,7 +26,7 @@ export default defineComponent({
   },
   computed: {
     round() : number {
-      return this.navigationState.round
+      return 0
     },
     turn() : number {
       return this.navigationState.turn

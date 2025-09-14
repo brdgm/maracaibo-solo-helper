@@ -42,16 +42,27 @@ export interface Setup {
   debugMode?: boolean
 }
 
-
 export interface Turn {
   turn: number
+  round: number
   player: Player
   botPersistence?: BotPersistence
 }
 export interface BotPersistence {
   cardDeck: CardDeckPersistence
+  jean?: JeanBotPersistence
+  jacques?: JeanBotPersistence
 }
 export interface CardDeckPersistence {
   pile: string[]
   discard: string[]
+}
+export interface JeanBotPersistence {
+  questCount: number
+  projectCardCount: number
+  discRemovedCount: number
+  vp: number
+}
+export interface JacquesBotPersistence {
+  vp: number
 }

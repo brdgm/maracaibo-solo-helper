@@ -1,14 +1,10 @@
 <template>
   <ActionBox :instructionTitle="t('jean.action.questPile.title')" :modalSizeLg="true">
     <template #action>
-      {{t('jean.action.questPile.title')}}
+      <AppIcon name="quest-pile" class="icon"/>
     </template>
     <template #instruction>
-      <ul class="instruction">
-        <li>
-          {{t('jean.action.questPile.title')}}...
-        </li>
-      </ul>
+      <p v-html="t('jean.action.questPile.take')"></p>
     </template>
   </ActionBox>
 </template>
@@ -45,4 +41,7 @@ export default defineComponent({
 </script>
 
 <style lang="scss" scoped>
+.icon {
+  width: 3rem;
+}
 </style>

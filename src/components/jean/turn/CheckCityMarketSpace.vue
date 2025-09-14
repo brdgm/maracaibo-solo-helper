@@ -13,7 +13,7 @@
 import { defineComponent, PropType } from 'vue'
 import { useI18n } from 'vue-i18n'
 import AppIcon from '@/components/structure/AppIcon.vue'
-import JeanCard, { CardAction } from '@/services/jean/JeanCard'
+import JeanCard from '@/services/jean/JeanCard'
 
 export default defineComponent({
   name: 'CheckCityMarketSpace',

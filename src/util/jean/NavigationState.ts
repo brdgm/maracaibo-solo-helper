@@ -3,6 +3,7 @@ import getIntRouteParam from '@brdgm/brdgm-commons/src/util/router/getIntRoutePa
 import { BotPersistence, JeanBotPersistence, State } from '@/store/state'
 import Player from '@/services/enum/Player'
 import CardDeck from '@/services/CardDeck'
+import JeanCard from '@/services/jean/JeanCard'
 
 export default class NavigationState {
 
@@ -23,6 +24,10 @@ export default class NavigationState {
       this.cardDeck.draw()
     }
     this.jean = botPersistence.jean ?? { questCount: 0, projectCardCount: 0, discRemovedCount: 0, vp: 0 }
+  }
+
+  get currentCard() : JeanCard {
+    return this.cardDeck.currentCard as JeanCard
   }
 
 }

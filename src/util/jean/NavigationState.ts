@@ -38,7 +38,7 @@ function getRound(state: State, turn: number) : number {
 }
 
 function getLastBotPersistence(state: State, turn: number) : BotPersistence {
-  const turnData = state.turns.filter(item => item.turn < turn).sort((a,b) => b.turn - a.turn)[0]
+  const turnData = state.turns.filter(item => item.turn < turn && item.player == Player.BOT).sort((a,b) => b.turn - a.turn)[0]
   if (turnData?.botPersistence) {
     return turnData?.botPersistence
   }

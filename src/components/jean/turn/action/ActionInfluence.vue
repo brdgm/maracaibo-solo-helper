@@ -1,7 +1,9 @@
 <template>
   <ActionBox :instructionTitle="t('jean.action.influence.title')" :modalSizeLg="true">
     <template #action>
-      <AppIcon v-for="i of action.influence" :key="i" type="influence" :name="action.nation" class="icon" v-if="action.nation && action.influence"/>
+      <template v-if="action.nation && action.influence">
+        <AppIcon v-for="i of action.influence" :key="i" type="influence" :name="action.nation" class="icon"/>
+      </template>
     </template>
     <template #instruction>
       <p v-html="t('jean.action.influence.get', {count:action.influence, nation:t(`nation.${action.nation}`)})"></p>

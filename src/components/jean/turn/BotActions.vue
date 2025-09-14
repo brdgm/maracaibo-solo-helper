@@ -37,7 +37,7 @@ import ActionVP from './action/ActionVP.vue'
 export default defineComponent({
   name: 'BotActions',
   emits: {
-    next: (_params: JeanBotPersistence) => true
+    next: (_params: JeanBotPersistence) => true  // eslint-disable-line @typescript-eslint/no-unused-vars
   },
   components: {
     AppIcon,

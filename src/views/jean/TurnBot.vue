@@ -16,6 +16,7 @@ import { useRoute, useRouter } from 'vue-router'
 import NavigationState from '@/util/jean/NavigationState'
 import SideBar from '@/components/jean/turn/SideBar.vue'
 import BotActions from '@/components/jean/turn/BotActions.vue'
+import Player from '@/services/enum/Player'
 
 export default defineComponent({
   name: 'TurnBot',
@@ -42,6 +43,14 @@ export default defineComponent({
   },
   methods: {
     next() : void {
+      this.state.storeTurn({
+        turn: this.turn,
+        round: this.navigationState.round,
+        player: Player.BOT,
+        botPersistence: {
+          cardDeck: this.navigationState.cardDeck.toPersistence()
+        }
+      })
       this.router.push(`/jean/turn/${this.turn + 1}/player`)
     }
   }

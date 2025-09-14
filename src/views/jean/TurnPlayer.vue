@@ -19,6 +19,7 @@ import FooterButtons from '@/components/structure/FooterButtons.vue'
 import { useStateStore } from '@/store/state'
 import NavigationState from '@/util/jean/NavigationState'
 import SideBar from '@/components/jean/turn/SideBar.vue'
+import Player from '@/services/enum/Player'
 
 export default defineComponent({
   name: 'TurnPlayer',
@@ -49,6 +50,11 @@ export default defineComponent({
   },
   methods: {
     next() : void {
+      this.state.storeTurn({
+        turn: this.turn,
+        round: this.navigationState.round,
+        player: Player.PLAYER
+      })
       this.router.push(`/jean/turn/${this.turn + 1}/bot`)
     }
   }

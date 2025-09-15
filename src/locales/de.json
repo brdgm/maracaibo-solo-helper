@@ -84,6 +84,11 @@
         "quest": "Befindet sich eine Quest in Reichweite ihres Entdeckers, zieht sie ihn dort hin und nimmt sie (und lässt möglicherweise Felder verfallen).",
         "shortestPath": "Andernfalls wählt sie immer den kürzestmöglichen Weg.",
         "noRewards": "Die Belohnung für das Überschreiten der Barriere oder der Ankunft am Zielfeld erhält Jean nicht, reduziert allerdings den Bonus für deinen Entdecker."
+      },
+      "combat": {
+        "title": "Kampf",
+        "max": "Max.:",
+        "tie": "Gleichstand:"
       }
     }
   },

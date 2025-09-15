@@ -84,6 +84,11 @@
         "quest": "If a quest tile is within her movement limit, she moves to it and stops (forgoing any additional movement).",
         "shortestPath": "Otherwise, she always chooses the shortest path.",
         "noRewards": "Jean doesn't get any rewards for crossing barriers or reaching the end of the explorer track, however she does reduce your explorer's bonuses."
+      },
+      "combat": {
+        "title": "Combat",
+        "max": "Max.:",
+        "tie": "Tie:"
       }
     }
   },

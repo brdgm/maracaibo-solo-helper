@@ -87,8 +87,16 @@
       },
       "combat": {
         "title": "Combat",
-        "max": "Max.:",
-        "tie": "Tie:"
+        "max": "Max.",
+        "tie": "Tie:",
+        "instruction": {
+          "token": "Reveal a combat token.",
+          "modifyValue": "Determine the modified combat value for each nation. For each nation, first add Jean's noble rank with that nation to the combat value indicated by the combat token. Then subtract your noble rank with that nation from the total. Noble ranks are the last red band you or Jean reached on the corresponding influence track. If the combat token shows a requirement that modifies a nation's combat value, then apply it. Jean ignores any costs or immediate bonuses on the combat token.",
+          "tie": "In case of a tie, Jean chooses the nation with the highest combat value on the combat token (ignoring any modifications or bonuses). If there is still a tie, she preferentially chooses France, then Spain and finally England.",
+          "annexCity": "Jean now annexes the lowest-numbered, empty city (without receiving the reward shown on the flag of this city). If there aren't any empty cities, she annexes the lowest-numbered empty village instead. If there aren't any of those either, then she removes the ownership marker from the game.",
+          "annexVillage": "Jean annexes an additional empty village according to the rules above.",
+          "influence": "Finally, Jean gets the indicated influence with the nation she fought with."
+        }
       }
     }
   },

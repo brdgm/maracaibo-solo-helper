@@ -22,20 +22,20 @@ describe('services/jean/BotActions', () => {
 
   it('params-B1-round1', () => {
     const botActions = new BotActions(JeanCards.get('B1'), 1)
-    expect(botActions.getParams(false)).to.eql({ questCount: 0, projectCardCount: 1, discRemovedCount: 0, vp: 4 })
-    expect(botActions.getParams(true)).to.eql({ questCount: 0, projectCardCount: 0, discRemovedCount: 1, vp: 4 })
+    expect(botActions.getParams(false, false)).to.eql({ questCount: 0, projectCardCount: 1, discRemovedCount: 0, vp: 4 })
+    expect(botActions.getParams(true, true)).to.eql({ questCount: 1, projectCardCount: 0, discRemovedCount: 1, vp: 4 })
   })
 
   it('params-B2-round1', () => {
     const botActions = new BotActions(JeanCards.get('B2'), 1)
-    expect(botActions.getParams(false)).to.eql({ questCount: 1, projectCardCount: 1, discRemovedCount: 0, vp: 0 })
-    expect(botActions.getParams(true)).to.eql({ questCount: 1, projectCardCount: 0, discRemovedCount: 1, vp: 0 })
+    expect(botActions.getParams(false, true)).to.eql({ questCount: 2, projectCardCount: 1, discRemovedCount: 0, vp: 0 })
+    expect(botActions.getParams(true, false)).to.eql({ questCount: 1, projectCardCount: 0, discRemovedCount: 1, vp: 0 })
   })
 
   it('params-B5-round4', () => {
     const botActions = new BotActions(JeanCards.get('B5'), 4)
-    expect(botActions.getParams(false)).to.eql({ questCount: 0, projectCardCount: 1, discRemovedCount: 1, vp: 4 })
-    expect(botActions.getParams(true)).to.eql({ questCount: 0, projectCardCount: 0, discRemovedCount: 2, vp: 4 })
+    expect(botActions.getParams(false, false)).to.eql({ questCount: 0, projectCardCount: 1, discRemovedCount: 1, vp: 4 })
+    expect(botActions.getParams(true, false)).to.eql({ questCount: 0, projectCardCount: 0, discRemovedCount: 2, vp: 4 })
   })
 
   it('hasExploreSteps-B1-round1', () => {

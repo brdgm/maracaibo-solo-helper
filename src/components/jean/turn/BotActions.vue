@@ -14,8 +14,8 @@
       <div v-for="(action,index) in botActions.actions" :key="index" class="mt-3">
         <component :is="`action-${action.action}`" :navigationState="navigationState" :action="action"/>
       </div>
-
-      <button class="btn btn-primary btn-lg mt-4" @click="next">
+      <CheckFoundQuest v-if="botActions.hasExploreSteps()" @foundQuest="foundQuestExplore" @noQuest="next"/>
+      <button v-else class="btn btn-primary btn-lg mt-4" @click="next">
         {{t('action.next')}}
       </button>
     </template>
@@ -77,7 +77,8 @@ export default defineComponent({
     return {
       noQuest: false,
       cityCompleted: false,
-      placedCityDisc: false
+      placedCityDisc: false,
+      exploreFoundQuest : false
     }
   },
   computed: {
@@ -90,7 +91,7 @@ export default defineComponent({
   },
   methods: {
     next() : void {
-      this.$emit('next', this.botActions.getParams(this.placedCityDisc))
+      this.$emit('next', this.botActions.getParams(this.placedCityDisc, this.exploreFoundQuest))
     },
     foundQuest() : void {
       this.$emit('next', {
@@ -107,6 +108,10 @@ export default defineComponent({
     removedCard() : void {
       this.placedCityDisc = false
       this.cityCompleted = true
+    },
+    foundQuestExplore() : void {
+      this.exploreFoundQuest = true
+      this.next()
     }
   }
 })

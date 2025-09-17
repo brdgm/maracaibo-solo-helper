@@ -19,8 +19,9 @@ export default class BotActions {
     return this._currentCard.actions.filter(item => item.roundFrom <= this._round && item.roundTo >= this._round)
   }
 
-  public getParams(placedCityDisc: boolean) : JeanBotPersistence {
-    const questCount = this.actions.filter(item => item.action == Action.QUEST_PILE).length
+  public getParams(placedCityDisc: boolean, exploreFoundQuest: boolean) : JeanBotPersistence {
+    const questCount = (exploreFoundQuest ? 1 : 0)
+        + this.actions.filter(item => item.action == Action.QUEST_PILE).length
     const projectCardCount = placedCityDisc ? 0 : 1
     const discRemovedCount = (placedCityDisc ? 1 : 0)
         + this.actions.filter(item => item.action == Action.REMOVE_DISC).length

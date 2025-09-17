@@ -95,7 +95,7 @@
           "tie": "Kosten und Sofortboni auf dem Kampfplättchen werden von Jean ignoriert. Jean wählt nun die Nation, deren modifizierter Kampfwert am höchsten ist, bei Gleichstand entscheidet der nicht modifizierte Kampfwert (ohne Adelsränge und eventueller Bedingung auf dem Kampfplättchen). Herrscht immer noch Gleichstand, wählt sie die Nationen in der Reihenfolge Frankreich, Spanien, England.",
           "annexCity": "Jean erobert nun jene leere Stadt, deren Feld die niedrigste Nummer zeigt (den auf der Flagge abgebildeten Bonus erhält sie nicht). Gibt es keine leere Stadt mehr, erobert sie das Dorf mit der niedrigsten Nummer. Gibt es auch das nicht mehr, entfernt sie den Nationenmarker aus dem Spiel.",
           "annexVillage": "Jean annektiert zusätzlich ein leeres Dorf nach den obigen Regeln.",
-          "influence": "Schlussendlicht bekommt Jean die angegebenen Einflusspunkte bei der Nation, mit der sie gekämpft hat."
+          "influence": "Schlussendlich bekommt Jean die angegebenen Einflusspunkte bei der Nation, mit der sie gekämpft hat."
         }
       }
     }

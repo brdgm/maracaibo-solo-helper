@@ -11,7 +11,7 @@
       <CheckCityMarketSpace :card="navigationState.currentCard" @marketSpace="cityPlacedDisc" @removeCard="removedCard"/>
     </template>
     <template v-else>
-      <div v-for="(action,index) in actions" :key="index" class="mt-3">
+      <div v-for="(action,index) in botActions.actions" :key="index" class="mt-3">
         <component :is="`action-${action.action}`" :navigationState="navigationState" :action="action"/>
       </div>
 
@@ -39,7 +39,7 @@ import ActionReduceCombat from './action/ActionReduceCombat.vue'
 import ActionRemoveDisc from './action/ActionRemoveDisc.vue'
 import ActionVp from './action/ActionVp.vue'
 import CheckCityMarketSpace from './CheckCityMarketSpace.vue'
-import { CardAction } from '@/services/jean/JeanCard'
+import BotActions from '@/services/jean/BotActions'
 
 export default defineComponent({
   name: 'BotActions',
@@ -65,20 +65,19 @@ export default defineComponent({
       required: true
     }
   },
-  setup() {
+  setup(props) {
     const { t } = useI18n()
-    return { t }
+
+    const { currentCard, round } = props.navigationState
+    const botActions = new BotActions(currentCard, round)
+
+    return { t, botActions }
   },
   data() {
     return {
       noQuest: false,
       cityCompleted: false,
-      params: {
-        questCount: 0,
-        projectCardCount: 0,
-        discRemovedCount: 0,
-        vp: 0
-      } as JeanBotPersistence
+      placedCityDisc: false
     }
   },
   computed: {
@@ -87,25 +86,26 @@ export default defineComponent({
     },
     direction() : Direction {
       return this.navigationState.currentCard.direction
-    },
-    actions() : CardAction[] {
-      return this.navigationState.currentCard.actions.filter(item => item.roundFrom <= this.navigationState.round && item.roundTo >= this.navigationState.round)
     }
   },
   methods: {
     next() : void {
-      this.$emit('next', this.params)
+      this.$emit('next', this.botActions.getParams(this.placedCityDisc))
     },
     foundQuest() : void {
-      this.params.questCount += 1
-      this.$emit('next', this.params)
+      this.$emit('next', {
+        questCount: 1,
+        projectCardCount: 0,
+        discRemovedCount: 0,
+        vp: 0
+      })
     },
     cityPlacedDisc() : void {
-      this.params.discRemovedCount += 1
+      this.placedCityDisc = true
       this.cityCompleted = true
     },
     removedCard() : void {
-      this.params.projectCardCount += 1
+      this.placedCityDisc = false
       this.cityCompleted = true
     }
   }

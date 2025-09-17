@@ -14,10 +14,17 @@
       <div v-for="(action,index) in botActions.actions" :key="index" class="mt-3">
         <component :is="`action-${action.action}`" :navigationState="navigationState" :action="action"/>
       </div>
-      <CheckFoundQuest v-if="botActions.hasExploreSteps()" @foundQuest="foundQuestExplore" @noQuest="next"/>
-      <button v-else class="btn btn-primary btn-lg mt-4" @click="next">
-        {{t('action.next')}}
-      </button>
+      
+      <template v-if="botActions.hasExploreSteps() && !explorerQuestChecked">
+        <CheckFoundQuest v-if="botActions.hasExploreSteps()" @foundQuest="foundQuestExplore" @noQuest="notFoundQuestExplore"/>
+      </template>
+      
+      <template v-if="!botActions.hasExploreSteps() || explorerQuestChecked">
+        <button class="btn btn-primary btn-lg mt-4 me-2" @click="next(false)">
+          {{t('action.next')}}
+        </button>
+        <ReachedFinalSpaceButton :round="navigationState.round" @endRound="next(true)"/>
+      </template>
     </template>
   </template>
 </template>
@@ -40,11 +47,12 @@ import ActionRemoveDisc from './action/ActionRemoveDisc.vue'
 import ActionVp from './action/ActionVp.vue'
 import CheckCityMarketSpace from './CheckCityMarketSpace.vue'
 import BotActions from '@/services/jean/BotActions'
+import ReachedFinalSpaceButton from './ReachedFinalSpaceButton.vue'
 
 export default defineComponent({
   name: 'BotActions',
   emits: {
-    next: (_params: JeanBotPersistence) => true  // eslint-disable-line @typescript-eslint/no-unused-vars
+    next: (_params: JeanBotPersistence, _endRound: boolean) => true  // eslint-disable-line @typescript-eslint/no-unused-vars
   },
   components: {
     AppIcon,
@@ -57,7 +65,8 @@ export default defineComponent({
     ActionQuestPile,
     ActionReduceCombat,
     ActionRemoveDisc,
-    ActionVp
+    ActionVp,
+    ReachedFinalSpaceButton
   },
   props: {
     navigationState: {
@@ -78,7 +87,8 @@ export default defineComponent({
       noQuest: false,
       cityCompleted: false,
       placedCityDisc: false,
-      exploreFoundQuest : false
+      exploreFoundQuest : false,
+      explorerQuestChecked: false
     }
   },
   computed: {
@@ -90,8 +100,8 @@ export default defineComponent({
     }
   },
   methods: {
-    next() : void {
-      this.$emit('next', this.botActions.getParams(this.placedCityDisc, this.exploreFoundQuest))
+    next(endRound: boolean) : void {
+      this.$emit('next', this.botActions.getParams(this.placedCityDisc, this.exploreFoundQuest), endRound)
     },
     foundQuest() : void {
       this.$emit('next', {
@@ -99,7 +109,7 @@ export default defineComponent({
         projectCardCount: 0,
         discRemovedCount: 0,
         vp: 0
-      })
+      }, false)
     },
     cityPlacedDisc() : void {
       this.placedCityDisc = true
@@ -111,7 +121,11 @@ export default defineComponent({
     },
     foundQuestExplore() : void {
       this.exploreFoundQuest = true
-      this.next()
+      this.explorerQuestChecked = true
+    },
+    notFoundQuestExplore() : void {
+      this.exploreFoundQuest = false
+      this.explorerQuestChecked = true
     }
   }
 })

@@ -4,9 +4,11 @@
 
   <p v-html="t('jean.turnPlayer.takeTurn')" class="mt-3"></p>
 
-  <button class="btn btn-primary btn-lg mt-4" @click="next">
+  <button class="btn btn-primary btn-lg mt-4 me-2" @click="next">
     {{t('action.next')}}
   </button>
+
+  <ReachedFinalSpaceButton :round="navigationState.round" @endRound="next"/>
 
   <FooterButtons :backButtonRouteTo="backButtonRouteTo" endGameButtonType="abortGame"/>
 </template>
@@ -20,12 +22,14 @@ import { useStateStore } from '@/store/state'
 import NavigationState from '@/util/jean/NavigationState'
 import SideBar from '@/components/jean/turn/SideBar.vue'
 import Player from '@/services/enum/Player'
+import ReachedFinalSpaceButton from '@/components/jean/turn/ReachedFinalSpaceButton.vue'
 
 export default defineComponent({
   name: 'TurnPlayer',
   components: {
     FooterButtons,
-    SideBar
+    SideBar,
+    ReachedFinalSpaceButton
   },
   setup() {
     const { t } = useI18n()

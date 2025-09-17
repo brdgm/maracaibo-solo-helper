@@ -47,7 +47,7 @@ export default defineComponent({
     }
   },
   methods: {
-    next(botPersistence: JeanBotPersistence) : void {
+    next(botPersistence: JeanBotPersistence, endRound: boolean) : void {
       this.state.storeTurn({
         turn: this.turn,
         round: this.navigationState.round,

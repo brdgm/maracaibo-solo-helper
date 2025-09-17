@@ -48,6 +48,11 @@
       "cityMarketSpace": "Belege ein freies Lagerfeld<br/>mit einer Scheibe aus dem Vorrat",
       "removeCard": "Entferne Karte {card}<br/>aus der Auslage"
     },
+    "endRound": {
+      "title": "Runde beenden",
+      "reachedLastSpace": "Letztes Feld {space} erreicht",
+      "endRoundConfirm": "Runde {round} wird beendet."
+    },
     "action": {
       "moveShip": {
         "title": "Schiff bewegen",
@@ -144,8 +149,7 @@
     "backToHome": "Zurück zum Anfang",
     "back": "Zurück",
     "close": "Schließen",
-    "ok": "OK",
-    "pass": "Passen"
+    "ok": "OK"
   },
   "footer": {
     "credits": "Credits"

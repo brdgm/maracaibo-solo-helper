@@ -48,6 +48,11 @@
       "cityMarketSpace": "Place disc from supply<br/>in free market space",
       "removeCard": "Remove card {card}<br/>from display"
     },
+    "endRound": {
+      "title": "End Round",
+      "reachedLastSpace": "Reached final space {space}",
+      "endRoundConfirm": "End round {round}."
+    },
     "action": {
       "moveShip": {
         "title": "Move Ship",
@@ -144,8 +149,7 @@
     "backToHome": "Back to Home",
     "back": "Back",
     "close": "Close",
-    "ok": "OK",
-    "pass": "Pass"
+    "ok": "OK"
   },
   "footer": {
     "credits": "Credits"

@@ -16,7 +16,7 @@ export default class NavigationState {
   constructor(route: RouteLocation, state: State) {    
     this.turn = getIntRouteParam(route, 'turn')
     this.round = getRound(state, this.turn)
-    this.player = route.name == 'JeanTurnPlayer' ? Player.PLAYER : Player.BOT
+    this.player = route.name == 'JeanTurnPlayer' || route.name == 'JeanTurnPlayerEndOfRound' ? Player.PLAYER : Player.BOT
     
     const botPersistence = getLastBotPersistence(state, this.turn)
     this.cardDeck = CardDeck.fromPersistence(state.setup.bot, botPersistence.cardDeck)
@@ -38,7 +38,7 @@ function getRound(state: State, turn: number) : number {
 }
 
 function getLastBotPersistence(state: State, turn: number) : BotPersistence {
-  const turnData = state.turns.filter(item => item.turn < turn && item.player == Player.BOT).sort((a,b) => b.turn - a.turn)[0]
+  const turnData = state.turns.filter(item => item.turn < turn && item.botPersistence != undefined).sort((a,b) => b.turn - a.turn)[0]
   if (turnData?.botPersistence) {
     return turnData?.botPersistence
   }

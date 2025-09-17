@@ -57,7 +57,12 @@ export default defineComponent({
           jean: mergeBotPersistence(this.navigationState.jean, botPersistence)
         }
       })
-      this.router.push(`/jean/turn/${this.turn + 1}/player`)
+      if (endRound) {
+        this.router.push(`/jean/turn/${this.turn + 1}/bot/endOfRound`)
+      }
+      else {
+        this.router.push(`/jean/turn/${this.turn + 1}/player`)
+      }
     }
   }
 })

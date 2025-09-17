@@ -1,14 +1,12 @@
 <template>
   <SideBar :navigationState="navigationState"/>
-  <h1>{{t('jean.turnPlayer.title')}}</h1>
+  <h1>{{t('jean.endOfRound.title')}}</h1>
 
-  <p v-html="t('jean.turnPlayer.takeTurn')" class="mt-3"></p>
+  <p>End of round...</p>
 
-  <button class="btn btn-primary btn-lg mt-4 me-2" @click="next(false)">
+  <button class="btn btn-primary btn-lg mt-4 me-2" @click="next">
     {{t('action.next')}}
   </button>
-
-  <ReachedFinalSpaceButton :round="navigationState.round" @endRound="next(true)"/>
 
   <FooterButtons :backButtonRouteTo="backButtonRouteTo" endGameButtonType="abortGame"/>
 </template>
@@ -25,7 +23,7 @@ import Player from '@/services/enum/Player'
 import ReachedFinalSpaceButton from '@/components/jean/turn/ReachedFinalSpaceButton.vue'
 
 export default defineComponent({
-  name: 'TurnPlayer',
+  name: 'EndOfRound',
   components: {
     FooterButtons,
     SideBar,
@@ -53,18 +51,13 @@ export default defineComponent({
     }
   },
   methods: {
-    next(endOfRound : boolean) : void {
+    next() : void {
       this.state.storeTurn({
         turn: this.turn,
         round: this.navigationState.round,
         player: Player.PLAYER
       })
-      if (endOfRound) {
-        this.router.push(`/jean/turn/${this.turn + 1}/player/endOfRound`)
-      }
-      else {
-        this.router.push(`/jean/turn/${this.turn + 1}/bot`)
-      }
+      this.router.push(`/jean/turn/${this.turn + 1}/bot`)
     }
   }
 })

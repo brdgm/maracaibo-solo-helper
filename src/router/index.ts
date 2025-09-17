@@ -7,6 +7,7 @@ import SetupApp from '@/views/SetupApp.vue'
 import SetupGame from '@/views/SetupGame.vue'
 import JeanTurnPlayer from '@/views/jean/TurnPlayer.vue'
 import JeanTurnBot from '@/views/jean/TurnBot.vue'
+import JeanEndOfRound from '@/views/jean/EndOfRound.vue'
 import JeanGameEnd from '@/views/jean/GameEnd.vue'
 import JacquesTurnPlayer from '@/views/jacques/TurnPlayer.vue'
 import JacquesTurnBot from '@/views/jacques/TurnBot.vue'
@@ -36,14 +37,19 @@ const routes: Array<RouteRecordRaw> = [
     component: JeanTurnPlayer
   },
   {
+    path: '/jean/turn/:turn/player/endOfRound',
+    name: 'JeanTurnPlayerEndOfRound',
+    component: JeanEndOfRound
+  },
+  {
     path: '/jean/turn/:turn/bot',
     name: 'JeanTurnBot',
     component: JeanTurnBot
   },
   {
-    path: '/jean/turn/:turn/bot/action/:action',
-    name: 'JeanTurnBotAction',
-    component: JeanTurnBot
+    path: '/jean/turn/:turn/bot/endOfRound',
+    name: 'JeanTurnBotEndOfRound',
+    component: JeanEndOfRound
   },
   {
     path: '/jean/gameEnd',
@@ -58,11 +64,6 @@ const routes: Array<RouteRecordRaw> = [
   {
     path: '/jacques/turn/:turn/bot',
     name: 'JacquesTurnBot',
-    component: JacquesTurnBot
-  },
-  {
-    path: '/jacques/turn/:turn/bot/action/:action',
-    name: 'JacquesTurnBotAction',
     component: JacquesTurnBot
   },
   {

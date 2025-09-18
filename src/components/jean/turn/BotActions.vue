@@ -12,7 +12,7 @@
     </template>
     <template v-else>
       <div v-for="(action,index) in botActions.actions" :key="index" class="mt-3">
-        <component :is="`action-${action.action}`" :navigationState="navigationState" :action="action"/>
+        <component :is="`action-${action.action}`" :navigationState="navigationState" :action="action" @extraVP="setExtraVP"/>
       </div>
       
       <template v-if="botActions.hasExploreSteps() && !explorerQuestChecked">
@@ -88,7 +88,8 @@ export default defineComponent({
       cityCompleted: false,
       placedCityDisc: false,
       exploreFoundQuest : false,
-      explorerQuestChecked: false
+      explorerQuestChecked: false,
+      extraVP: 0
     }
   },
   computed: {
@@ -101,7 +102,7 @@ export default defineComponent({
   },
   methods: {
     next(endRound: boolean) : void {
-      this.$emit('next', this.botActions.getParams(this.placedCityDisc, this.exploreFoundQuest), endRound)
+      this.$emit('next', this.botActions.getParams(this.placedCityDisc, this.exploreFoundQuest, this.extraVP), endRound)
     },
     foundQuest() : void {
       this.$emit('next', {
@@ -126,6 +127,9 @@ export default defineComponent({
     notFoundQuestExplore() : void {
       this.exploreFoundQuest = false
       this.explorerQuestChecked = true
+    },
+    setExtraVP(extraVP: number) : void {
+      this.extraVP = extraVP
     }
   }
 })

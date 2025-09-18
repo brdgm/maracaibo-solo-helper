@@ -78,7 +78,8 @@
       "reduceCombat": {
         "title": "Pay Combat Points",
         "reduce": "Pay <b>{amount}</b> combat point. | Pay <b>{amount}</b> combat points.",
-        "noPoints": "If you cannot, instead pay as many combat points as you can and Jean scores <b>{amount} VP</b> for each missing combat point."
+        "noPoints": "If you cannot, <b>enter in the text field</b> how many combat points you could actually pay. Jean scores {amount} VP for each missing combat point.",
+        "enterPoints": "Combat points<br>paid:"
       },
       "questPile": {
         "title": "Take Quest Tile",

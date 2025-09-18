@@ -78,7 +78,8 @@
       "reduceCombat": {
         "title": "Kampfpunkte abgeben",
         "reduce": "Gebe <b>{amount}</b> Kampfpunkt ab. | Gebe <b>{amount}</b> Kampfpunkte ab.",
-        "noPoints": "Kannst du dies nicht, gibst du alle übrigen Kampfpunkte ab und Jean erhält je fehlenden Kampfpunkte <b>{amount} Siegpunkte</b>."
+        "noPoints": "Kannst du dies nicht, <b>trage in dem Textfeld ein</b> wie viele Kampfpunkt du tatsächlich abgeben konntest. Jean erhält je fehlenden Kampfpunkt {amount} Siegpunkte.",
+        "enterPoints": "Abgegebene<br>Kampfpunkte:"
       },
       "questPile": {
         "title": "Nehme Quest",

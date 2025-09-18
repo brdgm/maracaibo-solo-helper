@@ -19,6 +19,9 @@ import { CardAction } from '@/services/jean/JeanCard'
 
 export default defineComponent({
   name: 'ActionRemoveDisc',
+  emits: {
+    extraVP: (_extraVP: number) => true  // eslint-disable-line @typescript-eslint/no-unused-vars
+  },
   components: {
     AppIcon,
     ActionBox

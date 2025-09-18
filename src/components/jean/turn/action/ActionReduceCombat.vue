@@ -4,6 +4,10 @@
       <div class="reduce-combat">
         <div class="amount">{{action.reduceCombat}}</div>
         <AppIcon name="combat-point" class="icon"/>
+        <label class="pointsLabel" @click.stop>
+          <div v-html="t('jean.action.reduceCombat.enterPoints')"></div>
+          <NumberInput v-model="reducedCombatPoints" :min="0" :max="action.reduceCombat" :step="1" class="points"/>
+        </label>
       </div>
     </template>
     <template #instruction>
@@ -16,18 +20,23 @@
 </template>
 
 <script lang="ts">
-import { defineComponent, PropType } from 'vue'
+import { defineComponent, PropType, ref } from 'vue'
 import { useI18n } from 'vue-i18n'
 import NavigationState from '@/util/jean/NavigationState'
 import AppIcon from '@/components/structure/AppIcon.vue'
 import ActionBox from '@/components/structure/ActionBox.vue'
 import { CardAction } from '@/services/jean/JeanCard'
+import NumberInput from '@brdgm/brdgm-commons/src/components/form/NumberInput.vue'
 
 export default defineComponent({
   name: 'ActionReduceCombat',
+  emits: {
+    extraVP: (_extraVP: number) => true  // eslint-disable-line @typescript-eslint/no-unused-vars
+  },
   components: {
     AppIcon,
-    ActionBox
+    ActionBox,
+    NumberInput
   },
   props: {
     navigationState: {
@@ -39,18 +48,20 @@ export default defineComponent({
       required: true
     }
   },
-  setup() {
+  setup(props) {
     const { t } = useI18n()
-    return { t }
+
+    const combatPointVP = (props.navigationState.round >= 3) ? 4 : 3
+    const reducedCombatPoints = ref(props.action.reduceCombat ?? 0)
+
+    return { t, combatPointVP, reducedCombatPoints }
   },
-  computed: {
-    combatPointVP() : number {
-      if (this.navigationState.round >= 3) {
-        return 4
-      }
-      else {
-        return 3
-      }
+ watch: {
+    reducedCombatPoints(value) {
+      const missingPoints = (this.action.reduceCombat ?? 0) - (value ?? 0)
+      const extraVP = missingPoints * this.combatPointVP
+      console.log("emit: " + extraVP)
+      this.$emit('extraVP', extraVP)
     }
   }
 })
@@ -69,6 +80,12 @@ export default defineComponent({
   }
   .icon {
     width: 3rem;
+  }
+  .pointsLabel {
+    margin-left: 1rem;
+  }
+  .points {
+    width: 4rem;
   }
 }
 </style>

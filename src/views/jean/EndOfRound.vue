@@ -1,8 +1,11 @@
 <template>
   <SideBar :navigationState="navigationState"/>
-  <h1>{{t('jean.endOfRound.title')}}</h1>
+  <h1>{{t('jean.endOfRound.title', {round})}}</h1>
 
-  <p>End of round...</p>
+  <ul class="mt-3">
+    <li v-html="t('jean.endOfRound.interimScoring')"></li>
+    <li v-html="t('jean.endOfRound.botVP', {count: botVP})"></li>
+  </ul>
 
   <button class="btn btn-primary btn-lg mt-4 me-2" @click="next">
     {{t('action.next')}}
@@ -19,6 +22,7 @@ import FooterButtons from '@/components/structure/FooterButtons.vue'
 import { useStateStore } from '@/store/state'
 import NavigationState from '@/util/jean/NavigationState'
 import SideBar from '@/components/jean/turn/SideBar.vue'
+import getRoundVP from '@/util/jean/getRoundVP'
 
 export default defineComponent({
   name: 'EndOfRound',
@@ -33,13 +37,16 @@ export default defineComponent({
     const state = useStateStore()
 
     const navigationState = new NavigationState(route, state)
-    const { turn, routeCalculator } = navigationState
+    const { round, turn, routeCalculator } = navigationState
 
-    return { t, router, state, turn, navigationState, routeCalculator }
+    return { t, router, state, round, turn, navigationState, routeCalculator }
   },
   computed: {
     backButtonRouteTo() : string {
       return this.routeCalculator.getBackRouteTo()
+    },
+    botVP() : number {
+      return getRoundVP(this.navigationState.jean)
     }
   },
   methods: {

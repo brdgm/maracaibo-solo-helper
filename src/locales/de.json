@@ -53,6 +53,11 @@
       "reachedLastSpace": "Letztes Feld {space} erreicht",
       "endRoundConfirm": "Runde {round} wird beendet."
     },
+    "endOfRound": {
+      "title": "Ende Runde {round}",
+      "interimScoring": "Führe die Zwischenwertung durch.",
+      "botVP": "Jean erhält <b>{count} Siegpunkt</b> in der Einkommensphase. | Jean erhält <b>{count} Siegpunkte</b> in der Einkommensphase."
+    },
     "action": {
       "moveShip": {
         "title": "Schiff bewegen",

@@ -53,6 +53,11 @@
       "reachedLastSpace": "Reached final space {space}",
       "endRoundConfirm": "End round {round}."
     },
+    "endOfRound": {
+      "title": "End of Round {round}",
+      "interimScoring": "Execute the interim scoring.",
+      "botVP": "During income, Jean gains <b>{count} victory point</b>. | During income, Jean gains <b>{count} victory points</b>."
+    },
     "action": {
       "moveShip": {
         "title": "Move Ship",

@@ -23,6 +23,7 @@ import { useStateStore } from '@/store/state'
 import NavigationState from '@/util/jean/NavigationState'
 import SideBar from '@/components/jean/turn/SideBar.vue'
 import getRoundVP from '@/util/jean/getRoundVP'
+import mergeBotPersistence from '@/util/jean/mergeBotPersistence'
 
 export default defineComponent({
   name: 'EndOfRound',
@@ -51,6 +52,17 @@ export default defineComponent({
   },
   methods: {
     next() : void {
+      this.state.storeTurn({
+        turn: this.turn,
+        round: this.navigationState.round,
+        player: this.routeCalculator.currentPlayer,
+        botPersistence: {
+          cardDeck: this.navigationState.cardDeck.toPersistence(),
+          jean: mergeBotPersistence(this.navigationState.jean,
+              {questCount: 0, projectCardCount: 0, discRemovedCount: 0, vp: this.botVP})
+        },
+        endOfRound: true
+      })
       this.router.push(this.routeCalculator.getNextRouteTo())
     }
   }

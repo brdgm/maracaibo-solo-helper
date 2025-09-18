@@ -13,7 +13,7 @@
 import { defineComponent } from 'vue'
 import { useI18n } from 'vue-i18n'
 import FooterButtons from '@/components/structure/FooterButtons.vue'
-import { JeanBotPersistence, Turn, useStateStore } from '@/store/state'
+import { JeanBotPersistence, useStateStore } from '@/store/state'
 import { useRoute, useRouter } from 'vue-router'
 import NavigationState from '@/util/jean/NavigationState'
 import SideBar from '@/components/jean/turn/SideBar.vue'
@@ -48,7 +48,7 @@ export default defineComponent({
   },
   methods: {
     next(botPersistence: JeanBotPersistence, endOfRound: boolean) : void {
-      const turn : Turn = {
+      this.state.storeTurn({
         turn: this.turn,
         round: this.navigationState.round,
         player: Player.BOT,
@@ -56,11 +56,7 @@ export default defineComponent({
           cardDeck: this.navigationState.cardDeck.toPersistence(),
           jean: mergeBotPersistence(this.navigationState.jean, botPersistence)
         }
-      }
-      if (endOfRound) {
-        turn.endOfRound = true
-      }
-      this.state.storeTurn(turn)
+      })
       if (endOfRound) {
         this.router.push(this.routeCalculator.getNextRouteToEndOfRound())
       }

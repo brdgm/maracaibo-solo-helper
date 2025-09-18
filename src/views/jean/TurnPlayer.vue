@@ -18,7 +18,7 @@ import { defineComponent } from 'vue'
 import { useI18n } from 'vue-i18n'
 import { useRoute, useRouter } from 'vue-router'
 import FooterButtons from '@/components/structure/FooterButtons.vue'
-import { Turn, useStateStore } from '@/store/state'
+import { useStateStore } from '@/store/state'
 import NavigationState from '@/util/jean/NavigationState'
 import SideBar from '@/components/jean/turn/SideBar.vue'
 import Player from '@/services/enum/Player'
@@ -49,15 +49,11 @@ export default defineComponent({
   },
   methods: {
     next(endOfRound : boolean) : void {
-      const turn : Turn = {
+      this.state.storeTurn({
         turn: this.turn,
         round: this.navigationState.round,
         player: Player.PLAYER
-      }
-      if (endOfRound) {
-        turn.endOfRound = true
-      }
-      this.state.storeTurn(turn)
+      })
       if (endOfRound) {
         this.router.push(this.routeCalculator.getNextRouteToEndOfRound())
       }

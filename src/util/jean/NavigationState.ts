@@ -19,9 +19,9 @@ export default class NavigationState {
     this.routeCalculator = new RouteCalculator({turn: this.turn, route, state})
     this.round = this.routeCalculator.round
     
-    const botPersistence = getLastBotPersistence(state, this.turn, this.routeCalculator.endOfRound)
+    const botPersistence = getLastBotPersistence(state, this.turn)
     this.cardDeck = CardDeck.fromPersistence(state.setup.bot, botPersistence.cardDeck)
-    if (this.routeCalculator.currentPlayer == Player.BOT) {
+    if (this.routeCalculator.currentPlayer == Player.BOT && !this.routeCalculator.endOfRound) {
       this.cardDeck.draw()
     }
     this.jean = botPersistence.jean ?? { questCount: 0, projectCardCount: 0, discRemovedCount: 0, vp: 0 }
@@ -33,9 +33,9 @@ export default class NavigationState {
 
 }
 
-function getLastBotPersistence(state: State, turn: number, endOfRound: boolean) : BotPersistence {
+function getLastBotPersistence(state: State, turn: number) : BotPersistence {
   const turnData = state.turns
-      .filter(item => ((item.turn < turn) || (endOfRound && item.turn <= turn)) && item.botPersistence != undefined)
+      .filter(item => (item.turn < turn) && item.botPersistence != undefined)
       .sort((a,b) => b.turn - a.turn)[0]
   if (turnData?.botPersistence) {
     return turnData?.botPersistence

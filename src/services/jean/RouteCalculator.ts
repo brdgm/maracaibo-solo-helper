@@ -12,8 +12,8 @@ export default class RouteCalculator {
   readonly state : State
 
   public readonly currentPlayer : Player
-  public readonly nextPlayer : Player
-  public readonly endOfRound : boolean
+  readonly nextPlayer : Player
+  readonly endOfRound : boolean
   readonly previousTurn? : Turn
 
   constructor(params:{turn: number, route: RouteLocation, state: State}) {
@@ -44,10 +44,10 @@ export default class RouteCalculator {
    */
   public getNextRouteToEndOfRound() : string {
     if (this.round == 4) {
-      return `/jean/turn/${this.turn}/${this.currentPlayer}/endOfGame`
+      return `/jean/turn/${this.turn + 1}/${this.currentPlayer}/endOfGame`
     }
     else {
-      return `/jean/turn/${this.turn}/${this.currentPlayer}/endOfRound`
+      return `/jean/turn/${this.turn + 1}/${this.currentPlayer}/endOfRound`
     }
   }
 
@@ -59,7 +59,7 @@ export default class RouteCalculator {
       return ''
     }
     if (this.endOfRound) {
-      return `/jean/turn/${this.turn}/${this.currentPlayer}`
+      return `/jean/turn/${this.turn - 1}/${this.currentPlayer}`
     }
     else if (this.previousTurn?.endOfRound) {
       return `/jean/turn/${this.turn - 1}/${this.previousTurn.player}/endOfRound`

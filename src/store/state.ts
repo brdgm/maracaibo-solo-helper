@@ -47,6 +47,7 @@ export interface Turn {
   round: number
   player: Player
   botPersistence?: BotPersistence
+  endOfRound?: boolean
 }
 export interface BotPersistence {
   cardDeck: CardDeckPersistence

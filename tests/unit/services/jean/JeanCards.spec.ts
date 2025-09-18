@@ -2,7 +2,7 @@ import CardLevel from '@/services/enum/CardLevel'
 import JeanCards from '@/services/jean/JeanCards'
 import { expect } from 'chai'
 
-describe('services/JeanCards', () => {
+describe('services/jean/JeanCards', () => {
   it('get', () => {
     const card = JeanCards.get('A1')
 

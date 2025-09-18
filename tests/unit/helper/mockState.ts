@@ -1,6 +1,6 @@
 import Bot from '@/services/enum/Bot'
 import DifficultyLevel from '@/services/enum/DifficultyLevel'
-import { Round, State } from '@/store/state'
+import { State, Turn } from '@/store/state'
 
 export default function (params?: MockStateParams) : State {  
   return {
@@ -10,12 +10,12 @@ export default function (params?: MockStateParams) : State {
       bot: params?.bot ?? Bot.JEAN,
       difficultyLevel: params?.difficultyLevel ?? DifficultyLevel.LEVEL_1
     },
-    rounds: params?.rounds ?? []
+    turns: params?.turns ?? []
   }
 }
 
 export interface MockStateParams {
   bot?: Bot
   difficultyLevel?: DifficultyLevel
-  rounds?: Round[]
+  turns?: Turn[]
 }

@@ -19,15 +19,12 @@ import FooterButtons from '@/components/structure/FooterButtons.vue'
 import { useStateStore } from '@/store/state'
 import NavigationState from '@/util/jean/NavigationState'
 import SideBar from '@/components/jean/turn/SideBar.vue'
-import Player from '@/services/enum/Player'
-import ReachedFinalSpaceButton from '@/components/jean/turn/ReachedFinalSpaceButton.vue'
 
 export default defineComponent({
   name: 'EndOfRound',
   components: {
     FooterButtons,
-    SideBar,
-    ReachedFinalSpaceButton
+    SideBar
   },
   setup() {
     const { t } = useI18n()
@@ -36,28 +33,18 @@ export default defineComponent({
     const state = useStateStore()
 
     const navigationState = new NavigationState(route, state)
-    const { turn } = navigationState
+    const { turn, routeCalculator } = navigationState
 
-    return { t, router, state, turn, navigationState }
+    return { t, router, state, turn, navigationState, routeCalculator }
   },
   computed: {
     backButtonRouteTo() : string {
-      if (this.turn > 1) {
-        return `/jean/turn/${this.turn - 1}/bot`
-      }
-      else {
-        return ''
-      }
+      return this.routeCalculator.getBackRouteTo()
     }
   },
   methods: {
     next() : void {
-      this.state.storeTurn({
-        turn: this.turn,
-        round: this.navigationState.round,
-        player: Player.PLAYER
-      })
-      this.router.push(`/jean/turn/${this.turn + 1}/bot`)
+      this.router.push(this.routeCalculator.getNextRouteTo())
     }
   }
 })

@@ -1,7 +1,9 @@
 <template>
   <div class="sidebar">
     {{t('sideBar.round', {round})}}<br/>
-    <template v-if="turn > 0">{{t('sideBar.turn', {turn})}}<br/></template>
+    {{t('sideBar.turn', {turn})}}
+    <h5 class="mt-2">{{t('bot.jacques')}}</h5>
+    <AppIcon name="vp" class="icon"/>: {{vp}}<br/>
   </div>
 </template>
 
@@ -9,10 +11,14 @@
 import { defineComponent } from 'vue'
 import { useI18n } from 'vue-i18n'
 import { useStateStore } from '@/store/state'
-import NavigationState from '@/util/jean/NavigationState'
+import NavigationState from '@/util/jacques/NavigationState'
+import AppIcon from '@/components/structure/AppIcon.vue'
 
 export default defineComponent({
   name: 'SideBar',
+  components: {
+    AppIcon
+  },
   setup() {
     const { t } = useI18n()
     const state = useStateStore()
@@ -26,11 +32,14 @@ export default defineComponent({
   },
   computed: {
     round() : number {
-      return 0
+      return this.navigationState.round
     },
     turn() : number {
       return this.navigationState.turn
-    }
+    },
+    vp() : number {
+      return this.navigationState.jacques.vp
+    },
   }
 })
 </script>
@@ -50,5 +59,11 @@ export default defineComponent({
     font-size: 0.9rem;
     width: 120px;
   }
+}
+.icon {
+  width: 1.6rem;
+  height: 1.6rem;
+  object-fit: contain;
+  padding: 0.1rem;
 }
 </style>

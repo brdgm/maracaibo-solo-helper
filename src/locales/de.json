@@ -32,26 +32,26 @@
     "jacques": {
       "intro": "Bereite das Spiel entsprechend der Anzahl menschlicher Spieler vor. Beim Solospiel bereite es als 2-Spieler-Spiel vor.",
       "noPlayerMaterial": "Jacques verwendet kein Spielermaterial.",
-      "victoryPointMarker": "Platziere seinen Siegpunktmarker auf der Siegpunktleiste",
+      "victoryPointMarker": "Platziere seinen Siegpunktmarker auf Feld 0 der Siegpunktleiste",
       "explorerMarker": "Platziere seinen Entdeckermarker am Start der Entdeckerleiste.",
       "automaNote": "Jacques' Automakarten werden nicht benötigt, sie werden von der Anwendung verwaltet."
     }
   },
+  "turnPlayer": {
+    "title": "Dein Zug",
+    "takeTurn": "Führe deinen Zug aus."
+  },
+  "endRound": {
+    "title": "Runde beenden",
+    "reachedLastSpace": "Letztes Feld {space} erreicht",
+    "endRoundConfirm": "Runde {round} wird beendet."
+  },
   "jean": {
-    "turnPlayer": {
-      "title": "Dein Zug",
-      "takeTurn": "Führe deinen Zug aus."
-    },
     "turnBot": {
       "foundQuest": "Jean findet eine Quest",
       "noQuest": "Keine Quest",
       "cityMarketSpace": "Belege ein freies Lagerfeld<br/>mit einer Scheibe aus dem Vorrat",
       "removeCard": "Entferne Karte {card}<br/>aus der Auslage"
-    },
-    "endRound": {
-      "title": "Runde beenden",
-      "reachedLastSpace": "Letztes Feld {space} erreicht",
-      "endRoundConfirm": "Runde {round} wird beendet."
     },
     "endOfRound": {
       "title": "Ende Runde {round}",

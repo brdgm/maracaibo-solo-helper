@@ -47,7 +47,7 @@ import ActionRemoveDisc from './action/ActionRemoveDisc.vue'
 import ActionVp from './action/ActionVp.vue'
 import CheckCityMarketSpace from './CheckCityMarketSpace.vue'
 import BotActions from '@/services/jean/BotActions'
-import ReachedFinalSpaceButton from './ReachedFinalSpaceButton.vue'
+import ReachedFinalSpaceButton from '@/components/turn/ReachedFinalSpaceButton.vue'
 
 export default defineComponent({
   name: 'BotActions',

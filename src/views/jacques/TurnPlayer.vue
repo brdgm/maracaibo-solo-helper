@@ -1,10 +1,14 @@
 <template>
   <SideBar :navigationState="navigationState"/>
-  <h1>{{t('player.player')}}</h1>
+  <h1>{{t('turnPlayer.title')}}</h1>
 
-  <button class="btn btn-primary btn-lg mt-4" @click="next">
+  <p v-html="t('turnPlayer.takeTurn')" class="mt-3"></p>
+
+  <button class="btn btn-primary btn-lg mt-4 me-2" @click="next">
     {{t('action.next')}}
   </button>
+
+  <ReachedFinalSpaceButton :round="navigationState.round" @endRound="next()"/>
 
   <FooterButtons :backButtonRouteTo="backButtonRouteTo" endGameButtonType="abortGame"/>
 </template>
@@ -17,12 +21,14 @@ import FooterButtons from '@/components/structure/FooterButtons.vue'
 import { useStateStore } from '@/store/state'
 import NavigationState from '@/util/jacques/NavigationState'
 import SideBar from '@/components/jacques/turn/SideBar.vue'
+import ReachedFinalSpaceButton from '@/components/turn/ReachedFinalSpaceButton.vue'
 
 export default defineComponent({
   name: 'TurnPlayer',
   components: {
     FooterButtons,
-    SideBar
+    SideBar,
+    ReachedFinalSpaceButton
   },
   setup() {
     const { t } = useI18n()

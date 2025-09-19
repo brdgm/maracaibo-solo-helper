@@ -32,26 +32,26 @@
     "jacques": {
       "intro": "Setup the game according to the human player count. If you play solo, setup as a 2-player game.",
       "noPlayerMaterial": "Jacques does not use any player material.",
-      "victoryPointMarker": "Place his victory point marker on the victory point track",
+      "victoryPointMarker": "Place his victory point marker on space 0 of the victory point track",
       "explorerMarker": "Place his explorer marker on the start of the explorer track.",
       "automaNote": "Jacques' Automa cards are not required, they are managed by the application."
     }
   },
+  "turnPlayer": {
+    "title": "Your turn",
+    "takeTurn": "Take your turn."
+  },
+  "endRound": {
+    "title": "End Round",
+    "reachedLastSpace": "Reached final space {space}",
+    "endRoundConfirm": "End round {round}."
+  },
   "jean": {
-    "turnPlayer": {
-      "title": "Your turn",
-      "takeTurn": "Take your turn."
-    },
     "turnBot": {
       "foundQuest": "Jean found a quest",
       "noQuest": "No Quest",
       "cityMarketSpace": "Place disc from supply<br/>in free market space",
       "removeCard": "Remove card {card}<br/>from display"
-    },
-    "endRound": {
-      "title": "End Round",
-      "reachedLastSpace": "Reached final space {space}",
-      "endRoundConfirm": "End round {round}."
     },
     "endOfRound": {
       "title": "End of Round {round}",

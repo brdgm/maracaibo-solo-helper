@@ -1,11 +1,11 @@
 <template>
   <button class="btn btn-secondary btn-lg mt-4" data-bs-toggle="modal" data-bs-target="#endRoundModal">
-    {{t('jean.endRound.reachedLastSpace', {space:lastSpace })}}
+    {{t('endRound.reachedLastSpace', {space:lastSpace })}}
   </button>
 
-  <ModalDialog id="endRoundModal" :title="t('jean.endRound.title')">
+  <ModalDialog id="endRoundModal" :title="t('endRound.title')">
     <template #body>
-      <p v-html="t('jean.endRound.endRoundConfirm', {round})"></p>
+      <p v-html="t('endRound.endRoundConfirm', {round})"></p>
     </template>
     <template #footer>
       <button class="btn btn-primary" @click="$emit('endRound')" data-bs-dismiss="modal">{{t('action.ok')}}</button>

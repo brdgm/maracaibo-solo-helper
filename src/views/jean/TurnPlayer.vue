@@ -1,8 +1,8 @@
 <template>
   <SideBar :navigationState="navigationState"/>
-  <h1>{{t('jean.turnPlayer.title')}}</h1>
+  <h1>{{t('turnPlayer.title')}}</h1>
 
-  <p v-html="t('jean.turnPlayer.takeTurn')" class="mt-3"></p>
+  <p v-html="t('turnPlayer.takeTurn')" class="mt-3"></p>
 
   <button class="btn btn-primary btn-lg mt-4 me-2" @click="next(false)">
     {{t('action.next')}}
@@ -22,7 +22,7 @@ import { useStateStore } from '@/store/state'
 import NavigationState from '@/util/jean/NavigationState'
 import SideBar from '@/components/jean/turn/SideBar.vue'
 import Player from '@/services/enum/Player'
-import ReachedFinalSpaceButton from '@/components/jean/turn/ReachedFinalSpaceButton.vue'
+import ReachedFinalSpaceButton from '@/components/turn/ReachedFinalSpaceButton.vue'
 
 export default defineComponent({
   name: 'TurnPlayer',

@@ -4,7 +4,7 @@
 
   <BotActions :navigationState="navigationState" @next="next"/>
 
-  <DebugInfo :cardDeck="navigationState.cardDeck"/>
+  <DebugInfo :navigationState="navigationState"/>
 
   <FooterButtons :backButtonRouteTo="backButtonRouteTo" endGameButtonType="abortGame"/>
 </template>
@@ -19,7 +19,7 @@ import NavigationState from '@/util/jacques/NavigationState'
 import SideBar from '@/components/jacques/turn/SideBar.vue'
 import Player from '@/services/enum/Player'
 import mergeBotPersistence from '@/util/jacques/mergeBotPersistence'
-import DebugInfo from '@/components/turn/DebugInfo.vue'
+import DebugInfo from '@/components/jacques/turn/DebugInfo.vue'
 import BotActions from '@/components/jacques/turn/BotActions.vue'
 
 export default defineComponent({

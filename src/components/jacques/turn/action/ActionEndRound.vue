@@ -1,14 +1,14 @@
 <template>
   <ActionBox :instructionTitle="t('jacques.action.endRound.title')" :modalSizeLg="true">
     <template #action>
-      <LocationNumber :value="'20'"/>
+      <div class="end-round">
+        <LocationNumber :value="'20'"/>
+        <div v-html="t(endRoundKey)"></div>
+      </div>
     </template>
     <template #instruction>
       <ul>
-        <li v-html="t('jacques.action.explore.move', {amount: action.exploreSteps}, action.exploreSteps ?? 0)"></li>
-        <li v-html="t('jacques.action.explore.quest')"></li>
-        <li v-html="t('jacques.action.explore.shortestPath')"></li>
-        <li v-html="t('jacques.action.explore.noRewards')"></li>
+        <li v-html="t(endRoundKey)"></li>
       </ul>
     </template>
   </ActionBox>
@@ -41,9 +41,25 @@ export default defineComponent({
   setup() {
     const { t } = useI18n()
     return { t }
+  },
+  computed: {
+    endRoundKey() : string {
+      if (this.navigationState.round == 4) {
+        return 'jacques.action.endRound.twoTurns'
+      }
+      else {
+        return 'jacques.action.endRound.nextTurn'
+      }
+    }
   }
 })
 </script>
 
 <style lang="scss" scoped>
+.end-round {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0.5rem;
+}
 </style>

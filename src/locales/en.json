@@ -148,6 +148,11 @@
         "none": "If there are none, he discards the topmost quest from the pile instead.",
         "multiple": "If there are multiple quests at a location, choose for him."
       },
+      "endRound": {
+        "title": "End Round",
+        "nextTurn": "Jacques will end round <b>next turn</b>.",
+        "twoTurns": "Jacques will end round <b>in two turns</b>."
+      },
       "vp": {
         "title": "Victory Points",
         "get": "Jacques gains <b>{amount}</b> victory point. | Jacques gains <b>{amount}</b> victory points."

@@ -148,6 +148,11 @@
         "none": "Findet sich keine Quest an diesen Orten, wirft er die oberste Quest des Queststapels ab.",
         "multiple": "Befinden sich mehrere Quests an einem Ort, wählst du aus."
       },
+      "endRound": {
+        "title": "Runde beenden",
+        "nextTurn": "Jacques wird die Runde <b>im nächsten Zug</b> beenden.",
+        "twoTurns": "Jacques wird die Runde <b>im übernächsten Zug</b> beenden."
+      },
       "vp": {
         "title": "Siegpunkte",
         "get": "Jacques erhält <b>{amount}</b> Siegpunkt. | Jacques erhält <b>{amount}</b> Siegpunkte."

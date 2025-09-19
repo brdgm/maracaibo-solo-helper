@@ -4,7 +4,8 @@ import { BotPersistence, JeanBotPersistence, State } from '@/store/state'
 import Player from '@/services/enum/Player'
 import CardDeck from '@/services/CardDeck'
 import JeanCard from '@/services/jean/JeanCard'
-import RouteCalculator from '@/services/jean/RouteCalculator'
+import RouteCalculator from '@/services/RouteCalculator'
+import Bot from '@/services/enum/Bot'
 
 export default class NavigationState {
 
@@ -16,7 +17,7 @@ export default class NavigationState {
 
   constructor(route: RouteLocation, state: State) {    
     this.turn = getIntRouteParam(route, 'turn')
-    this.routeCalculator = new RouteCalculator({turn: this.turn, route, state})
+    this.routeCalculator = new RouteCalculator(Bot.JEAN, this.turn, route, state)
     this.round = this.routeCalculator.round
     
     const botPersistence = getLastBotPersistence(state, this.turn)

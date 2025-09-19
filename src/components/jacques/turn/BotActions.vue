@@ -6,7 +6,7 @@
     <ActionVp :vp="navigationState.currentCard.vp"/>
   </div>
 
-  <button class="btn btn-primary btn-lg mt-4 me-2" @click="next(false)">
+  <button class="btn btn-primary btn-lg mt-4 me-2" @click="next()">
     {{t('action.next')}}
   </button>
 </template>
@@ -22,11 +22,12 @@ import ActionEndRound from './action/ActionEndRound.vue'
 import ActionExplore from './action/ActionExplore.vue'
 import ActionQuest from './action/ActionQuest.vue'
 import ActionVp from './action/ActionVp.vue'
+import Action from '@/services/jacques/enum/Action'
 
 export default defineComponent({
   name: 'BotActions',
   emits: {
-    next: (_params: JacquesBotPersistence, _endRound: boolean) => true  // eslint-disable-line @typescript-eslint/no-unused-vars
+    next: (_params: JacquesBotPersistence, _botField20: boolean) => true  // eslint-disable-line @typescript-eslint/no-unused-vars
   },
   components: {
     ActionCityDisc,
@@ -55,8 +56,9 @@ export default defineComponent({
     }
   },
   methods: {
-    next(endRound: boolean) : void {
-      this.$emit('next', {vp:this.navigationState.currentCard.vp}, endRound)
+    next() : void {
+      const botField20 = this.action?.action == Action.END_ROUND
+      this.$emit('next', {vp:this.navigationState.currentCard.vp}, botField20)
     }
   }
 })

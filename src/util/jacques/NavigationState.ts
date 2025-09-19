@@ -3,8 +3,9 @@ import getIntRouteParam from '@brdgm/brdgm-commons/src/util/router/getIntRoutePa
 import { BotPersistence, JacquesBotPersistence, State } from '@/store/state'
 import Player from '@/services/enum/Player'
 import CardDeck from '@/services/CardDeck'
-import RouteCalculator from '@/services/jacques/RouteCalculator'
 import JacquesCard from '@/services/jacques/JacquesCard'
+import RouteCalculator from '@/services/RouteCalculator'
+import Bot from '@/services/enum/Bot'
 
 export default class NavigationState {
 
@@ -19,7 +20,7 @@ export default class NavigationState {
   constructor(route: RouteLocation, state: State) {    
     this.turn = getIntRouteParam(route, 'turn')
     this.player = route.name == 'JacquesTurnPlayer' ? Player.PLAYER : Player.BOT
-    this.routeCalculator = new RouteCalculator({turn: this.turn, route, state})
+    this.routeCalculator = new RouteCalculator(Bot.JACQUES, this.turn, route, state)
     this.round = this.routeCalculator.round
     
     const botPersistence = getLastBotPersistence(state, this.turn)

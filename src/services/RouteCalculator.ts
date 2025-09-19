@@ -1,12 +1,14 @@
 import { State, Turn } from '@/store/state'
-import Player from '../enum/Player'
+import Player from './enum/Player'
 import { RouteLocation } from 'vue-router'
+import Bot from './enum/Bot'
 
 /**
  * Calculate routes for next/back respecting "passed" state of players.
  */
 export default class RouteCalculator {
 
+  readonly pathPrefix : string
   readonly round : number
   readonly turn : number
   readonly state : State
@@ -16,12 +18,13 @@ export default class RouteCalculator {
   readonly endOfRound : boolean
   readonly previousTurn? : Turn
 
-  constructor(params:{turn: number, route: RouteLocation, state: State}) {
-    this.turn = params.turn
-    this.state = params.state
-    this.currentPlayer = params.route.name?.toString().match(JACQUES_TURN_REGEX) ? Player.PLAYER : Player.BOT
+  constructor(bot:Bot, turn: number, route: RouteLocation, state: State) {
+    this.pathPrefix = bot == Bot.JEAN ? '/jean' : '/jacques'
+    this.turn = turn
+    this.state = state
+    this.currentPlayer = route.name?.toString().match(TURN_REGEX) ? Player.PLAYER : Player.BOT
     this.nextPlayer = this.currentPlayer == Player.BOT ? Player.PLAYER : Player.BOT
-    this.endOfRound = params.route.name?.toString().match(ENDOFROUND_REGEX) ? true : false
+    this.endOfRound = route.name?.toString().match(ENDOFROUND_REGEX) ? true : false
     this.previousTurn = this.state.turns.find(item => item.turn == this.turn - 1)
 
     if (this.previousTurn?.endOfRound) {
@@ -36,7 +39,7 @@ export default class RouteCalculator {
    * Get route to next step in round.
    */
   public getNextRouteTo() : string {
-    return `/jacques/turn/${this.turn + 1}/${this.nextPlayer}`
+    return `${this.pathPrefix}/turn/${this.turn + 1}/${this.nextPlayer}`
   }
 
   /**
@@ -44,10 +47,10 @@ export default class RouteCalculator {
    */
   public getNextRouteToEndOfRound() : string {
     if (this.round == 4) {
-      return `/jacques/turn/${this.turn + 1}/endOfGame`
+      return `${this.pathPrefix}/turn/${this.turn + 1}/endOfGame`
     }
     else {
-      return `/jacques/turn/${this.turn + 1}/${this.currentPlayer}/endOfRound`
+      return `${this.pathPrefix}/turn/${this.turn + 1}/${this.currentPlayer}/endOfRound`
     }
   }
 
@@ -59,14 +62,14 @@ export default class RouteCalculator {
       return ''
     }
     else if (this.previousTurn?.endOfRound) {
-      return `/jacques/turn/${this.turn - 1}/${this.previousTurn.player}/endOfRound`
+      return `${this.pathPrefix}/turn/${this.turn - 1}/${this.previousTurn.player}/endOfRound`
     }
     else {
-      return `/jacques/turn/${this.turn - 1}/${this.previousTurn?.player ?? Player.PLAYER}`
+      return `${this.pathPrefix}/turn/${this.turn - 1}/${this.previousTurn?.player ?? Player.PLAYER}`
     }
   }
 
 }
 
-const JACQUES_TURN_REGEX = /^JacquesTurnPlayer(.*)?$/
-const ENDOFROUND_REGEX = /^.*EndOfRound$/
+const TURN_REGEX = /^.+TurnPlayer(.+)?$/
+const ENDOFROUND_REGEX = /^.+EndOfRound$/

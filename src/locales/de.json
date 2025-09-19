@@ -60,7 +60,20 @@
     },
     "endOfGame": {
       "title": "Spielende",
-      "finalScoring": "Führe die Endwertung durch."
+      "finalScoring": "Führe die Endwertung durch.",
+      "additionalBonusPoints": "Zusätzlich erhält Jean:",
+      "table": {
+        "condition": "Bedingung",
+        "influence": "Werte Jeans Einflussmarker",
+        "player": "Du",
+        "bot": "Jean",
+        "botVP": "Jean SP",
+        "questTiles": "Quests",
+        "shipUpgrades": "Schiffsverbesserungen",
+        "explorerStepsAhead": "Anzahl Felder, die Jeans Entdecker sich vor deinem befindet*"
+      },
+      "explorerNote": "* Befinden sich die Entdecker auf verschiedenen Pfaden, zähle wie weit jeder Entdecker von der nächsten Barriere entfernt ist. Der Entdecker, der weniger Felder bis zur Barriere braucht, gilt als 'vorne'.",
+      "finalScore": "Jeans Endergebnis: <b>{score} SP</b>"
     },
     "action": {
       "moveShip": {

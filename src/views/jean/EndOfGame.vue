@@ -4,43 +4,46 @@
   <ul class="mt-3">
     <li v-html="t('jean.endOfGame.finalScoring')"></li>
     <li v-html="t('jean.endOfRound.botVP', {count: botIncomeVP})"></li>
-    <li>Score Jean's <b>influence marker</b> as if she were a human opponent.</li>
   </ul>
 
-  <p>Additionally, Jean scores bonus points:</p>
+  <p v-html="t('jean.endOfGame.additionalBonusPoints')"></p>
 
   <table class="table table-bordered table-striped">
     <thead>
       <tr class="table-secondary">
-        <th>Condition</th>
-        <th>You</th>
-        <th>Jean</th>
-        <th>Jean VP</th>
+        <th>{{t('jean.endOfGame.table.condition')}}</th>
+        <th>{{t('jean.endOfGame.table.player')}}</th>
+        <th>{{t('jean.endOfGame.table.bot')}}</th>
+        <th>{{t('jean.endOfGame.table.botVP')}}</th>
       </tr>
     </thead>
     <tbody>
       <tr>
-        <td>Quest tiles</td>
+        <td colspan="3">{{t('jean.endOfGame.table.influence')}}</td>
+        <td><NumberInput v-model="botInfluenceMakerVP" class="number"/></td>
+      </tr>
+      <tr>
+        <td>{{t('jean.endOfGame.table.questTiles')}}</td>
         <td><NumberInput v-model="playerQuestCount" class="number"/></td>
         <td>{{navigationState.jean.questCount}}</td>
         <td>{{botQuestVP}}</td>
       </tr>
       <tr>
-        <td>Ship Upgrades</td>
+        <td>{{t('jean.endOfGame.table.shipUpgrades')}}</td>
         <td><NumberInput v-model="playerShipUpgrades" class="number" :max="12"/></td>
         <td>{{botShipUpgrades}}</td>
         <td>{{botShipUpgradesVP}}</td>
       </tr>
       <tr>
-        <td colspan="2">Number of steps Jean's explorer is ahead of yours*</td>
+        <td colspan="2">{{t('jean.endOfGame.table.explorerStepsAhead')}}</td>
         <td><NumberInput v-model="botExplorerStepsAhead" class="number" :min="-99" :max="99"/></td>
         <td>{{botExplorerVP}}</td>
       </tr>
     </tbody>
   </table>
-  <p class="small fst-italic">* If the explorers are on different branches of the path, count how far each explorer is away from the next barrier. The explorer who needs fewer spaces to reach the barrier counts as 'ahead'.</p>
+  <p class="small fst-italic" v-html="t('jean.endOfGame.explorerNote')"></p>
 
-  <p class="finalScore">Jean's final score: <b>{{ botTotalVP }} VP</b></p>
+  <p class="finalScore" v-html="t('jean.endOfGame.finalScore', {score: botTotalVP})"></p>
   
 
   <FooterButtons :backButtonRouteTo="backButtonRouteTo" endGameButtonType="abortGame"/>
@@ -76,6 +79,7 @@ export default defineComponent({
   },
   data() {
     return {
+      botInfluenceMakerVP: undefined as number|undefined,
       playerQuestCount: undefined as number|undefined,
       playerShipUpgrades: undefined as number|undefined,
       botExplorerStepsAhead: undefined as number|undefined
@@ -132,7 +136,8 @@ export default defineComponent({
       return 0
     },
     botTotalVP() : number {
-      return this.jean.vp + this.botIncomeVP + this.botQuestVP + this.botShipUpgradesVP + this.botExplorerVP
+      return this.jean.vp + this.botIncomeVP + toNumber(this.botInfluenceMakerVP)
+        + this.botQuestVP + this.botShipUpgradesVP + this.botExplorerVP
     }
   }
 })

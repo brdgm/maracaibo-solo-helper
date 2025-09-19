@@ -142,6 +142,12 @@
         "place": "Jacques adds a disc from the supply to the market of the city with number <b>{cityNumber}</b>.",
         "noPlace": "This does not happen if the location‘s market is full."
       },
+      "quest": {
+        "title": "Claim Quest",
+        "selectLocation": "Jacques discards a quest from a location with the lowest number <b>between {from} and {to}</b>.",
+        "none": "If there are none, he discards the topmost quest from the pile instead.",
+        "multiple": "If there are multiple quests at a location, choose for him."
+      },
       "vp": {
         "title": "Victory Points",
         "get": "Jacques gains <b>{amount}</b> victory point. | Jacques gains <b>{amount}</b> victory points."

@@ -142,6 +142,12 @@
         "place": "Jacques legt eine Scheibe aus dem Vorrat auf ein Lagerfeld der Stadt mit der Nummer <b>{cityNumber}</b>.",
         "noPlace": "Dies entfällt, wenn alle Lagerplätze an diesem Ort schon besetzt sind."
       },
+      "quest": {
+        "title": "Quest nehmen",
+        "selectLocation": "Jacques wirft eine Quest von einem Ort mit der niedrigsten Nummer <b>zwischen {from} und {to}</b> ab.",
+        "none": "Findet sich keine Quest an diesen Orten, wirft er die oberste Quest des Queststapels ab.",
+        "multiple": "Befinden sich mehrere Quests an einem Ort, wählst du aus."
+      },
       "vp": {
         "title": "Siegpunkte",
         "get": "Jacques erhält <b>{amount}</b> Siegpunkt. | Jacques erhält <b>{amount}</b> Siegpunkte."

@@ -27,9 +27,6 @@ import { CardAction } from '@/services/jacques/JacquesCard'
 
 export default defineComponent({
   name: 'ActionExplore',
-  emits: {
-    extraVP: (_extraVP: number) => true  // eslint-disable-line @typescript-eslint/no-unused-vars
-  },
   components: {
     AppIcon,
     ActionBox

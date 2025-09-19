@@ -3,7 +3,7 @@
     <template #action>
       <div class="city-disc">
         <AppIcon name="city-disc" class="icon"/>
-        <div class="number">{{action.cityNumber}}</div>
+        <LocationNumber v-if="action.cityNumber" :value="action.cityNumber"/>
       </div>
     </template>
     <template #instruction>
@@ -22,15 +22,14 @@ import AppIcon from '@/components/structure/AppIcon.vue'
 import ActionBox from '@/components/structure/ActionBox.vue'
 import NavigationState from '@/util/jacques/NavigationState'
 import { CardAction } from '@/services/jacques/JacquesCard'
+import LocationNumber from '@/components/structure/LocationNumber.vue'
 
 export default defineComponent({
   name: 'ActionCityDisc',
-  emits: {
-    extraVP: (_extraVP: number) => true  // eslint-disable-line @typescript-eslint/no-unused-vars
-  },
   components: {
     AppIcon,
-    ActionBox
+    ActionBox,
+    LocationNumber
   },
   props: {
     navigationState: {
@@ -56,22 +55,7 @@ export default defineComponent({
   align-items: end;
   .icon {
     width: 4rem;
-    margin-right: 0.25rem;
-  }
-  .number {
-    width: 2rem;
-    height: 2rem;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    background-color: #00a3d8;
-    border: 2px solid #110617;
-    border-radius: 50%;
-    font-weight: bold;
-    font-size: 1.25rem;
-    color: white;
-    text-shadow: -1px -1px 0 #000, 1px -1px 0 #000, -1px 1px 0 #000, 1px 1px 0 #000;
-    padding-bottom: 0.1rem;
+    margin-right: 0.5rem;
   }
 }
 </style>

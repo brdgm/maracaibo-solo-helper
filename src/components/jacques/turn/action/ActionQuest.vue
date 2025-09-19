@@ -1,17 +1,21 @@
 <template>
   <ActionBox :instructionTitle="t('jacques.action.quest.title')" :modalSizeLg="true">
     <template #action>
-      <div class="explore">
+      <div class="quest">
         <div class="amount">{{action.exploreSteps}}</div>
         <AppIcon name="quest-discard" class="icon"/>
+        <div class="range">
+          <LocationNumber v-if="action.cityNumberFrom" :value="action.cityNumberFrom"/>
+          <span> - </span>
+          <LocationNumber v-if="action.cityNumberTo" :value="action.cityNumberTo"/>
+        </div>
       </div>
     </template>
     <template #instruction>
       <ul>
-        <li v-html="t('jean.action.explore.move', {amount: action.exploreSteps}, action.exploreSteps ?? 0)"></li>
-        <li v-html="t('jean.action.explore.quest')"></li>
-        <li v-html="t('jean.action.explore.shortestPath')"></li>
-        <li v-html="t('jean.action.explore.noRewards')"></li>
+        <li v-html="t('jacques.action.quest.selectLocation', {from: action.cityNumberFrom, to: action.cityNumberTo})"></li>
+        <li v-html="t('jacques.action.quest.none')"></li>
+        <li v-html="t('jacques.action.quest.multiple')"></li>
       </ul>
     </template>
   </ActionBox>
@@ -24,15 +28,14 @@ import AppIcon from '@/components/structure/AppIcon.vue'
 import ActionBox from '@/components/structure/ActionBox.vue'
 import NavigationState from '@/util/jacques/NavigationState'
 import { CardAction } from '@/services/jacques/JacquesCard'
+import LocationNumber from '@/components/structure/LocationNumber.vue'
 
 export default defineComponent({
   name: 'ActionQuest',
-  emits: {
-    extraVP: (_extraVP: number) => true  // eslint-disable-line @typescript-eslint/no-unused-vars
-  },
   components: {
     AppIcon,
-    ActionBox
+    ActionBox,
+    LocationNumber
   },
   props: {
     navigationState: {
@@ -52,18 +55,18 @@ export default defineComponent({
 </script>
 
 <style lang="scss" scoped>
-.explore {
+.quest {
   display: flex;
+  flex-direction: column;
   align-items: center;
-  .amount {
-    margin-right: 0.25rem;
-    font-size: 2rem;
-    font-weight: bold;
-    color: white;
-    text-shadow: -2px -2px 0 #000, 2px -2px 0 #000, -2px 2px 0 #000, 2px 2px 0 #000;
-  }
   .icon {
-    width: 3rem;
+    width: 3.5rem;
+  }
+  .range {
+    display: flex;
+    margin-top: 0.5rem;
+    gap: 0.25rem;
+    font-size: 1.25rem;
   }
 }
 </style>

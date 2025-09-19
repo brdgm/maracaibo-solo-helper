@@ -1,10 +1,10 @@
 <template>
   <SideBar :navigationState="navigationState"/>
-  <h1>{{t('player.bot')}}</h1>
+  <h1>{{t('bot.jacques')}}</h1>
 
-  <button class="btn btn-primary btn-lg mt-4" @click="next">
-    {{t('action.next')}}
-  </button>
+  <BotActions :navigationState="navigationState" @next="next"/>
+
+  <DebugInfo :cardDeck="navigationState.cardDeck"/>
 
   <FooterButtons :backButtonRouteTo="backButtonRouteTo" endGameButtonType="abortGame"/>
 </template>
@@ -13,16 +13,22 @@
 import { defineComponent } from 'vue'
 import { useI18n } from 'vue-i18n'
 import FooterButtons from '@/components/structure/FooterButtons.vue'
-import { useStateStore } from '@/store/state'
+import { JacquesBotPersistence, useStateStore } from '@/store/state'
 import { useRoute, useRouter } from 'vue-router'
 import NavigationState from '@/util/jacques/NavigationState'
 import SideBar from '@/components/jacques/turn/SideBar.vue'
+import Player from '@/services/enum/Player'
+import mergeBotPersistence from '@/util/jacques/mergeBotPersistence'
+import DebugInfo from '@/components/turn/DebugInfo.vue'
+import BotActions from '@/components/jacques/turn/BotActions.vue'
 
 export default defineComponent({
   name: 'TurnBot',
   components: {
     FooterButtons,
-    SideBar
+    SideBar,
+    BotActions,
+    DebugInfo
   },
   setup() {
     const { t } = useI18n()
@@ -31,18 +37,32 @@ export default defineComponent({
     const state = useStateStore()
 
     const navigationState = new NavigationState(route, state)
-    const { turn } = navigationState
+    const { turn, routeCalculator } = navigationState
 
-    return { t, router, state, turn, navigationState }
+    return { t, router, state, turn, navigationState, routeCalculator }
   },
   computed: {
     backButtonRouteTo() : string {
-      return `/jacques/turn/${this.turn - 1}/player`
+      return this.routeCalculator.getBackRouteTo()
     }
   },
   methods: {
-    next() : void {
-      this.router.push(`/jacques/turn/${this.turn + 1}/player`)
+    next(botPersistence: JacquesBotPersistence, endOfRound: boolean) : void {
+      this.state.storeTurn({
+        turn: this.turn,
+        round: this.navigationState.round,
+        player: Player.BOT,
+        botPersistence: {
+          cardDeck: this.navigationState.cardDeck.toPersistence(),
+          jacques: mergeBotPersistence(this.navigationState.jacques, botPersistence)
+        }
+      })
+      if (endOfRound) {
+        this.router.push(this.routeCalculator.getNextRouteToEndOfRound())
+      }
+      else {
+        this.router.push(this.routeCalculator.getNextRouteTo())
+      }
     }
   }
 })

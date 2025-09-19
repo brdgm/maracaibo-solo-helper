@@ -52,7 +52,7 @@ export interface Turn {
 export interface BotPersistence {
   cardDeck: CardDeckPersistence
   jean?: JeanBotPersistence
-  jacques?: JeanBotPersistence
+  jacques?: JacquesBotPersistence
 }
 export interface CardDeckPersistence {
   pile: string[]

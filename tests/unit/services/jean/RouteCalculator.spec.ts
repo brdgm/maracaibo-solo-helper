@@ -11,14 +11,14 @@ import mockRouteLocation from '../../helper/mockRouteLocation'
 const state = mockState({bot:Bot.JEAN, turns:[
   mockTurn({turn:1, round:1, player:Player.PLAYER}),
   mockTurn({turn:2, round:1, player:Player.BOT, botPersistence:mockBotPersistenceJean(
-    {cardDeck:mockCardDeck(Bot.JACQUES, {pile:['A2','A3'], discard:['A1']}),projectCardCount:1}
+    {cardDeck:mockCardDeck(Bot.JEAN, {pile:['A2','A3'], discard:['A1']}),projectCardCount:1}
   )}),
   mockTurn({turn:3, round:1, player:Player.PLAYER}),
   mockTurn({turn:4, round:1, player:Player.BOT, botPersistence:mockBotPersistenceJean(
-    {cardDeck:mockCardDeck(Bot.JACQUES, {pile:['A3'], discard:['A2','A1']}),projectCardCount:1,vp:4}
+    {cardDeck:mockCardDeck(Bot.JEAN, {pile:['A3'], discard:['A2','A1']}),projectCardCount:1,vp:4}
   )}),
   mockTurn({turn:5, round:1, endOfRound:true, player:Player.BOT, botPersistence:mockBotPersistenceJean(
-    {cardDeck:mockCardDeck(Bot.JACQUES, {pile:['A3'], discard:['A2','A1']}),projectCardCount:1,vp:5}
+    {cardDeck:mockCardDeck(Bot.JEAN, {pile:['A3'], discard:['A2','A1']}),projectCardCount:1,vp:5}
   )}),
 ]})
 

@@ -3,16 +3,15 @@
     <hr/>
     <p class="debug">
       <b>cardDeck</b>: {{cardDeck.toPersistence()}}<br/>
-      <b>currentCard</b>: {{navigationState.currentCard}}<br/>
+      <b>currentCard</b>: {{cardDeck.currentCard}}<br/>
     </p>
   </div>
 </template>
 
 <script lang="ts">
-import { defineComponent } from 'vue'
+import { defineComponent, PropType } from 'vue'
 import { useStateStore } from '@/store/state'
 import CardDeck from '@/services/CardDeck'
-import NavigationState from '@/util/jean/NavigationState'
 
 export default defineComponent({
   name: 'DebugInfo',
@@ -21,14 +20,9 @@ export default defineComponent({
     return { state }
   },
   props: {
-    navigationState: {
-      type: NavigationState,
+    cardDeck: {
+      type: Object as PropType<CardDeck>,
       required: true
-    }
-  },
-  computed: {
-    cardDeck() : CardDeck {
-      return this.navigationState.cardDeck
     }
   }
 })

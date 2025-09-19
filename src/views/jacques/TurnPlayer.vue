@@ -4,11 +4,11 @@
 
   <p v-html="t('turnPlayer.takeTurn')" class="mt-3"></p>
 
-  <button class="btn btn-primary btn-lg mt-4 me-2" @click="next">
+  <button class="btn btn-primary btn-lg mt-4 me-2" @click="next(false)">
     {{t('action.next')}}
   </button>
 
-  <ReachedFinalSpaceButton :round="navigationState.round" @endRound="next()"/>
+  <ReachedFinalSpaceButton :round="navigationState.round" @endRound="next(true)"/>
 
   <FooterButtons :backButtonRouteTo="backButtonRouteTo" endGameButtonType="abortGame"/>
 </template>
@@ -22,6 +22,7 @@ import { useStateStore } from '@/store/state'
 import NavigationState from '@/util/jacques/NavigationState'
 import SideBar from '@/components/jacques/turn/SideBar.vue'
 import ReachedFinalSpaceButton from '@/components/turn/ReachedFinalSpaceButton.vue'
+import Player from '@/services/enum/Player'
 
 export default defineComponent({
   name: 'TurnPlayer',
@@ -37,23 +38,28 @@ export default defineComponent({
     const state = useStateStore()
 
     const navigationState = new NavigationState(route, state)
-    const { turn } = navigationState
+    const { turn, routeCalculator } = navigationState
 
-    return { t, router, state, turn, navigationState }
+    return { t, router, state, turn, navigationState, routeCalculator }
   },
   computed: {
     backButtonRouteTo() : string {
-      if (this.turn > 1) {
-        return `/jacques/turn/${this.turn - 1}/bot`
-      }
-      else {
-        return ''
-      }
+      return this.routeCalculator.getBackRouteTo()
     }
   },
   methods: {
-    next() : void {
-      this.router.push(`/jacques/turn/${this.turn + 1}/bot`)
+    next(endOfRound : boolean) : void {
+      this.state.storeTurn({
+        turn: this.turn,
+        round: this.navigationState.round,
+        player: Player.PLAYER
+      })
+      if (endOfRound) {
+        this.router.push(this.routeCalculator.getNextRouteToEndOfRound())
+      }
+      else {
+        this.router.push(this.routeCalculator.getNextRouteTo())
+      }
     }
   }
 })

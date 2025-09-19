@@ -19,7 +19,7 @@ export default class RouteCalculator {
   constructor(params:{turn: number, route: RouteLocation, state: State}) {
     this.turn = params.turn
     this.state = params.state
-    this.currentPlayer = params.route.name?.toString().match(JEAN_TURN_REGEX) ? Player.PLAYER : Player.BOT
+    this.currentPlayer = params.route.name?.toString().match(JACQUES_TURN_REGEX) ? Player.PLAYER : Player.BOT
     this.nextPlayer = this.currentPlayer == Player.BOT ? Player.PLAYER : Player.BOT
     this.endOfRound = params.route.name?.toString().match(ENDOFROUND_REGEX) ? true : false
     this.previousTurn = this.state.turns.find(item => item.turn == this.turn - 1)
@@ -36,7 +36,7 @@ export default class RouteCalculator {
    * Get route to next step in round.
    */
   public getNextRouteTo() : string {
-    return `/jean/turn/${this.turn + 1}/${this.nextPlayer}`
+    return `/jacques/turn/${this.turn + 1}/${this.nextPlayer}`
   }
 
   /**
@@ -44,10 +44,10 @@ export default class RouteCalculator {
    */
   public getNextRouteToEndOfRound() : string {
     if (this.round == 4) {
-      return `/jean/turn/${this.turn + 1}/endOfGame`
+      return `/jacques/turn/${this.turn + 1}/endOfGame`
     }
     else {
-      return `/jean/turn/${this.turn + 1}/${this.currentPlayer}/endOfRound`
+      return `/jacques/turn/${this.turn + 1}/${this.currentPlayer}/endOfRound`
     }
   }
 
@@ -59,14 +59,14 @@ export default class RouteCalculator {
       return ''
     }
     else if (this.previousTurn?.endOfRound) {
-      return `/jean/turn/${this.turn - 1}/${this.previousTurn.player}/endOfRound`
+      return `/jacques/turn/${this.turn - 1}/${this.previousTurn.player}/endOfRound`
     }
     else {
-      return `/jean/turn/${this.turn - 1}/${this.previousTurn?.player ?? Player.PLAYER}`
+      return `/jacques/turn/${this.turn - 1}/${this.previousTurn?.player ?? Player.PLAYER}`
     }
   }
 
 }
 
-const JEAN_TURN_REGEX = /^JeanTurnPlayer(.*)?$/
+const JACQUES_TURN_REGEX = /^JacquesTurnPlayer(.*)?$/
 const ENDOFROUND_REGEX = /^.*EndOfRound$/

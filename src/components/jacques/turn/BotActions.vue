@@ -75,7 +75,7 @@ export default defineComponent({
   methods: {
     next() : void {
       const botField20 = this.action?.action == Action.END_ROUND
-      this.$emit('next', {vp:this.navigationState.currentCard.vp}, botField20)
+      this.$emit('next', {vp:this.turnVp}, botField20)
     }
   }
 })

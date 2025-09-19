@@ -3,7 +3,7 @@
     <template #action>
       <div class="explore">
         <div class="amount">{{action.exploreSteps}}</div>
-        <AppIcon name="explorer-track" class="icon"/>
+        <AppIcon name="quest-discard" class="icon"/>
       </div>
     </template>
     <template #instruction>

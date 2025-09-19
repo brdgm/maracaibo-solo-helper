@@ -136,6 +136,15 @@
         "quest": "Befindet sich eine Quest in Reichweite seines Entdeckers, zieht er ihn dort hin und nimmt sie (und lässt möglicherweise Felder verfallen).",
         "shortestPath": "Andernfalls wählt er immer den kürzestmöglichen Weg.",
         "noRewards": "Die Belohnung für das Überschreiten der Barriere oder der Ankunft am Zielfeld erhält Jacques nicht, reduziert allerdings den Bonus für deinen Entdecker."
+      },
+      "cityDisc": {
+        "title": "Scheibe in Stadt platzieren",
+        "place": "Jacques legt eine Scheibe aus dem Vorrat auf ein Lagerfeld der Stadt mit der Nummer <b>{cityNumber}</b>.",
+        "noPlace": "Dies entfällt, wenn alle Lagerplätze an diesem Ort schon besetzt sind."
+      },
+      "vp": {
+        "title": "Siegpunkte",
+        "get": "Jacques erhält <b>{amount}</b> Siegpunkt. | Jacques erhält <b>{amount}</b> Siegpunkte."
       }
     }
   },

@@ -1,17 +1,15 @@
 <template>
   <ActionBox :instructionTitle="t('jacques.action.cityDisc.title')" :modalSizeLg="true">
     <template #action>
-      <div class="explore">
-        <div class="amount">{{action.exploreSteps}}</div>
-        <AppIcon name="explorer-track" class="icon"/>
+      <div class="city-disc">
+        <AppIcon name="city-disc" class="icon"/>
+        <div class="number">{{action.cityNumber}}</div>
       </div>
     </template>
     <template #instruction>
       <ul>
-        <li v-html="t('jean.action.explore.move', {amount: action.exploreSteps}, action.exploreSteps ?? 0)"></li>
-        <li v-html="t('jean.action.explore.quest')"></li>
-        <li v-html="t('jean.action.explore.shortestPath')"></li>
-        <li v-html="t('jean.action.explore.noRewards')"></li>
+        <li v-html="t('jacques.action.cityDisc.place', {cityNumber:action.cityNumber})"></li>
+        <li v-html="t('jacques.action.cityDisc.noPlace')"></li>
       </ul>
     </template>
   </ActionBox>
@@ -52,18 +50,28 @@ export default defineComponent({
 </script>
 
 <style lang="scss" scoped>
-.explore {
+.city-disc {
   display: flex;
-  align-items: center;
-  .amount {
-    margin-right: 0.25rem;
-    font-size: 2rem;
-    font-weight: bold;
-    color: white;
-    text-shadow: -2px -2px 0 #000, 2px -2px 0 #000, -2px 2px 0 #000, 2px 2px 0 #000;
-  }
+  flex-direction: column;
+  align-items: end;
   .icon {
-    width: 3rem;
+    width: 4rem;
+    margin-right: 0.25rem;
+  }
+  .number {
+    width: 2rem;
+    height: 2rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: #00a3d8;
+    border: 2px solid #110617;
+    border-radius: 50%;
+    font-weight: bold;
+    font-size: 1.25rem;
+    color: white;
+    text-shadow: -1px -1px 0 #000, 1px -1px 0 #000, -1px 1px 0 #000, 1px 1px 0 #000;
+    padding-bottom: 0.1rem;
   }
 }
 </style>

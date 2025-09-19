@@ -136,6 +136,15 @@
         "quest": "If a quest tile is within his movement limit, he moves to it and stops (forgoing any additional movement).",
         "shortestPath": "Otherwise, he always chooses the shortest path.",
         "noRewards": "Jacques doesn't get any rewards for crossing barriers or reaching the end of the explorer track, however he does reduce your explorer's bonuses."
+      },
+      "cityDisc": {
+        "title": "Place City Disc",
+        "place": "Jacques adds a disc from the supply to the market of the city with number <b>{cityNumber}</b>.",
+        "noPlace": "This does not happen if the location‘s market is full."
+      },
+      "vp": {
+        "title": "Victory Points",
+        "get": "Jacques gains <b>{amount}</b> victory point. | Jacques gains <b>{amount}</b> victory points."
       }
     }
   },

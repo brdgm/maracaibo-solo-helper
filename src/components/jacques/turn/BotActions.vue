@@ -2,6 +2,9 @@
   <div class="mt-3">
     <component v-if="action" :is="`action-${action.action}`" :navigationState="navigationState" :action="action"/>
   </div>
+  <div class="mt-3">
+    <ActionVp :vp="navigationState.currentCard.vp"/>
+  </div>
 
   <button class="btn btn-primary btn-lg mt-4 me-2" @click="next(false)">
     {{t('action.next')}}
@@ -18,6 +21,7 @@ import ActionCityDisc from './action/ActionCityDisc.vue'
 import ActionEndRound from './action/ActionEndRound.vue'
 import ActionExplore from './action/ActionExplore.vue'
 import ActionQuest from './action/ActionQuest.vue'
+import ActionVp from './action/ActionVp.vue'
 
 export default defineComponent({
   name: 'BotActions',
@@ -28,7 +32,8 @@ export default defineComponent({
     ActionCityDisc,
     ActionEndRound,
     ActionExplore,
-    ActionQuest
+    ActionQuest,
+    ActionVp
   },
   props: {
     navigationState: {
@@ -51,7 +56,7 @@ export default defineComponent({
   },
   methods: {
     next(endRound: boolean) : void {
-      this.$emit('next', {vp:0}, endRound)
+      this.$emit('next', {vp:this.navigationState.currentCard.vp}, endRound)
     }
   }
 })

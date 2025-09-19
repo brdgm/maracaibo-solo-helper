@@ -128,6 +128,17 @@
       }
     }
   },
+  "jacques": {
+    "action": {
+      "explore": {
+        "title": "Move Explorer",
+        "move": "Jacques moves his explorer <b>{amount} space</b> forward. | Jacques moves his explorer <b>{amount} spaces</b> forward.",
+        "quest": "If a quest tile is within his movement limit, he moves to it and stops (forgoing any additional movement).",
+        "shortestPath": "Otherwise, he always chooses the shortest path.",
+        "noRewards": "Jacques doesn't get any rewards for crossing barriers or reaching the end of the explorer track, however he does reduce your explorer's bonuses."
+      }
+    }
+  },
   "sideBar": {
     "round": "Round {round}",
     "turn": "Turn {turn}"

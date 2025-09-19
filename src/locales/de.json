@@ -128,6 +128,17 @@
       }
     }
   },
+  "jacques": {
+    "action": {
+      "explore": {
+        "title": "Entdecker bewegen",
+        "move": "Jacques bewegt seinen Entdecker <b>{amount} Feld</b> weiter. | Jacques bewegt seinen Entdecker <b>{amount} Felder</b> weiter.",
+        "quest": "Befindet sich eine Quest in Reichweite seines Entdeckers, zieht er ihn dort hin und nimmt sie (und lässt möglicherweise Felder verfallen).",
+        "shortestPath": "Andernfalls wählt er immer den kürzestmöglichen Weg.",
+        "noRewards": "Die Belohnung für das Überschreiten der Barriere oder der Ankunft am Zielfeld erhält Jacques nicht, reduziert allerdings den Bonus für deinen Entdecker."
+      }
+    }
+  },
   "sideBar": {
     "round": "Runde {round}",
     "turn": "Zug {turn}"

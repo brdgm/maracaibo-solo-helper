@@ -46,7 +46,7 @@
   <p class="finalScore" v-html="t('jean.endOfGame.finalScore', {score: botTotalVP})"></p>
   
 
-  <FooterButtons :backButtonRouteTo="backButtonRouteTo" endGameButtonType="abortGame"/>
+  <FooterButtons :backButtonRouteTo="backButtonRouteTo" endGameButtonType="endGame"/>
 </template>
 
 <script lang="ts">

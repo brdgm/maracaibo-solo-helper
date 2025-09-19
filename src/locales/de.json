@@ -151,7 +151,8 @@
       "endRound": {
         "title": "Runde beenden",
         "nextTurn": "Jacques wird die Runde <b>im nächsten Zug</b> beenden.",
-        "twoTurns": "Jacques wird die Runde <b>im übernächsten Zug</b> beenden."
+        "twoTurns": "Jacques wird die Runde <b>im übernächsten Zug</b> beenden.",
+        "now": "Jacques beendet die Runde."
       },
       "vp": {
         "title": "Siegpunkte",

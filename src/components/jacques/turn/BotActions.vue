@@ -1,9 +1,10 @@
 <template>
   <div class="mt-3">
-    <component v-if="action" :is="`action-${action.action}`" :navigationState="navigationState" :action="action"/>
+    <ActionEndRoundInfo v-if="navigationState.botEndRound || navigationState.botEndRoundNextTurn" :navigationState="navigationState"/>
+    <component v-else-if="action" :is="`action-${action.action}`" :navigationState="navigationState" :action="action"/>
   </div>
   <div class="mt-3">
-    <ActionVp :vp="navigationState.currentCard.vp"/>
+    <ActionVp :vp="turnVp"/>
   </div>
 
   <button class="btn btn-primary btn-lg mt-4 me-2" @click="next()">
@@ -23,6 +24,7 @@ import ActionExplore from './action/ActionExplore.vue'
 import ActionQuest from './action/ActionQuest.vue'
 import ActionVp from './action/ActionVp.vue'
 import Action from '@/services/jacques/enum/Action'
+import ActionEndRoundInfo from './action/ActionEndRoundInfo.vue'
 
 export default defineComponent({
   name: 'BotActions',
@@ -34,7 +36,8 @@ export default defineComponent({
     ActionEndRound,
     ActionExplore,
     ActionQuest,
-    ActionVp
+    ActionVp,
+    ActionEndRoundInfo
   },
   props: {
     navigationState: {
@@ -52,7 +55,21 @@ export default defineComponent({
   },
   computed: {
     action() : CardAction|undefined {
+      if (this.navigationState.botEndRound || this.navigationState.botEndRoundNextTurn) {
+        return undefined
+      }
       return this.navigationState.currentCard.actions[this.navigationState.botAction]
+    },
+    turnVp() : number {
+      if (this.navigationState.botEndRound) {
+        return 15
+      }
+      else if (this.navigationState.botEndRoundNextTurn) {
+        return 0
+      }
+      else {
+        return this.navigationState.currentCard.vp
+      }
     }
   },
   methods: {

@@ -61,8 +61,7 @@ export default defineComponent({
         turn.botField20 = true
       }
       this.state.storeTurn(turn)
-      const endOfRound = false  // TODO: determine
-      if (endOfRound) {
+      if (this.navigationState.botEndRound) {
         this.router.push(this.routeCalculator.getNextRouteToEndOfRound())
       }
       else {

@@ -151,7 +151,8 @@
       "endRound": {
         "title": "End Round",
         "nextTurn": "Jacques will end round <b>next turn</b>.",
-        "twoTurns": "Jacques will end round <b>in two turns</b>."
+        "twoTurns": "Jacques will end round <b>in two turns</b>.",
+        "now": "Jacques ends the round."
       },
       "vp": {
         "title": "Victory Points",

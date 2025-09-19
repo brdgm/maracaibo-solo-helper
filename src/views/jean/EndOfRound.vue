@@ -4,7 +4,7 @@
 
   <ul class="mt-3">
     <li v-html="t('jean.endOfRound.interimScoring')"></li>
-    <li v-html="t('jean.endOfRound.botVP', {count: botVP})"></li>
+    <li v-html="t('jean.endOfRound.botVP', {count: botIncomeVP})"></li>
   </ul>
 
   <button class="btn btn-primary btn-lg mt-4 me-2" @click="next">
@@ -46,7 +46,7 @@ export default defineComponent({
     backButtonRouteTo() : string {
       return this.routeCalculator.getBackRouteTo()
     },
-    botVP() : number {
+    botIncomeVP() : number {
       return getRoundVP(this.navigationState.jean)
     }
   },
@@ -59,7 +59,7 @@ export default defineComponent({
         botPersistence: {
           cardDeck: this.navigationState.cardDeck.toPersistence(),
           jean: mergeBotPersistence(this.navigationState.jean,
-              {questCount: 0, projectCardCount: 0, discRemovedCount: 0, vp: this.botVP})
+              {questCount: 0, projectCardCount: 0, discRemovedCount: 0, vp: this.botIncomeVP})
         },
         endOfRound: true
       })

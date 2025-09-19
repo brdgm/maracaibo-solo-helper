@@ -44,7 +44,7 @@ export default class RouteCalculator {
    */
   public getNextRouteToEndOfRound() : string {
     if (this.round == 4) {
-      return `/jean/turn/${this.turn + 1}/${this.currentPlayer}/endOfGame`
+      return `/jean/turn/${this.turn + 1}/endOfGame`
     }
     else {
       return `/jean/turn/${this.turn + 1}/${this.currentPlayer}/endOfRound`

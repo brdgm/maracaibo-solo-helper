@@ -58,6 +58,10 @@
       "interimScoring": "Execute the interim scoring.",
       "botVP": "During income, Jean gains <b>{count} victory point</b>. | During income, Jean gains <b>{count} victory points</b>."
     },
+    "endOfGame": {
+      "title": "End of Game",
+      "finalScoring": "Execute the final scoring."
+    },
     "action": {
       "moveShip": {
         "title": "Move Ship",

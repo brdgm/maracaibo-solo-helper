@@ -8,7 +8,7 @@ import SetupGame from '@/views/SetupGame.vue'
 import JeanTurnPlayer from '@/views/jean/TurnPlayer.vue'
 import JeanTurnBot from '@/views/jean/TurnBot.vue'
 import JeanEndOfRound from '@/views/jean/EndOfRound.vue'
-import JeanGameEnd from '@/views/jean/GameEnd.vue'
+import JeanEndOfGame from '@/views/jean/EndOfGame.vue'
 import JacquesTurnPlayer from '@/views/jacques/TurnPlayer.vue'
 import JacquesTurnBot from '@/views/jacques/TurnBot.vue'
 import JacquesGameEnd from '@/views/jacques/GameEnd.vue'
@@ -52,9 +52,9 @@ const routes: Array<RouteRecordRaw> = [
     component: JeanEndOfRound
   },
   {
-    path: '/jean/gameEnd',
+    path: '/jean/turn/:turn/endOfGame',
     name: 'JeanGameEnd',
-    component: JeanGameEnd
+    component: JeanEndOfGame
   },
   {
     path: '/jacques/turn/:turn/player',

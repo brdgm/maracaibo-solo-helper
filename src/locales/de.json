@@ -58,6 +58,10 @@
       "interimScoring": "Führe die Zwischenwertung durch.",
       "botVP": "Jean erhält <b>{count} Siegpunkt</b> in der Einkommensphase. | Jean erhält <b>{count} Siegpunkte</b> in der Einkommensphase."
     },
+    "endOfGame": {
+      "title": "Spielende",
+      "finalScoring": "Führe die Endwertung durch."
+    },
     "action": {
       "moveShip": {
         "title": "Schiff bewegen",

@@ -1,0 +1,246 @@
+{
+  "gameTitle": "Maracaibo",
+  "home": {
+    "title": "Maracaibo Solo Helper",
+    "play1": "Play a <a href='https://boardgamegeek.com/boardgame/276025/maracaibo' target='_blank' rel='noopener'><b>Maracaibo</b></a> solo game against Jean or Jacques, the solo opponents.",
+    "play2": "You can play with or without the expansion <a href='https://boardgamegeek.com/boardgameexpansion/338013/maracaibo-the-uprising' target='_blank' rel='noopener'>The Uprising</a>.",
+    "feedback": "Discussion and Feedback:"
+  },
+  "setup": {
+    "title": "Setup Application",
+    "botSelection": {
+      "title": "Your Opponent"
+    },
+    "difficultyLevel": {
+      "title": "Difficulty Level",
+      "easy": "Easy",
+      "hard": "Hard"
+    }
+  },
+  "setupGame": {
+    "title": "Setup Game",
+    "jean": {
+      "intro": "Setup the game up as for a 2-player game, with the following changes:",
+      "chooseColor": "Choose a color for Jean.",
+      "setupMarkers": "Setup her ship, explorer, and influence markers as usual.",
+      "noFigures": "She does not use her figures.",
+      "noShipBoard": "She doesn't need a ship board.",
+      "noDoubloons": "She does not collect doubloons or combat points.",
+      "noProjectCards": "She does not receive any project cards at the start of the game.",
+      "automaNote": "The Automa board and Automa cards are not required, they are managed by the application. Jean's victory points are tracked automatically."
+    },
+    "jacques": {
+      "intro": "Setup the game according to the human player count. If you play solo, setup as a 2-player game.",
+      "noPlayerMaterial": "Jacques does not use any player material.",
+      "explorerMarker": "Place his explorer marker on the start of the explorer track.",
+      "automaNote": "Jacques' Automa cards are not required, they are managed by the application. His victory points are tracked automatically.",
+      "questTiles": "Keep the quest tiles Jacques claims during the game - they are needed for final scoring."
+    }
+  },
+  "turnPlayer": {
+    "title": "Your turn",
+    "takeTurn": "Take your turn."
+  },
+  "endRound": {
+    "title": "End Round",
+    "reachedLastSpace": "Reached final space {space}",
+    "endRoundConfirm": "End round {round}."
+  },
+  "jean": {
+    "turnBot": {
+      "foundQuest": "Jean found a quest",
+      "noQuest": "No Quest",
+      "cityMarketSpace": "Place disc from supply<br/>in free market space",
+      "removeCard": "Remove card {card}<br/>from display"
+    },
+    "endOfRound": {
+      "title": "End of Round {round}",
+      "interimScoring": "Execute the interim scoring.",
+      "botVP": "During income, Jean gains <b>{count} victory point</b>. | During income, Jean gains <b>{count} victory points</b>."
+    },
+    "endOfGame": {
+      "title": "End of Game",
+      "finalScoring": "Execute the final scoring.",
+      "additionalBonusPoints": "Additionally, Jean scores:",
+      "table": {
+        "condition": "Condition",
+        "player": "You",
+        "bot": "Jean",
+        "botVP": "Jean VP",
+        "influence": "Score Jean's influence marker",
+        "questTiles": "Quest tiles",
+        "shipUpgrades": "Ship Upgrades",
+        "explorerStepsAhead": "Number of steps Jean's explorer is ahead of yours*"
+      },
+      "explorerNote": "* If the explorers are on different branches of the path, count how far each explorer is away from the next barrier. The explorer who needs fewer spaces to reach the barrier counts as 'ahead'.",
+      "finalScore": "Jean's final score: <b>{score} VP</b>"
+    },
+    "action": {
+      "moveShip": {
+        "title": "Move Ship",
+        "upperRoute": "If there is a choice: use the upper route.",
+        "lowerRoute": "If there is a choice: use the lower route.",
+        "ignoreVillages": "Jean ignores all villages without quests. These are not-counted spaces! This means that Jean will always end her movement in either a city or a location with a quest.",
+        "cannotSkipHand": "Jean cannot skip locations with the hand symbol, such as the 'homeward bound' spaces. This means that once she reaches space 20, she only every moves to the next space.",
+        "legacyTiles": "If legacy tiles reveal new cities, these also count for Jean."
+      },
+      "influence": {
+        "title": "Influence",
+        "get": "Jean gains <b>{count}</b> influence for <b>{nation}</b>."
+      },
+      "vp": {
+        "title": "Victory Points",
+        "get": "Jean gains <b>{amount}</b> victory point. | Jean gains <b>{amount}</b> victory points."
+      },
+      "reduceCombat": {
+        "title": "Pay Combat Points",
+        "reduce": "Pay <b>{amount}</b> combat point. | Pay <b>{amount}</b> combat points.",
+        "noPoints": "If you cannot, <b>enter in the text field</b> how many combat points you could actually pay. Jean scores {amount} VP for each missing combat point.",
+        "enterPoints": "Combat points<br>paid:"
+      },
+      "questPile": {
+        "title": "Take Quest Tile",
+        "take": "Jean removes a quest tile from the pile."
+      },
+      "removeDisc": {
+        "title": "Remove Disc",
+        "remove": "Jean removes a disc for ship upgrades (managed by the application)."
+      },
+      "explore": {
+        "title": "Move Explorer",
+        "move": "Jean moves her explorer <b>{amount} spaces</b> forward.",
+        "quest": "If a quest tile is within her movement limit, she moves to it and stops (forgoing any additional movement).",
+        "shortestPath": "Otherwise, she always chooses the shortest path.",
+        "noRewards": "Jean doesn't get any rewards for crossing barriers or reaching the end of the explorer track, however she does reduce your explorer's bonuses."
+      },
+      "combat": {
+        "title": "Combat",
+        "max": "Max.",
+        "tie": "Tie:",
+        "instruction": {
+          "token": "Reveal a combat token.",
+          "highestCombatValue": "Jean will pick the nation with the highest modified combat value.",
+          "modifyValue": "Determine the modified combat value for each nation. For each nation, first add Jean's noble rank with that nation to the combat value indicated by the combat token. Then subtract your noble rank with that nation from the total. Noble ranks are the last red band you or Jean reached on the corresponding influence track. If the combat token shows a requirement that modifies a nation's combat value, then apply it. Jean ignores any costs or immediate bonuses on the combat token.",
+          "tie": "In case of a tie, Jean chooses the nation with the highest combat value on the combat token (ignoring any modifications or bonuses). If there is still a tie, she preferentially chooses France, then Spain and finally England.",
+          "annexCity": "Jean now annexes the lowest-numbered, empty city (without receiving the reward shown on the flag of this city). If there aren't any empty cities, she annexes the lowest-numbered empty village instead. If there aren't any of those either, then she removes the ownership marker from the game.",
+          "annexVillage": "Jean annexes an additional empty village according to the rules above.",
+          "influence": "Finally, Jean gets the indicated influence with the nation she fought with."
+        }
+      }
+    },
+    "rules": {
+      "legacytiles": {
+        "title": "Legacy Tiles",
+        "item1": "L4, L7: Jean can only sail to or annex this city if her explorer has reached or passed the required space.",
+        "item2": "L2, L5, L6, L8, L10-25: Jean ignores these tiles.",
+        "item3": "L10-L17: When one of these tiles enters the game, in addition to the 2-player rule (L11-L17: Place a disk on the legacy tile), take another disc from the box and add it to the tile, occupying another space."
+      }
+    }
+  },
+  "jacques": {
+    "endOfRound": {
+      "title": "End of Round {round}",
+      "interimScoring": "Execute the interim scoring.",
+      "botNoScoring": "Jacques doesn't score any additional victory points."
+    },
+    "endOfGame": {
+      "title": "End of Game",
+      "finalScoring": "Execute the final scoring.",
+      "playerGainPoints": {
+        "title": "You <b>gain</b> points if:",
+        "explorer": "Your explorer is ahead* of Jacques: <b>+5VP</b>",
+        "quests": "You have more quests than Jacques: <b>+5VP</b>"
+      },
+      "playerLoosePoints": {
+        "title": "You <b>lose</b> points if:",
+        "explorer": "Your explorer is behind* of Jacques: <b>-5VP</b>",
+        "quests": "You have fewer quests than Jacques: <b>-5VP</b>"
+      },
+      "explorerNote": "* If explorers are on different paths, count the number of spaces to the next barrier.",
+      "finalScore": "Jacques' final score: <b>{score} VP</b>"
+    },
+    "action": {
+      "explore": {
+        "title": "Move Explorer",
+        "move": "Jacques moves his explorer <b>{amount} space</b> forward. | Jacques moves his explorer <b>{amount} spaces</b> forward.",
+        "quest": "If a quest tile is within his movement limit, he moves to it and stops to claim the quest (forgoing any additional movement).",
+        "shortestPath": "Otherwise, he always chooses the shortest path.",
+        "noRewards": "Jacques doesn't get any rewards for crossing barriers or reaching the end of the explorer track, however he does reduce your explorer's bonuses."
+      },
+      "cityDisc": {
+        "title": "Place City Disc",
+        "place": "Jacques adds a disc from the supply to the market of the city with number <b>{cityNumber}</b>.",
+        "noPlace": "This does not happen if the location‘s market is full."
+      },
+      "quest": {
+        "title": "Claim Quest",
+        "selectLocation": "Jacques claims a quest from a location with the lowest number <b>between {from} and {to}</b>.",
+        "none": "If there are none, he takes the topmost quest from the pile instead.",
+        "multiple": "If there are multiple quests at a location, choose for him."
+      },
+      "endRound": {
+        "title": "End Round",
+        "nextTurn": "Jacques will end round <b>next turn</b>.",
+        "twoTurns": "Jacques will end round <b>in two turns</b>.",
+        "now": "Jacques ends the round."
+      },
+      "vp": {
+        "title": "Victory Points",
+        "get": "Jacques gains <b>{amount}</b> victory point. | Jacques gains <b>{amount}</b> victory points."
+      }
+    }
+  },
+  "sideBar": {
+    "round": "Round {round}",
+    "turn": "Turn {turn}"
+  },
+  "bot": {
+    "jean": "Jean",
+    "jacques": "Jacques"
+  },
+  "difficultyLevel": {
+    "jean": {
+      "1": "Level 1 - Very easy",
+      "2": "Level 2 - Easy",
+      "3": "Level 3 - Medium",
+      "4": "Level 4 - Hard",
+      "5": "Level 5 - Very hard"
+    },
+    "jacques": {
+      "1": "Level 1 - Simple („Deck Scrubber“)",
+      "2": "Level 2 - Medium („Keel Diver“)",
+      "3": "Level 3 - Hard („Navigator“)",
+      "4": "Level 4 - Very hard („Commodore“)"
+    }
+  },
+  "nation": {
+    "france": "France",
+    "spain": "Spain",
+    "england": "England"
+  },
+  "notfound": {
+    "title": "Not Found"
+  },
+  "action": {
+    "playGame": "Play Game",
+    "startGame": "Start Game",
+    "next": "Next",
+    "nextRound": "Next Round",
+    "abortGame": "Abort Game",
+    "abortGameConfirm": "Aborting the running game - are you sure?",
+    "endGame": "End Game",
+    "endGameConfirm": "End this game and return to home screen - are you sure?",
+    "cancel": "Cancel",
+    "backToHome": "Back to Home",
+    "back": "Back",
+    "close": "Close",
+    "ok": "OK"
+  },
+  "footer": {
+    "credits": "Credits"
+  },
+  "serviceWorkerUpdatedRefresh": {
+    "title": "Refresh Application",
+    "notice": "The application was updated - do you want to refresh to use the latest version?"
+  }
+}

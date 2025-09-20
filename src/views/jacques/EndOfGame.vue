@@ -20,7 +20,8 @@
   <p class="small fst-italic" v-html="t('jacques.endOfGame.explorerNote')"></p>
 
   <p class="finalScore" v-html="t('jacques.endOfGame.finalScore', {score: jacques.vp})"></p>
-  
+
+  <p class="small">{{t('setup.difficultyLevel.title')}}: <b>{{t(`difficultyLevel.jacques.${state.setup.difficultyLevel}`)}}</b></p>
 
   <FooterButtons :backButtonRouteTo="backButtonRouteTo" endGameButtonType="endGame"/>
 </template>

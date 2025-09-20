@@ -44,7 +44,8 @@
   <p class="small fst-italic" v-html="t('jean.endOfGame.explorerNote')"></p>
 
   <p class="finalScore" v-html="t('jean.endOfGame.finalScore', {score: botTotalVP})"></p>
-  
+
+  <p class="small">{{t('setup.difficultyLevel.title')}}: <b>{{t(`difficultyLevel.jean.${state.setup.difficultyLevel}`)}}</b></p>
 
   <FooterButtons :backButtonRouteTo="backButtonRouteTo" endGameButtonType="endGame"/>
 </template>

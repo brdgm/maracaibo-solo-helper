@@ -3,7 +3,7 @@ import getRoundVP from '@/util/jean/getRoundVP'
 
 describe('util/jean/getRoundVP', () => {
   it('getRoundVP', () => {
-    expect(getRoundVP(undefined)).to.eq(0)
+    expect(getRoundVP()).to.eq(0)
     expect(getRoundVP({questCount:0, discRemovedCount:0, projectCardCount:0, vp:0})).to.eq(0)
     expect(getRoundVP({questCount:0, discRemovedCount:1, projectCardCount:0, vp:0})).to.eq(0)
     expect(getRoundVP({questCount:0, discRemovedCount:2, projectCardCount:0, vp:0})).to.eq(1)

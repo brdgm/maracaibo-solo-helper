@@ -32,7 +32,7 @@ describe('util/jean/mergeBotPersistence', () => {
       discRemovedCount: 3,
       vp: 4
     }
-    const result = mergeBotPersistence(a, undefined)
+    const result = mergeBotPersistence(a)
     expect(result).toEqual({
       questCount: 1,
       projectCardCount: 2,

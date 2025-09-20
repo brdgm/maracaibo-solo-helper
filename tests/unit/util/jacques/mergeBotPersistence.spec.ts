@@ -20,7 +20,7 @@ describe('util/jacques/mergeBotPersistence', () => {
     const a: JacquesBotPersistence = {
       vp: 4
     }
-    const result = mergeBotPersistence(a, undefined)
+    const result = mergeBotPersistence(a)
     expect(result).toEqual({
       vp: 4
     })

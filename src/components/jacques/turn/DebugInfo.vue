@@ -4,7 +4,7 @@
     <p class="debug">
       <b>cardDeck</b>: {{navigationState.cardDeck.toPersistence()}}<br/>
       <b>currentCard</b>: {{navigationState.currentCard}}<br/>
-      <b>botAction</b>: {{navigationState.botAction}}<br/>
+      <b>botAction</b>: {{navigationState.botAction+1}} ➔ {{navigationState.currentCard.actions[navigationState.botAction]}}<br/>
     </p>
   </div>
 </template>

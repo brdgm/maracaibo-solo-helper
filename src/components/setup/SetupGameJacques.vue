@@ -2,7 +2,6 @@
   <p>{{t('setupGame.jacques.intro')}}</p>
   <ul>
     <li>{{t('setupGame.jacques.noPlayerMaterial')}}</li>
-    <li>{{t('setupGame.jacques.victoryPointMarker')}}</li>
     <li>{{t('setupGame.jacques.explorerMarker')}}</li>
   </ul>
   <p>{{t('setupGame.jacques.automaNote')}}</p>

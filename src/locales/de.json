@@ -22,19 +22,18 @@
     "jean": {
       "intro": "Bereite das Spiel wie gewohnt für 2 Spieler vor, mit diesen Änderungen:",
       "chooseColor": "Wähle eine Farbe für Jean.",
-      "setupMarkers": "Bereite ihr Schiff, ihren Entdecker, ihren Siegpunktmarker und Einflussmarker wie gewohnt vor.",
+      "setupMarkers": "Bereite ihr Schiff, ihren Entdecker, und Einflussmarker wie gewohnt vor.",
       "noFigures": "Sie verwendet ihre Figuren nicht.",
       "noShipBoard": "Sie braucht kein Schiffstableau.",
       "noDoubloons": "Sie sammelt keine Dublonen oder Kampfpunkte.",
       "noProjectCards": "Sie erhält keine Projektkarten zu Spielbeginn.",
-      "automaNote": "Das Automa-Tableau und die Automakarten werden nicht benötigt, sie werden von der Anwendung verwaltet."
+      "automaNote": "Das Automa-Tableau und die Automakarten werden nicht benötigt, sie werden von der Anwendung verwaltet. Jeans Siegpunkte werden automatisch gezählt."
     },
     "jacques": {
       "intro": "Bereite das Spiel entsprechend der Anzahl menschlicher Spieler vor. Beim Solospiel bereite es als 2-Spieler-Spiel vor.",
       "noPlayerMaterial": "Jacques verwendet kein Spielermaterial.",
-      "victoryPointMarker": "Platziere seinen Siegpunktmarker auf Feld 0 der Siegpunktleiste",
       "explorerMarker": "Platziere seinen Entdeckermarker am Start der Entdeckerleiste.",
-      "automaNote": "Jacques' Automakarten werden nicht benötigt, sie werden von der Anwendung verwaltet."
+      "automaNote": "Jacques' Automakarten werden nicht benötigt, sie werden von der Anwendung verwaltet. Seine Siegpunkte werden automatisch gezählt."
     }
   },
   "turnPlayer": {
@@ -165,8 +164,8 @@
       },
       "quest": {
         "title": "Quest nehmen",
-        "selectLocation": "Jacques wirft eine Quest von einem Ort mit der niedrigsten Nummer <b>zwischen {from} und {to}</b> ab.",
-        "none": "Findet sich keine Quest an diesen Orten, wirft er die oberste Quest des Queststapels ab.",
+        "selectLocation": "Jacques nimmt eine Quest von einem Ort mit der niedrigsten Nummer <b>zwischen {from} und {to}</b>.",
+        "none": "Findet sich keine Quest an diesen Orten, nimmt er die oberste Quest des Queststapels.",
         "multiple": "Befinden sich mehrere Quests an einem Ort, wählst du aus."
       },
       "endRound": {

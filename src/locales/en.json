@@ -22,19 +22,18 @@
     "jean": {
       "intro": "Setup the game up as for a 2-player game, with the following changes:",
       "chooseColor": "Choose a color for Jean.",
-      "setupMarkers": "Setup her ship, explorer, victory point marker and influence markers as usual.",
+      "setupMarkers": "Setup her ship, explorer, and influence markers as usual.",
       "noFigures": "She does not use her figures.",
       "noShipBoard": "She doesn't need a ship board.",
       "noDoubloons": "She does not collect doubloons or combat points.",
       "noProjectCards": "She does not receive any project cards at the start of the game.",
-      "automaNote": "The Automa board and Automa cards are not required, they are managed by the application."
+      "automaNote": "The Automa board and Automa cards are not required, they are managed by the application. Jean's victory points are tracked automatically."
     },
     "jacques": {
       "intro": "Setup the game according to the human player count. If you play solo, setup as a 2-player game.",
       "noPlayerMaterial": "Jacques does not use any player material.",
-      "victoryPointMarker": "Place his victory point marker on space 0 of the victory point track",
       "explorerMarker": "Place his explorer marker on the start of the explorer track.",
-      "automaNote": "Jacques' Automa cards are not required, they are managed by the application."
+      "automaNote": "Jacques' Automa cards are not required, they are managed by the application. His victory points are tracked automatically."
     }
   },
   "turnPlayer": {
@@ -73,7 +72,7 @@
         "explorerStepsAhead": "Number of steps Jean's explorer is ahead of yours*"
       },
       "explorerNote": "* If the explorers are on different branches of the path, count how far each explorer is away from the next barrier. The explorer who needs fewer spaces to reach the barrier counts as 'ahead'.",
-      "finalScore": "Jeans' final score: <b>{score} VP</b>"
+      "finalScore": "Jean's final score: <b>{score} VP</b>"
     },
     "action": {
       "moveShip": {
@@ -148,13 +147,13 @@
         "quests": "You have fewer quests than Jacques: <b>-5VP</b>"
       },
       "explorerNote": "* If explorers are on different paths, count the number of spaces to the next barrier.",
-      "finalScore": "Jacques final score: <b>{score} VP</b>"
+      "finalScore": "Jacques' final score: <b>{score} VP</b>"
     },
     "action": {
       "explore": {
         "title": "Move Explorer",
         "move": "Jacques moves his explorer <b>{amount} space</b> forward. | Jacques moves his explorer <b>{amount} spaces</b> forward.",
-        "quest": "If a quest tile is within his movement limit, he moves to it and stops (forgoing any additional movement).",
+        "quest": "If a quest tile is within his movement limit, he moves to it and stops to claim the quest (forgoing any additional movement).",
         "shortestPath": "Otherwise, he always chooses the shortest path.",
         "noRewards": "Jacques doesn't get any rewards for crossing barriers or reaching the end of the explorer track, however he does reduce your explorer's bonuses."
       },
@@ -165,8 +164,8 @@
       },
       "quest": {
         "title": "Claim Quest",
-        "selectLocation": "Jacques discards a quest from a location with the lowest number <b>between {from} and {to}</b>.",
-        "none": "If there are none, he discards the topmost quest from the pile instead.",
+        "selectLocation": "Jacques claims a quest from a location with the lowest number <b>between {from} and {to}</b>.",
+        "none": "If there are none, he takes the topmost quest from the pile instead.",
         "multiple": "If there are multiple quests at a location, choose for him."
       },
       "endRound": {

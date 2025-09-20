@@ -11,7 +11,8 @@ import JeanEndOfRound from '@/views/jean/EndOfRound.vue'
 import JeanEndOfGame from '@/views/jean/EndOfGame.vue'
 import JacquesTurnPlayer from '@/views/jacques/TurnPlayer.vue'
 import JacquesTurnBot from '@/views/jacques/TurnBot.vue'
-import JacquesGameEnd from '@/views/jacques/GameEnd.vue'
+import JacquesEndOfRound from '@/views/jacques/EndOfRound.vue'
+import JacquesEndOfGame from '@/views/jacques/EndOfGame.vue'
 
 const LOCALSTORAGE_KEY = `${name}.route`
 
@@ -62,14 +63,24 @@ const routes: Array<RouteRecordRaw> = [
     component: JacquesTurnPlayer
   },
   {
+    path: '/jacques/turn/:turn/player/endOfRound',
+    name: 'JacquesTurnPlayerEndOfRound',
+    component: JacquesEndOfRound
+  },
+  {
     path: '/jacques/turn/:turn/bot',
     name: 'JacquesTurnBot',
     component: JacquesTurnBot
   },
   {
-    path: '/jacques/gameEnd',
+    path: '/jacques/turn/:turn/bot/endOfRound',
+    name: 'JacquesTurnBotEndOfRound',
+    component: JacquesEndOfRound
+  },
+  {
+    path: '/jacques/turn/:turn/endOfGame',
     name: 'JacquesGameEnd',
-    component: JacquesGameEnd
+    component: JacquesEndOfGame
   },
   {
     path: '/:pathMatch(.*)*',

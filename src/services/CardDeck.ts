@@ -60,6 +60,15 @@ export default class CardDeck {
   }
 
   /**
+   * Prepare for a new round with Jacques bot.
+   * The discard pile is shuffled and added to the bottom of the draw pile.
+   */
+  public prepareForNewRoundJacques() : void {
+    this._pile.value.push(...shuffle(this._discard.value))
+    this._discard.value = []
+  }
+
+  /**
    * Creates a shuffled new card deck.
    */
   public static new(bot: Bot, difficultyLevel: DifficultyLevel) : CardDeck {

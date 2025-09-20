@@ -56,4 +56,19 @@ describe('services/CardDeck', () => {
     expect(deck.pile.length, 'pile').to.eq(2)
     expect(deck.discard.length, 'discard').to.eq(1)
   })
+
+  it('prepareForNewRoundJacques', () => {
+    const deck = mockCardDeck(Bot.JACQUES, {pile:['A1','B2'], discard:['A2','A3']})
+
+    expect(deck.pile.length, 'pile').to.eq(2)
+    expect(deck.discard.length, 'discard').to.eq(2)
+
+    deck.prepareForNewRoundJacques()
+
+    expect(deck.pile.length, 'pile').to.eq(4)
+    expect(deck.discard.length, 'discard').to.eq(0)
+
+    expect(deck.pile[0].id).to.eq('A1')
+    expect(deck.pile[1].id).to.eq('B2')
+  })
 })

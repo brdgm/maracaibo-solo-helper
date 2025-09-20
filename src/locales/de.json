@@ -73,7 +73,7 @@
         "explorerStepsAhead": "Anzahl Felder, die Jeans Entdecker sich vor deinem befindet*"
       },
       "explorerNote": "* Befinden sich die Entdecker auf verschiedenen Pfaden, zähle wie weit jeder Entdecker von der nächsten Barriere entfernt ist. Der Entdecker, der weniger Felder bis zur Barriere braucht, gilt als 'vorne'.",
-      "finalScore": "Jeans Endergebnis: <b>{score} SP</b>"
+      "finalScore": "Endergebnis Jean: <b>{score} SP</b>"
     },
     "action": {
       "moveShip": {
@@ -129,6 +129,27 @@
     }
   },
   "jacques": {
+    "endOfRound": {
+      "title": "Ende Runde {round}",
+      "interimScoring": "Führe die Zwischenwertung durch.",
+      "botNoScoring": "Jacques erhält keine weiteren Siegpunkte."
+    },
+    "endOfGame": {
+      "title": "Spielende",
+      "finalScoring": "Führe die Endwertung durch.",
+      "playerGainPoints": {
+        "title": "Du <b>erhälst</b> Siegpunkte wenn:",
+        "explorer": "Dein Entdecker sich vor* Jacques befindet: <b>+5VP</b>",
+        "quests": "Du mehr Quests als Jacques hast: <b>+5VP</b>"
+      },
+      "playerLoosePoints": {
+        "title": "Du <b>verlierst</b> Siegpunkte wenn:",
+        "explorer": "Dein Entdecker hinter* Jacques ist: <b>-5VP</b>",
+        "quests": "Du weniger Quests als Jacques hast: <b>-5VP</b>"
+      },
+      "explorerNote": "* Befinden sich die Entdecker auf unterschiedlichen Abzweigungen, zähle die Anzahl an Feldern zur nächsten Barriere.",
+      "finalScore": "Endergebnis Jacques: <b>{score} SP</b>"
+    },
     "action": {
       "explore": {
         "title": "Entdecker bewegen",

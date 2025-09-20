@@ -73,7 +73,7 @@
         "explorerStepsAhead": "Number of steps Jean's explorer is ahead of yours*"
       },
       "explorerNote": "* If the explorers are on different branches of the path, count how far each explorer is away from the next barrier. The explorer who needs fewer spaces to reach the barrier counts as 'ahead'.",
-      "finalScore": "Jean's final score: <b>{score} VP</b>"
+      "finalScore": "Jeans' final score: <b>{score} VP</b>"
     },
     "action": {
       "moveShip": {
@@ -129,6 +129,27 @@
     }
   },
   "jacques": {
+    "endOfRound": {
+      "title": "End of Round {round}",
+      "interimScoring": "Execute the interim scoring.",
+      "botNoScoring": "Jacques doesn't score any additional victory points."
+    },
+    "endOfGame": {
+      "title": "End of Game",
+      "finalScoring": "Execute the final scoring.",
+      "playerGainPoints": {
+        "title": "You <b>gain</b> points if:",
+        "explorer": "Your explorer is ahead* of Jacques: <b>+5VP</b>",
+        "quests": "You have more quests than Jacques: <b>+5VP</b>"
+      },
+      "playerLoosePoints": {
+        "title": "You <b>lose</b> points if:",
+        "explorer": "Your explorer is behind* of Jacques: <b>-5VP</b>",
+        "quests": "You have fewer quests than Jacques: <b>-5VP</b>"
+      },
+      "explorerNote": "* If explorers are on different paths, count the number of spaces to the next barrier.",
+      "finalScore": "Jacques final score: <b>{score} VP</b>"
+    },
     "action": {
       "explore": {
         "title": "Move Explorer",

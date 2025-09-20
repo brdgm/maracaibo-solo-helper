@@ -18,6 +18,7 @@
     <template #instruction>
       <ul class="instruction">
         <li v-html="t('jean.action.combat.instruction.token')"></li>
+        <li v-html="t('jean.action.combat.instruction.highestCombatValue')"></li>
         <li v-html="t('jean.action.combat.instruction.modifyValue')"></li>
         <li v-html="t('jean.action.combat.instruction.tie')"></li>
         <li v-html="t('jean.action.combat.instruction.annexCity')"></li>

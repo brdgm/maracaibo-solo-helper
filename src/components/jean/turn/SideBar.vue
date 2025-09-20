@@ -7,7 +7,21 @@
     <AppIcon name="card" class="icon"/>: {{projectCardCount}}<br/>
     <AppIcon name="ship-upgrade" class="icon"/>: {{shipUpgradeCount}}<br/>
     <AppIcon name="vp" class="icon"/>: {{vp}}<br/>
+    <p class="mt-2">
+      <a data-bs-toggle="modal" href="#legacyTilesModal">{{t('jean.rules.legacytiles.title')}}</a>
+    </p>
   </div>
+
+  <ModalDialog id="legacyTilesModal" :size-lg="true" :scrollable="true"
+      :title="t('jean.rules.legacytiles.title')">
+    <template #body>
+      <ul>
+        <li v-html="t('jean.rules.legacytiles.item1')"></li>
+        <li v-html="t('jean.rules.legacytiles.item2')"></li>
+        <li v-html="t('jean.rules.legacytiles.item3')"></li>
+      </ul>
+    </template>
+  </ModalDialog>
 </template>
 
 <script lang="ts">
@@ -16,11 +30,13 @@ import { useI18n } from 'vue-i18n'
 import { useStateStore } from '@/store/state'
 import NavigationState from '@/util/jean/NavigationState'
 import AppIcon from '@/components/structure/AppIcon.vue'
+import ModalDialog from '@brdgm/brdgm-commons/src/components/structure/ModalDialog.vue'
 
 export default defineComponent({
   name: 'SideBar',
   components: {
-    AppIcon
+    AppIcon,
+    ModalDialog
   },
   setup() {
     const { t } = useI18n()
@@ -71,11 +87,23 @@ export default defineComponent({
     font-size: 0.9rem;
     width: 120px;
   }
+  a {
+    text-decoration-line: underline;
+    text-decoration-style: dotted;
+    color: #333;
+    font-size: 0.9rem;
+    @media (max-width: 600px) {
+      font-size: 0.8rem;
+    }
+  }
 }
 .icon {
   width: 1.6rem;
   height: 1.6rem;
   object-fit: contain;
   padding: 0.1rem;
+}
+ul > li {
+  margin-bottom: 0.5rem;
 }
 </style>

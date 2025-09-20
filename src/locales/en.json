@@ -33,7 +33,8 @@
       "intro": "Setup the game according to the human player count. If you play solo, setup as a 2-player game.",
       "noPlayerMaterial": "Jacques does not use any player material.",
       "explorerMarker": "Place his explorer marker on the start of the explorer track.",
-      "automaNote": "Jacques' Automa cards are not required, they are managed by the application. His victory points are tracked automatically."
+      "automaNote": "Jacques' Automa cards are not required, they are managed by the application. His victory points are tracked automatically.",
+      "questTiles": "Keep the quest tiles Jacques claims during the game - they are needed for final scoring."
     }
   },
   "turnPlayer": {

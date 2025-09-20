@@ -33,7 +33,8 @@
       "intro": "Bereite das Spiel entsprechend der Anzahl menschlicher Spieler vor. Beim Solospiel bereite es als 2-Spieler-Spiel vor.",
       "noPlayerMaterial": "Jacques verwendet kein Spielermaterial.",
       "explorerMarker": "Platziere seinen Entdeckermarker am Start der Entdeckerleiste.",
-      "automaNote": "Jacques' Automakarten werden nicht benötigt, sie werden von der Anwendung verwaltet. Seine Siegpunkte werden automatisch gezählt."
+      "automaNote": "Jacques' Automakarten werden nicht benötigt, sie werden von der Anwendung verwaltet. Seine Siegpunkte werden automatisch gezählt.",
+      "questTiles": "Bewahre die Quests auf, die Jacques während des Spiels beansprucht - sie werden für die Endwertung benötigt."
     }
   },
   "turnPlayer": {

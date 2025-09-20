@@ -5,6 +5,7 @@
     <li>{{t('setupGame.jacques.explorerMarker')}}</li>
   </ul>
   <p>{{t('setupGame.jacques.automaNote')}}</p>
+  <p>{{t('setupGame.jacques.questTiles')}}</p>
 </template>
 
 <script lang="ts">

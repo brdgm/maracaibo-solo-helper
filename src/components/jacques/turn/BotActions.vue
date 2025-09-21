@@ -3,7 +3,7 @@
     <ActionEndRoundInfo v-if="navigationState.botEndRound || navigationState.botEndRoundNextTurn" :navigationState="navigationState"/>
     <component v-else-if="action" :is="`action-${action.action}`" :navigationState="navigationState" :action="action"/>
   </div>
-  <div class="mt-3">
+  <div class="mt-3" v-if="turnVp > 0">
     <ActionVp :vp="turnVp"/>
   </div>
 

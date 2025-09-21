@@ -1,0 +1,246 @@
+{
+  "gameTitle": "Maracaibo",
+  "home": {
+    "title": "Maracaibo Solo Helper",
+    "play1": "Spiele den <a href='https://boardgamegeek.com/boardgame/276025/maracaibo' target='_blank' rel='noopener'><b>Maracaibo</b></a> Solomodus gegen Jean oder Jacques, die Sologegner.",
+    "play2": "Du kannst mit oder ohne die Erweiterung <a href='https://boardgamegeek.com/boardgameexpansion/338013/maracaibo-the-uprising' target='_blank' rel='noopener'>Der Aufstand</a> spielen.",
+    "feedback": "Diskussion und Feedback:"
+  },
+  "setup": {
+    "title": "Konfiguration",
+    "botSelection": {
+      "title": "Dein Gegner"
+    },
+    "difficultyLevel": {
+      "title": "Schwierigkeitsgrad",
+      "easy": "Leicht",
+      "hard": "Schwer"
+    }
+  },
+  "setupGame": {
+    "title": "Spielaufbau",
+    "jean": {
+      "intro": "Bereite das Spiel wie gewohnt für 2 Spieler vor, mit diesen Änderungen:",
+      "chooseColor": "Wähle eine Farbe für Jean.",
+      "setupMarkers": "Bereite ihr Schiff, ihren Entdecker, und Einflussmarker wie gewohnt vor.",
+      "noFigures": "Sie verwendet ihre Figuren nicht.",
+      "noShipBoard": "Sie braucht kein Schiffstableau.",
+      "noDoubloons": "Sie sammelt keine Dublonen oder Kampfpunkte.",
+      "noProjectCards": "Sie erhält keine Projektkarten zu Spielbeginn.",
+      "automaNote": "Das Automa-Tableau und die Automakarten werden nicht benötigt, sie werden von der Anwendung verwaltet. Jeans Siegpunkte werden automatisch gezählt."
+    },
+    "jacques": {
+      "intro": "Bereite das Spiel entsprechend der Anzahl menschlicher Spieler vor. Beim Solospiel bereite es als 2-Spieler-Spiel vor.",
+      "noPlayerMaterial": "Jacques verwendet kein Spielermaterial.",
+      "explorerMarker": "Platziere seinen Entdeckermarker am Start der Entdeckerleiste.",
+      "automaNote": "Jacques' Automakarten werden nicht benötigt, sie werden von der Anwendung verwaltet. Seine Siegpunkte werden automatisch gezählt.",
+      "questTiles": "Bewahre die Quests auf, die Jacques während des Spiels beansprucht - sie werden für die Endwertung benötigt."
+    }
+  },
+  "turnPlayer": {
+    "title": "Dein Zug",
+    "takeTurn": "Führe deinen Zug aus."
+  },
+  "endRound": {
+    "title": "Runde beenden",
+    "reachedLastSpace": "Letztes Feld {space} erreicht",
+    "endRoundConfirm": "Runde {round} wird beendet."
+  },
+  "jean": {
+    "turnBot": {
+      "foundQuest": "Jean findet eine Quest",
+      "noQuest": "Keine Quest",
+      "cityMarketSpace": "Belege ein freies Lagerfeld<br/>mit einer Scheibe aus dem Vorrat",
+      "removeCard": "Entferne Karte {card}<br/>aus der Auslage"
+    },
+    "endOfRound": {
+      "title": "Ende Runde {round}",
+      "interimScoring": "Führe die Zwischenwertung durch.",
+      "botVP": "Jean erhält <b>{count} Siegpunkt</b> in der Einkommensphase. | Jean erhält <b>{count} Siegpunkte</b> in der Einkommensphase."
+    },
+    "endOfGame": {
+      "title": "Spielende",
+      "finalScoring": "Führe die Endwertung durch.",
+      "additionalBonusPoints": "Zusätzlich erhält Jean:",
+      "table": {
+        "condition": "Bedingung",
+        "influence": "Werte Jeans Einflussmarker",
+        "player": "Du",
+        "bot": "Jean",
+        "botVP": "Jean SP",
+        "questTiles": "Quests",
+        "shipUpgrades": "Schiffsverbesserungen",
+        "explorerStepsAhead": "Anzahl Felder, die Jeans Entdecker sich vor deinem befindet*"
+      },
+      "explorerNote": "* Befinden sich die Entdecker auf verschiedenen Pfaden, zähle wie weit jeder Entdecker von der nächsten Barriere entfernt ist. Der Entdecker, der weniger Felder bis zur Barriere braucht, gilt als 'vorne'.",
+      "finalScore": "Endergebnis Jean: <b>{score} SP</b>"
+    },
+    "action": {
+      "moveShip": {
+        "title": "Schiff bewegen",
+        "upperRoute": "Bei einer Auswahl: nutze die obere Route.",
+        "lowerRoute": "Bei einer Auswahl: nutze die untere Route.",
+        "ignoreVillages": "Jean ignoriert alle Dörfer ohne Aufträge. Diese sind nicht zu zählende Felder! Das bedeutet, dass Jean ihre Bewegung immer entweder in einer Stadt oder an einem Ort mit einer Quest beendet.",
+        "cannotSkipHand": "Jean kann Orte mit dem Handsymbol, wie die 'Heimwärts' Felder, nicht überspringen. Das bedeutet, dass sie, sobald sie Feld 20 erreicht hat, immer nur zum nächsten Feld zieht.",
+        "legacyTiles": "Wenn Legacyplättchen neue Städte aufdecken, zählen diese auch für Jean."
+      },
+      "influence": {
+        "title": "Einfluss",
+        "get": "Jean erhält <b>{count}</b> Einfluss bei <b>{nation}</b>."
+      },
+      "vp": {
+        "title": "Siegpunkte",
+        "get": "Jean erhält <b>{amount}</b> Siegpunkt. | Jean erhält <b>{amount}</b> Siegpunkte."
+      },
+      "reduceCombat": {
+        "title": "Kampfpunkte abgeben",
+        "reduce": "Gebe <b>{amount}</b> Kampfpunkt ab. | Gebe <b>{amount}</b> Kampfpunkte ab.",
+        "noPoints": "Kannst du dies nicht, <b>trage in dem Textfeld ein</b> wie viele Kampfpunkt du tatsächlich abgeben konntest. Jean erhält je fehlenden Kampfpunkt {amount} Siegpunkte.",
+        "enterPoints": "Abgegebene<br>Kampfpunkte:"
+      },
+      "questPile": {
+        "title": "Nehme Quest",
+        "take": "Jean entfernt eine Quest vom Nachziehstapel."
+      },
+      "removeDisc": {
+        "title": "Scheibe entfernen",
+        "remove": "Jean entfernt eine Scheibe für Schiffs-Upgrades (wird von der Anwendung verwaltet)."
+      },
+      "explore": {
+        "title": "Entdecker bewegen",
+        "move": "Jean bewegt ihren Entdecker <b>{amount} Felder</b> weiter.",
+        "quest": "Befindet sich eine Quest in Reichweite ihres Entdeckers, zieht sie ihn dort hin und nimmt sie (und lässt möglicherweise Felder verfallen).",
+        "shortestPath": "Andernfalls wählt sie immer den kürzestmöglichen Weg.",
+        "noRewards": "Die Belohnung für das Überschreiten der Barriere oder der Ankunft am Zielfeld erhält Jean nicht, reduziert allerdings den Bonus für deinen Entdecker."
+      },
+      "combat": {
+        "title": "Kampf",
+        "max": "Max.",
+        "tie": "Gleichstand:",
+        "instruction": {
+          "token": "Decke ein Kampfplättchen auf.",
+          "highestCombatValue": "Jean wählt die Nation mit dem höchsten modifizierten Kampfwert.",
+          "modifyValue": "Für jede Nation der modifizierte Kampfwert berechnet. Dafür addierst du den Kampfwert auf dem Kampfplättchen zum Wert des Adelsranges, den Jean momentan bei dieser Nation innehat, minus den Wert deines momentanen Adelsranges. Der Adelsrangs ist das letzterreichte rote Feld auf der jeweiligen Einflussleiste. Ist auf dem Kampfplättchen eine Bedingung angegeben, die die Kampfstärke der Nation modifiziert, so wird diese auch angewendet.",
+          "tie": "Kosten und Sofortboni auf dem Kampfplättchen werden von Jean ignoriert. Bei Gleichstand entscheidet der nicht modifizierte Kampfwert (ohne Adelsränge und eventueller Bedingung auf dem Kampfplättchen). Herrscht immer noch Gleichstand, wählt sie die Nationen in der Reihenfolge Frankreich, Spanien, England.",
+          "annexCity": "Jean erobert nun jene leere Stadt, deren Feld die niedrigste Nummer zeigt (den auf der Flagge abgebildeten Bonus erhält sie nicht). Gibt es keine leere Stadt mehr, erobert sie das Dorf mit der niedrigsten Nummer. Gibt es auch das nicht mehr, entfernt sie den Nationenmarker aus dem Spiel.",
+          "annexVillage": "Jean annektiert zusätzlich ein leeres Dorf nach den obigen Regeln.",
+          "influence": "Schlussendlich bekommt Jean die angegebenen Einflusspunkte bei der Nation, mit der sie gekämpft hat."
+        }
+      }
+    },
+    "rules": {
+      "legacytiles": {
+        "title": "Legacy-Plättchen",
+        "item1": "L4, L7: Wie ein Spieler kann Jean diese Stadt nur anfahren oder erobern, wenn ihr Entdecker das betreffende Feld erreicht oder passiert hat.",
+        "item2": "L2, L5, L6, L8, L10-25: Jean ignoriert diese Plättchen.",
+        "item3": "L10-L17: Wird dieses Plättchen ins Spiel gebracht, musst du zusätzlich zur 2-Spieler-Regel (L11-L17: Schreibe auf das Legacy-Plättchen legen) sofort eine weitere Schreibe aus der Schachtel auf das Plättchen legen, um einen Platz zu besetzen."
+      }
+    }
+  },
+  "jacques": {
+    "endOfRound": {
+      "title": "Ende Runde {round}",
+      "interimScoring": "Führe die Zwischenwertung durch.",
+      "botNoScoring": "Jacques erhält keine weiteren Siegpunkte."
+    },
+    "endOfGame": {
+      "title": "Spielende",
+      "finalScoring": "Führe die Endwertung durch.",
+      "playerGainPoints": {
+        "title": "Du <b>erhälst</b> Siegpunkte wenn:",
+        "explorer": "Dein Entdecker sich vor* Jacques befindet: <b>+5VP</b>",
+        "quests": "Du mehr Quests als Jacques hast: <b>+5VP</b>"
+      },
+      "playerLoosePoints": {
+        "title": "Du <b>verlierst</b> Siegpunkte wenn:",
+        "explorer": "Dein Entdecker hinter* Jacques ist: <b>-5VP</b>",
+        "quests": "Du weniger Quests als Jacques hast: <b>-5VP</b>"
+      },
+      "explorerNote": "* Befinden sich die Entdecker auf unterschiedlichen Abzweigungen, zähle die Anzahl an Feldern zur nächsten Barriere.",
+      "finalScore": "Endergebnis Jacques: <b>{score} SP</b>"
+    },
+    "action": {
+      "explore": {
+        "title": "Entdecker bewegen",
+        "move": "Jacques bewegt seinen Entdecker <b>{amount} Feld</b> weiter. | Jacques bewegt seinen Entdecker <b>{amount} Felder</b> weiter.",
+        "quest": "Befindet sich eine Quest in Reichweite seines Entdeckers, zieht er ihn dort hin und nimmt sie (und lässt möglicherweise Felder verfallen).",
+        "shortestPath": "Andernfalls wählt er immer den kürzestmöglichen Weg.",
+        "noRewards": "Die Belohnung für das Überschreiten der Barriere oder der Ankunft am Zielfeld erhält Jacques nicht, reduziert allerdings den Bonus für deinen Entdecker."
+      },
+      "cityDisc": {
+        "title": "Scheibe in Stadt platzieren",
+        "place": "Jacques legt eine Scheibe aus dem Vorrat auf ein Lagerfeld der Stadt mit der Nummer <b>{cityNumber}</b>.",
+        "noPlace": "Dies entfällt, wenn alle Lagerplätze an diesem Ort schon besetzt sind."
+      },
+      "quest": {
+        "title": "Quest nehmen",
+        "selectLocation": "Jacques nimmt eine Quest von einem Ort mit der niedrigsten Nummer <b>zwischen {from} und {to}</b>.",
+        "none": "Findet sich keine Quest an diesen Orten, nimmt er die oberste Quest des Queststapels.",
+        "multiple": "Befinden sich mehrere Quests an einem Ort, wählst du aus."
+      },
+      "endRound": {
+        "title": "Runde beenden",
+        "nextTurn": "Jacques wird die Runde <b>im nächsten Zug</b> beenden.",
+        "twoTurns": "Jacques wird die Runde <b>im übernächsten Zug</b> beenden.",
+        "now": "Jacques beendet die Runde."
+      },
+      "vp": {
+        "title": "Siegpunkte",
+        "get": "Jacques erhält <b>{amount}</b> Siegpunkt. | Jacques erhält <b>{amount}</b> Siegpunkte."
+      }
+    }
+  },
+  "sideBar": {
+    "round": "Runde {round}",
+    "turn": "Zug {turn}"
+  },
+  "bot": {
+    "jean": "Jean",
+    "jacques": "Jacques"
+  },
+  "difficultyLevel": {
+    "jean": {
+      "1": "Level 1 - Sehr einfach",
+      "2": "Level 2 - Einfach",
+      "3": "Level 3 - Mittel",
+      "4": "Level 4 - Schwer",
+      "5": "Level 5 - Sehr schwer"
+    },
+    "jacques": {
+      "1": "Level 1 - Einfach („Deckschrubber“)",
+      "2": "Level 2 - Mittel („Kieltaucher“)",
+      "3": "Level 3 - Schwer („Steuermann“)",
+      "4": "Level 4 - So gut wie unmöglich! („Commodore“)"
+    }
+  },
+  "nation": {
+    "france": "Frankreich",
+    "spain": "Spanien",
+    "england": "England"
+  },
+  "notfound": {
+    "title": "Nicht Gefunden"
+  },
+  "action": {
+    "playGame": "Spielen",
+    "startGame": "Spiel starten",
+    "next": "Weiter",
+    "nextRound": "Nächste Runde",
+    "abortGame": "Spiel abbrechen",
+    "abortGameConfirm": "Das aktuelle Spiel wird abgebrochen - bist du sicher?",
+    "endGame": "Spiel beenden",
+    "endGameConfirm": "Dieses Spiel wird beendet - bist du sicher?",
+    "cancel": "Abbrechen",
+    "backToHome": "Zurück zum Anfang",
+    "back": "Zurück",
+    "close": "Schließen",
+    "ok": "OK"
+  },
+  "footer": {
+    "credits": "Credits"
+  },
+  "serviceWorkerUpdatedRefresh": {
+    "title": "Applikation neu laden",
+    "notice": "Die Applikation wurde aktualisiert - möchtest du die Seite neu laden um die neueste Version zu nutzen?"
+  }
+}

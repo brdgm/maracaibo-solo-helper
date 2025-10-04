@@ -6,7 +6,7 @@ import { JeanBotPersistence } from '@/store/state'
  * @param botPersistence2 The second bot persistence.
  * @returns The merged bot persistence.
  */
-export default function(botPersistence1?: JeanBotPersistence, botPersistence2?: JeanBotPersistence) : JeanBotPersistence {
+export default function mergeBotPersistence(botPersistence1?: JeanBotPersistence, botPersistence2?: JeanBotPersistence) : JeanBotPersistence {
   return {
     questCount: (botPersistence1?.questCount ?? 0) + (botPersistence2?.questCount ?? 0),
     projectCardCount: (botPersistence1?.projectCardCount ?? 0) + (botPersistence2?.projectCardCount ?? 0),

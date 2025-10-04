@@ -3,7 +3,7 @@ import { BotPersistence } from '@/store/state'
 import mockCardDeck from './mockCardDeck'
 import Bot from '@/services/enum/Bot'
 
-export default function (params?: MockBotPersistenceParams) : BotPersistence {  
+export default function mockBotPersistenceJean(params?: MockBotPersistenceParams) : BotPersistence {  
   return {
     cardDeck: (params?.cardDeck ?? mockCardDeck(Bot.JEAN)).toPersistence(),
     jean: {

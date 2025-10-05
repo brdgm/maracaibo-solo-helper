@@ -22,7 +22,7 @@ const state = mockState({bot:Bot.JEAN, turns:[
   )}),
 ]})
 
-describe('services/jean/RouteCalculator', () => {
+describe('services/RouteCalculator', () => {
   it('turn1', () => {
     const routeCalculator = new RouteCalculator(Bot.JEAN, 1, mockRouteLocation({name:'JeanTurnPlayer'}), state)
 

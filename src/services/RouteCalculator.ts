@@ -4,7 +4,7 @@ import { RouteLocation } from 'vue-router'
 import Bot from './enum/Bot'
 
 /**
- * Calculate routes for next/back respecting "passed" state of players.
+ * Calculate routes for next/back respecting special "end of round" turns.
  */
 export default class RouteCalculator {
 

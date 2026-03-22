@@ -1,0 +1,246 @@
+{
+  "gameTitle": "마라카이보",
+  "home": {
+    "title": "마라카이보 솔로 헬퍼",
+    "play1": "솔로 상대인 장(Jean) 또는 자크(Jacques)와 <a href='https://boardgamegeek.com/boardgame/276025/maracaibo' target='_blank' rel='noopener'><b>마라카이보</b></a> 솔로 게임을 플레이하세요.",
+    "play2": "확장판 <a href='https://boardgamegeek.com/boardgameexpansion/338013/maracaibo-the-uprising' target='_blank' rel='noopener'>반란(The Uprising)</a>을 포함하거나 포함하지 않고 플레이할 수 있습니다.",
+    "feedback": "토론 및 피드백:"
+  },
+  "setup": {
+    "title": "앱 설정",
+    "botSelection": {
+      "title": "상대방"
+    },
+    "difficultyLevel": {
+      "title": "난이도",
+      "easy": "쉬움",
+      "hard": "어려움"
+    }
+  },
+  "setupGame": {
+    "title": "게임 설정",
+    "jean": {
+      "intro": "2인 게임과 동일하게 게임을 설정하되, 다음과 같이 변경합니다:",
+      "chooseColor": "장의 색깔을 선택하세요.",
+      "setupMarkers": "평소와 같이 그녀의 배, 탐험가, 영향력 마커를 설치하세요.",
+      "noFigures": "그녀는 인물 말을 사용하지 않습니다.",
+      "noShipBoard": "그녀는 배 보드가 필요하지 않습니다.",
+      "noDoubloons": "그녀는 금화나 전투 점수를 수집하지 않습니다.",
+      "noProjectCards": "그녀는 게임 시작 시 프로젝트 카드를 받지 않습니다.",
+      "automaNote": "오토마 보드와 오토마 카드는 필요하지 않으며, 앱에서 관리됩니다. 장의 승리 점수는 자동으로 추적됩니다."
+    },
+    "jacques": {
+      "intro": "인간 플레이어 수에 따라 게임을 설정하세요. 솔로로 플레이한다면, 2인 게임으로 설정하세요.",
+      "noPlayerMaterial": "자크는 어떤 플레이어 구성품도 사용하지 않습니다.",
+      "explorerMarker": "그의 탐험가 마커를 탐험가 트랙의 시작점에 놓으세요.",
+      "automaNote": "자크의 오토마 카드는 필요하지 않으며, 앱에서 관리됩니다. 그의 승리 점수는 자동으로 추적됩니다.",
+      "questTiles": "자크가 게임 중에 획득하는 퀘스트 타일은 보관하세요 - 최종 점수 계산에 필요합니다."
+    }
+  },
+  "turnPlayer": {
+    "title": "당신의 턴",
+    "takeTurn": "턴을 진행하세요."
+  },
+  "endRound": {
+    "title": "라운드 종료",
+    "reachedLastSpace": "최종 공간 {space}에 도달",
+    "endRoundConfirm": "라운드 {round}을 종료합니다."
+  },
+  "jean": {
+    "turnBot": {
+      "foundQuest": "장이 퀘스트를 발견했습니다",
+      "noQuest": "퀘스트 없음",
+      "cityMarketSpace": "공급처에서 디스크를<br/>빈 시장 공간에 놓으세요",
+      "removeCard": "전시된 카드에서<br/>카드 {card}를 제거하세요"
+    },
+    "endOfRound": {
+      "title": "라운드 {round} 종료",
+      "interimScoring": "중간 점수 계산을 실행하세요.",
+      "botVP": "수입 단계에서 장은 <b>승리 점수 {count}점</b>을 얻습니다. | 수입 단계에서 장은 <b>승리 점수 {count}점</b>을 얻습니다."
+    },
+    "endOfGame": {
+      "title": "게임 종료",
+      "finalScoring": "최종 점수 계산을 실행하세요.",
+      "additionalBonusPoints": "추가로, 장은 다음을 점수로 얻습니다:",
+      "table": {
+        "condition": "조건",
+        "player": "당신",
+        "bot": "장",
+        "botVP": "장의 승리점",
+        "influence": "장의 영향력 마커 점수",
+        "questTiles": "퀘스트 타일",
+        "shipUpgrades": "배 업그레이드",
+        "explorerStepsAhead": "장의 탐험가가 당신보다 앞선 칸 수*"
+      },
+      "explorerNote": "* 탐험가들이 다른 경로에 있다면, 각 탐험가가 다음 장벽까지 얼마나 떨어져 있는지 세어보세요. 장벽에 도달하기까지 더 적은 칸이 필요한 탐험가가 '앞선' 것으로 간주됩니다.",
+      "finalScore": "장의 최종 점수: <b>{score} 승리점</b>"
+    },
+    "action": {
+      "moveShip": {
+        "title": "배 이동",
+        "upperRoute": "선택지가 있다면: 위쪽 경로를 사용하세요.",
+        "lowerRoute": "선택지가 있다면: 아래쪽 경로를 사용하세요.",
+        "ignoreVillages": "장은 퀘스트가 없는 모든 마을을 무시합니다. 이들은 계산되지 않는 공간입니다! 즉, 장은 항상 도시나 퀘스트가 있는 장소에서 이동을 끝냅니다.",
+        "cannotSkipHand": "장은 '귀향' 공간과 같은 손 기호가 있는 장소를 건너뛸 수 없습니다. 즉, 20번 공간에 도달하면, 항상 다음 공간으로만 이동합니다.",
+        "legacyTiles": "레거시 타일이 새로운 도시를 공개하면, 이것들도 장에게 적용됩니다."
+      },
+      "influence": {
+        "title": "영향력",
+        "get": "장은 <b>{nation}</b>에 대한 영향력을 <b>{count}</b> 얻습니다."
+      },
+      "vp": {
+        "title": "승리 점수",
+        "get": "장은 <b>승리 점수 {amount}점</b>을 얻습니다. | 장은 <b>승리 점수 {amount}점</b>을 얻습니다."
+      },
+      "reduceCombat": {
+        "title": "전투 점수 지불",
+        "reduce": "<b>전투 점수 {amount}점</b>을 지불하세요. | <b>전투 점수 {amount}점</b>을 지불하세요.",
+        "noPoints": "지불할 수 없다면, <b>텍스트 필드에</b> 실제로 지불할 수 있는 전투 점수 수를 입력하세요. 장은 부족한 전투 점수 1점마다 {amount} 승리점을 얻습니다.",
+        "enterPoints": "지불한<br>전투 점수:"
+      },
+      "questPile": {
+        "title": "퀘스트 타일 획득",
+        "take": "장은 더미에서 퀘스트 타일을 제거합니다."
+      },
+      "removeDisc": {
+        "title": "디스크 제거",
+        "remove": "장은 배 업그레이드용 디스크를 제거합니다 (앱에서 관리)."
+      },
+      "explore": {
+        "title": "탐험가 이동",
+        "move": "장은 탐험가를 <b>{amount}칸</b> 앞으로 이동시킵니다.",
+        "quest": "퀘스트 타일이 이동 범위 내에 있다면, 그곳으로 이동하여 멈춥니다 (추가 이동은 포기).",
+        "shortestPath": "그렇지 않으면, 항상 가장 짧은 경로를 선택합니다.",
+        "noRewards": "장은 장벽을 넘거나 탐험가 트랙의 끝에 도달해도 보상을 받지 않지만, 당신의 탐험가 보너스를 줄입니다."
+      },
+      "combat": {
+        "title": "전투",
+        "max": "최대",
+        "tie": "동점:",
+        "instruction": {
+          "token": "전투 토큰을 공개하세요.",
+          "highestCombatValue": "장은 수정된 전투 값이 가장 높은 국가를 선택합니다.",
+          "modifyValue": "각 국가의 수정된 전투 값을 결정하세요. 각 국가에 대해, 먼저 장의 해당 국가 귀족 등급을 전투 토큰에 표시된 전투 값에 더하세요. 그 다음 당신의 해당 국가 귀족 등급을 총합에서 빼세요. 귀족 등급은 해당 영향력 트랙에서 당신이나 장이 도달한 마지막 빨간 띠입니다. 전투 토큰에 국가의 전투 값을 수정하는 요구사항이 표시되어 있다면 적용하세요. 장은 전투 토큰의 비용이나 즉시 보너스는 무시합니다.",
+          "tie": "동점인 경우, 장은 전투 토큰에서 전투 값이 가장 높은 국가를 선택합니다 (수정이나 보너스 무시). 여전히 동점이면, 프랑스, 스페인, 영국 순으로 우선 선택합니다.",
+          "annexCity": "장은 이제 번호가 가장 낮은 빈 도시를 병합합니다 (해당 도시 깃발에 표시된 보상은 받지 않음). 빈 도시가 없다면, 번호가 가장 낮은 빈 마을을 병합합니다. 그것도 없다면, 소유권 마커를 게임에서 제거합니다.",
+          "annexVillage": "장은 위 규칙에 따라 추가로 빈 마을을 병합합니다.",
+          "influence": "마지막으로, 장은 전투한 국가에 대한 표시된 영향력을 얻습니다."
+        }
+      }
+    },
+    "rules": {
+      "legacytiles": {
+        "title": "레거시 타일",
+        "item1": "L4, L7: 장은 탐험가가 필요한 공간에 도달했거나 지나간 경우에만 이 도시로 항해하거나 병합할 수 있습니다.",
+        "item2": "L2, L5, L6, L8, L10-25: 장은 이 타일들을 무시합니다.",
+        "item3": "L10-L17: 이 타일 중 하나가 게임에 들어올 때, 2인 게임 규칙(L11-L17: 레거시 타일에 디스크 놓기)에 추가로, 상자에서 다른 디스크를 가져와 타일에 추가하여 다른 공간을 점유하세요."
+      }
+    }
+  },
+  "jacques": {
+    "endOfRound": {
+      "title": "라운드 {round} 종료",
+      "interimScoring": "중간 점수 계산을 실행하세요.",
+      "botNoScoring": "자크는 추가 승리 점수를 얻지 않습니다."
+    },
+    "endOfGame": {
+      "title": "게임 종료",
+      "finalScoring": "최종 점수 계산을 실행하세요.",
+      "playerGainPoints": {
+        "title": "다음의 경우 당신이 점수를 <b>얻습니다</b>:",
+        "explorer": "당신의 탐험가가 자크보다 앞선 경우*: <b>+5승리점</b>",
+        "quests": "자크보다 퀘스트를 많이 가진 경우: <b>+5승리점</b>"
+      },
+      "playerLoosePoints": {
+        "title": "다음의 경우 당신이 점수를 <b>잃습니다</b>:",
+        "explorer": "당신의 탐험가가 자크보다 뒤처진 경우*: <b>-5승리점</b>",
+        "quests": "자크보다 퀘스트를 적게 가진 경우: <b>-5승리점</b>"
+      },
+      "explorerNote": "* 탐험가들이 다른 경로에 있다면, 다음 장벽까지의 칸 수를 세어보세요.",
+      "finalScore": "자크의 최종 점수: <b>{score} 승리점</b>"
+    },
+    "action": {
+      "explore": {
+        "title": "탐험가 이동",
+        "move": "자크는 탐험가를 <b>{amount}칸</b> 앞으로 이동시킵니다. | 자크는 탐험가를 <b>{amount}칸</b> 앞으로 이동시킵니다.",
+        "quest": "퀘스트 타일이 이동 범위 내에 있다면, 그곳으로 이동하여 퀘스트를 획득하고 멈춥니다 (추가 이동은 포기).",
+        "shortestPath": "그렇지 않으면, 항상 가장 짧은 경로를 선택합니다.",
+        "noRewards": "자크는 장벽을 넘거나 탐험가 트랙의 끝에 도달해도 보상을 받지 않지만, 당신의 탐험가 보너스를 줄입니다."
+      },
+      "cityDisc": {
+        "title": "도시 디스크 놓기",
+        "place": "자크는 공급처에서 디스크를 <b>{cityNumber}번</b> 도시의 시장에 추가합니다.",
+        "noPlace": "해당 위치의 시장이 가득 찬 경우에는 이를 수행하지 않습니다."
+      },
+      "quest": {
+        "title": "퀘스트 획득",
+        "selectLocation": "자크는 <b>{from}과 {to} 사이</b>에서 번호가 가장 낮은 위치의 퀘스트를 획득합니다.",
+        "none": "해당하는 것이 없다면, 더미에서 맨 위 퀘스트를 대신 가져갑니다.",
+        "multiple": "한 위치에 여러 퀘스트가 있다면, 대신 선택해 주세요."
+      },
+      "endRound": {
+        "title": "라운드 종료",
+        "nextTurn": "자크는 <b>다음 턴</b>에 라운드를 종료합니다.",
+        "twoTurns": "자크는 <b>두 턴 후</b>에 라운드를 종료합니다.",
+        "now": "자크가 라운드를 종료합니다."
+      },
+      "vp": {
+        "title": "승리 점수",
+        "get": "자크는 <b>승리 점수 {amount}점</b>을 얻습니다. | 자크는 <b>승리 점수 {amount}점</b>을 얻습니다."
+      }
+    }
+  },
+  "sideBar": {
+    "round": "라운드 {round}",
+    "turn": "턴 {turn}"
+  },
+  "bot": {
+    "jean": "장",
+    "jacques": "자크"
+  },
+  "difficultyLevel": {
+    "jean": {
+      "1": "레벨 1 - 매우 쉬움",
+      "2": "레벨 2 - 쉬움",
+      "3": "레벨 3 - 보통",
+      "4": "레벨 4 - 어려움",
+      "5": "레벨 5 - 매우 어려움"
+    },
+    "jacques": {
+      "1": "레벨 1 - 간단함 (\"갑판 청소부\")",
+      "2": "레벨 2 - 보통 (\"선체 잠수부\")",
+      "3": "레벨 3 - 어려움 (\"항해사\")",
+      "4": "레벨 4 - 매우 어려움 (\"제독\")"
+    }
+  },
+  "nation": {
+    "france": "프랑스",
+    "spain": "스페인",
+    "england": "영국"
+  },
+  "notfound": {
+    "title": "찾을 수 없음"
+  },
+  "action": {
+    "playGame": "게임 플레이",
+    "startGame": "게임 시작",
+    "next": "다음",
+    "nextRound": "다음 라운드",
+    "abortGame": "게임 중단",
+    "abortGameConfirm": "진행 중인 게임을 중단합니다 - 확실합니까?",
+    "endGame": "게임 종료",
+    "endGameConfirm": "이 게임을 종료하고 홈 화면으로 돌아갑니다 - 확실합니까?",
+    "cancel": "취소",
+    "backToHome": "홈으로 돌아가기",
+    "back": "뒤로",
+    "close": "닫기",
+    "ok": "확인"
+  },
+  "footer": {
+    "credits": "크레딧"
+  },
+  "serviceWorkerUpdatedRefresh": {
+    "title": "앱 새로고침",
+    "notice": "앱이 업데이트되었습니다 - 최신 버전을 사용하려면 새로고침하시겠습니까?"
+  }
+}

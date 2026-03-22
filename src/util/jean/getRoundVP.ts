@@ -5,7 +5,7 @@ import { JeanBotPersistence } from '@/store/state'
  * @param botPersistence The bot persistence.
  * @return The VP gained this round.
  */
-export default function(botPersistence?: JeanBotPersistence) : number {
+export default function getRoundVP(botPersistence?: JeanBotPersistence) : number {
   const projectCardCount = botPersistence?.projectCardCount ?? 0
   let discRemovedCount = botPersistence?.discRemovedCount ?? 0
 
